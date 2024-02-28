@@ -140,7 +140,7 @@
     column-gap: 42px;
     align-items: center;
     justify-items: center;
-    margin: auto 20px;
+    padding: 0 20px;
 }
 
 .home-msg img {
@@ -163,11 +163,12 @@
 .home-msg a {
     text-decoration: none;
     color: black;
-    padding: 6px 12px;
+    padding: 8px 16px;
     border-radius: 6px;
     transition: all .15s ease-in-out;
     font-size: 18px;
     font-family: 'Source Sans 3';
+    letter-spacing: 1px;
     border: solid 2px rgb(34, 34, 34);
 }
 
