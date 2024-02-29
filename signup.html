@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINT GIFT - Customize a Gift for a Memorable Moment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="nav-logo">
+                <a href="index.html">
+                    Print.
+                    <span>GIFT</span>
+                </a>
+            </div>
+            <div class="nav-search">
+                <div class="search">
+                    <input type="search" placeholder="Search products">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+            </div>
+            <div class="nav-cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="nav-list" id="navList">
+                <a href="products.html">Explore</a>
+                <a href="#">About</a>
+                <a href="login.html" class="login-btn">Login</a>
+                <a href="signup.html" class="sign-btn">Sign Up</a>
+            </div>
+            <div class="nav-list-control" id="navListControl">
+                <div id="navListControl1"></div>
+                <div id="navListControl2"></div>
+                <div id="navListControl3"></div>
+            </div>
+        </div>
+
+
+        <!-- Sign Up Content -->
+        <div class="signup-content">
+
+            <div class="signup-card">
+                <h1>Sign Up</h1>
+                <form action="#" method="post" class="signup-form" id="signupForm">
+                    <div>
+                        <label for="signUpFName">First Name</label>
+                        <input type="text" name="fname" id="signUpFName" placeholder="Enter your first name">
+                    </div>
+                    <div>
+                        <label for="signUpLName">Last Name</label>
+                        <input type="text" name="lname" id="signUpLName" placeholder="Enter your last name">
+                    </div>
+                    <div>
+                        <label for="signUpTel">Phone Number</label>
+                        <input type="tel" name="tel" id="signUpTel" placeholder="Enter your phone number">
+                    </div>
+                    <div>
+                        <label for="signUpDOB">Date of Birth</label>
+                        <input type="date" name="dob" id="signUpDOB">
+                    </div>
+                    <div class="email-field">
+                        <label for="signUpEmail">Email</label>
+                        <input type="email" name="email" id="signUpEmail" placeholder="Enter yout email">
+                    </div>
+                    <div>
+                        <label for="signUpPassword">Password</label>
+                        <input type="password" name="password" id="signUpPassword" placeholder="Enter your password">
+                    </div>
+                    <div>
+                        <label for="signUpConfirmPassword">Confirm Password</label>
+                        <input type="password" name="confirm-password" id="signUpConfirmPassword"
+                            placeholder="Confirm your password">
+                    </div>
+                    <div class="agree-terms-field">
+                        <input type="checkbox" name="agree-terms" id="signUpAgreeTerms">
+                        <label for="signUpAgreeTerms">I hereby agree to terms and conditions</label>
+                    </div>
+                    <button type="submit" id="submit">Sign Up</button>
+                </form>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

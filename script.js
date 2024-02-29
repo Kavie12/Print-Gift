@@ -15,8 +15,25 @@ navListControl.addEventListener('click', () => {
     } 
     else {
         navList.style.right = '0px'
-        navListControl1.style.transform = 'rotate(45deg) translateY(4px)'
+        navListControl1.style.transform = 'rotate(45deg) translateY(4.2px)'
         navListControl2.style.display = 'none'
-        navListControl3.style.transform = 'rotate(-45deg) translateY(-4px)'
+        navListControl3.style.transform = 'rotate(-45deg) translateY(-4.2px)'
     }
+})
+
+
+
+const filtersSidebarClose = document.getElementById('filtersSidebarClose')
+const filtersSidebarOpen = document.getElementById('filtersSidebarOpen')
+
+// Close Filters Sidebar
+filtersSidebarClose.addEventListener('click', () => {
+    const productsFilters = document.getElementById('productsFilters')
+    productsFilters.style.left = '-60%'
+})
+
+// Open Filters Sidebar
+filtersSidebarOpen.addEventListener('click', () => {
+    const productsFilters = document.getElementById('productsFilters')
+    productsFilters.style.left = '0px' 
 })
