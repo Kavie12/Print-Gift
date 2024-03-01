@@ -8,7 +8,7 @@ navListControl.addEventListener('click', () => {
     const navListControl3 = document.getElementById('navListControl3')
     
     if (navList.style.right == '0px') {
-        navList.style.right = '-100vw'
+        navList.style.right = '-100%'
         navListControl1.style.transform = 'rotate(0) translateY(0)'
         navListControl2.style.display = 'block'
         navListControl3.style.transform = 'rotate(0) translateY(0)'

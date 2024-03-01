@@ -32,10 +32,10 @@
     left: 0;
     right: 0;
     display: grid;
-    grid-template-areas: 'nav-logo nav-search nav-cart nav-list';
+    grid-template-areas: 'nav-logo nav-search nav-search nav-search nav-cart nav-list';
     align-items: center;
-    justify-items: center;
-    padding: 18px 180px;
+    justify-content: space-between;
+    padding: 18px 220px;
     border-bottom: solid 1px rgba(56, 56, 56, 0.2);
     background: #eff0f5;
     z-index: 2;
@@ -61,7 +61,6 @@
 
 .nav-search {
     grid-area: nav-search;
-    width: 100%;
 }
 
 .nav-search .search {
@@ -142,7 +141,7 @@
 }
 
 .nav-list .login-btn:hover {
-    background-color: rgb(223, 228, 228);
+    background-color: rgb(230, 230, 230);
 }
 
 .nav-list .sign-btn {
@@ -168,14 +167,16 @@
     transition: all .45s ease;
 }
 
+@media screen and (max-width: 1300px) {
+    .navbar {
+        grid-template-areas: 'nav-logo nav-search nav-cart nav-list';
+    }
+}
+
 @media screen and (max-width: 1220px) {
     .navbar {
         grid-template-areas: 'nav-logo nav-cart nav-list' 'nav-search nav-search nav-search';
         row-gap: 12px;
-    }
-
-    .nav-search {
-        width: 100%;
     }
 }
 
@@ -192,11 +193,11 @@
         align-items: center;
         row-gap: 20px;
         position: fixed;
-        height: 100vh;
-        width: 100vw;
+        height: 100%;
+        width: 100%;
         top: 0;
-        right: -100vw;
-        transition: all .45s ease;
+        right: -100%;
+        transition: all .45s ease-in-out;
     }
 
     .nav-list-control {
@@ -295,25 +296,25 @@
 /* Sign Up Content */
 
 .signup-content {
-    margin-top: 35px;
+    margin-top: 42px;
 }
 
-.signup-card {
+.signup-section {
     display: flex;
     flex-direction: column;
     padding: 0 40px;
     padding-bottom: 80px;
 }
 
-.signup-card h1 {
+.signup-section h1 {
     font-family: Poppins;
-    font-size: 26px;
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 4px;
-    padding: 8px 0;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
-.signup-form {
+.signup-card {
     background-color: rgb(255, 255, 255);
     padding: 28px 36px;
     border-radius: 8px;
@@ -323,18 +324,18 @@
     min-width: 560px;
 }
 
-.signup-form>div {
+.signup-card>div {
     display: flex;
     flex-direction: column;
     row-gap: 4px;
 }
 
-.signup-form>div label {
+.signup-card>div label {
     font-family: Poppins;
     font-size: 13px;
 }
 
-.signup-form>div input {
+.signup-card>div input {
     font-family: Poppins;
     font-size: 14px;
     padding: 8px 12px;
@@ -343,7 +344,7 @@
     width: 100%;
 }
 
-.signup-form>div input:focus {
+.signup-card>div input:focus {
     outline-color: rgb(90, 90, 90);
 }
 
@@ -362,7 +363,7 @@
     width: inherit !important;
 }
 
-.signup-form button {
+.signup-card button {
     grid-column: 1/3;
     justify-self: end;
     padding: 6px 12px;
@@ -375,13 +376,13 @@
     transition: all .25s ease;
 }
 
-.signup-form button:hover {
+.signup-card button:hover {
     background-color: rgb(34, 34, 34);
     color: white;
 }
 
 @media screen and (max-width: 750px) {
-    .signup-form {
+    .signup-card {
         grid-template-columns: auto;
         min-width: auto;
     }
@@ -392,7 +393,7 @@
 
     .email-field,
     .agree-terms-field,
-    .signup-form button {
+    .signup-card button {
         grid-column: inherit;
     }
 }
@@ -405,25 +406,25 @@
 /* Login Content */
 
 .login-content {
-    margin-top: 80px;
+    margin-top: 88px;
 }
 
-.login-card {
+.login-section {
     display: flex;
     flex-direction: column;
     padding: 0 40px;
     padding-bottom: 80px;
 }
 
-.login-card h1 {
+.login-section h1 {
     font-family: Poppins;
-    font-size: 26px;
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 4px;
-    padding: 8px 0;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
-.login-form {
+.login-card {
     background-color: rgb(255, 255, 255);
     padding: 28px 36px;
     border-radius: 8px;
@@ -433,18 +434,18 @@
     min-width: 320px;
 }
 
-.login-form>div {
+.login-card>div {
     display: flex;
     flex-direction: column;
     row-gap: 4px;
 }
 
-.login-form>div label {
+.login-card>div label {
     font-family: Poppins;
     font-size: 13px;
 }
 
-.login-form>div input {
+.login-card>div input {
     font-family: Poppins;
     font-size: 14px;
     padding: 8px 12px;
@@ -453,11 +454,11 @@
     width: 100%;
 }
 
-.login-form>div input:focus {
+.login-card>div input:focus {
     outline-color: rgb(90, 90, 90);
 }
 
-.login-form button {
+.login-card button {
     justify-self: end;
     padding: 6px 12px;
     font-family: Poppins;
@@ -469,16 +470,17 @@
     transition: all .25s ease;
 }
 
-.login-form button:hover {
+.login-card button:hover {
     background-color: rgb(34, 34, 34);
     color: white;
 }
 
 @media screen and (max-width: 420px) {
-    .login-form {
+    .login-card {
         min-width: auto;
     }
 }
+
 
 
 
@@ -662,7 +664,7 @@
         background-color: white;
         border: none;
         width: 60%;
-        transition: all .25s ease;
+        transition: all .25s ease-in-out;
     }
 
     .filters-sidebar-close {
@@ -692,5 +694,135 @@
 @media screen and (max-width: 500px) {
     .products-tab {
         padding: 40px 40px;
+    }
+}
+
+
+
+
+
+
+/* About Content */
+
+.about-content {
+    margin-top: 65px;
+}
+
+.about-us-section {
+    margin: 0 262px;
+}
+
+.about-content .about-us-section h2 {
+    font-family: Poppins;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.about-content .about-us-section .about-us-card {
+    margin-top: 22px;
+    display: grid;
+    grid-template-areas: 'about-para about-para' 'services img-list' 'services about-explore-btn';
+    row-gap: 54px;
+}
+
+.about-content .about-us-section .about-us-card>p {
+    grid-area: about-para;
+    font-family: Poppins;
+    font-size: 15px;
+    line-height: 26px;
+}
+
+.about-content .about-us-section .about-us-card .services {
+    grid-area: services;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+}
+
+.about-content .about-us-section .about-us-card .services h3 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.about-content .about-us-section .about-us-card .services .service-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-content .about-us-section .about-us-card .services .service-list span {
+    font-family: Poppins;
+    font-size: 15px;
+    padding: 16px 0;
+    border-top: solid 1px rgba(56, 56, 56, 0.2);
+}
+
+.about-content .about-us-section .about-us-card .services .service-list span:last-child {
+    border-bottom: solid 1px rgba(56, 56, 56, 0.2);
+}
+
+.about-content .about-us-section .about-us-card .services .service-list span i {
+    margin-right: 8px;
+    color: rgb(0, 156, 138);
+    transition: all .15s ease-in-out;
+}
+
+.about-content .about-us-section .about-us-card .services .service-list span:hover>i {
+    color: rgb(0, 136, 120);
+}
+
+.about-content .about-us-section .about-us-card .img-list {
+    grid-area: img-list;
+    display: flex;
+    justify-content: center;
+    column-gap: 18px;
+}
+
+.about-content .about-us-section .about-us-card .img-list img {
+    width: 160px;
+    height: 260px;
+    object-fit: cover;
+}
+
+.about-content .about-us-section .about-us-card>a {
+    grid-area: about-explore-btn;
+    text-decoration: none;
+    color: black;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all .15s ease-in-out;
+    font-size: 15px;
+    font-family: 'Source Sans 3';
+    letter-spacing: 1px;
+    border: solid 2px rgb(34, 34, 34);
+    justify-self: center;
+}
+
+.about-content .about-us-section .about-us-card>a:hover {
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+
+@media screen and (max-width: 1225px) {
+    .about-us-section {
+        margin: 0 140px;
+    }
+
+    .about-content .about-us-section .about-us-card {
+        grid-template-areas: 'about-para' 'services' 'img-list' 'about-explore-btn';
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .about-us-section {
+        margin: 28px;
+    }
+
+    .about-content .about-us-section .about-us-card .img-list img {
+        width: 125px;
+        height: 200px;
     }
 }
