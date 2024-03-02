@@ -938,6 +938,8 @@
     display: flex;
     justify-content: center;
     column-gap: 40px;
+    align-items: start;
+    padding: 0 40px;
 }
 
 .cart-content .cart-tab .cart-list {
@@ -958,12 +960,13 @@
     background-color: orangered;
     color: white;
     padding: 8px 12px;
-    border-radius: 12px 0 0 12px;
+    border-radius: 8px 0 0 8px;
     font-size: 12px;
     font-family: Roboto;
 }
 
 .cart-content .cart-tab .cart-list .cart-item .cart-item-info {
+    width: 100%;
     background-color: whitesmoke;
     padding: 18px 26px;
     display: grid;
@@ -1002,6 +1005,13 @@
     font-size: 14px;
     font-family: Poppins;
     color: rgb(80, 80, 80);
+    display: flex;
+    column-gap: 12px;
+}
+
+
+.cart-content .cart-tab .cart-list .cart-item .cart-item-info .options li img {
+    width: 100px;
 }
 
 .cart-content .cart-tab .cart-list .cart-item .cart-item-info .price {
@@ -1022,6 +1032,7 @@
     font-size: 16px;
     justify-self: end;
     display: flex;
+    align-self: flex-end;
 }
 
 .cart-content .cart-tab .cart-list .cart-item .cart-item-info .qty button {
@@ -1030,6 +1041,7 @@
     color: white;
     font-size: 10px;
     padding: 6px 10px;
+    cursor: pointer;
 }
 
 .cart-content .cart-tab .cart-list .cart-item .cart-item-info .qty button:first-child {
@@ -1185,4 +1197,37 @@
 
 .cart-content .cart-tab .checkout .confirm-order a:hover {
     background-color: rgb(232, 62, 0);
+}
+
+@media screen and (max-width: 1250px) {
+    .cart-content .cart-tab .cart-list .cart-item .cart-item-info {
+        grid-template-areas: 'cart-item-info-pic cart-item-info-name cart-item-info-remove'
+            'cart-item-info-pic cart-item-info-options cart-item-info-qty'
+            'cart-item-info-pic cart-item-info-price cart-item-info-qty';
+        grid-template-areas: 'cart-item-info-pic cart-item-info-remove'
+            'cart-item-info-name cart-item-info-name'
+            'cart-item-info-options cart-item-info-options'
+            'cart-item-info-price cart-item-info-price'
+            'cart-item-info-qty cart-item-info-qty';
+    }
+
+    .cart-content .cart-tab .cart-list .cart-item .cart-item-info .fa-xmark {
+        align-self: self-start;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .cart-content .cart-tab {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .cart-content .cart-tab .cart-list .cart-item {
+        flex-direction: column;
+    }
+
+    .cart-content .cart-tab .cart-list .cart-item .item-no {
+        border-radius: 8px 8px 0 0;
+    }
 }
