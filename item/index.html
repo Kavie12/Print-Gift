@@ -53,7 +53,7 @@
                     <h1>Custom Printed White Mug</h1>
                     <p>Print your design on glassy white mug built with better quality</p>
                     <span>Rs. 1100</span>
-                    <form action="" method="post">
+                    <form id="addToCartForm" enctype="multipart/form-data">
                         <div class="text">
                             <label for="printingText">
                                 Enter Text if Required
@@ -105,7 +105,7 @@
                             <label for="printingImage">
                                 Upload Image if Required
                             </label>
-                            <input type="file" id="printingImage">
+                            <input type="file" name="printing_image" id="printingImage">
                         </div>
                         <div class="wrap">
                             <input type="checkbox" name="item_wrap" id="itemWrap">
@@ -121,7 +121,7 @@
                                 placeholder="Describe how your design should be printed"></textarea>
                         </div>
                         <div class="qty">
-                            <input type="number" name="quantity" id="itemQty" value="1" onchange="itemQtyAllowedNums()">
+                            <input type="number" name="item_qty" id="itemQty" value="1" onchange="itemQtyAllowedNums()">
                             <div>
                                 <i class="fa-solid fa-angle-up" id="itemIncreaseQty"></i>
                                 <i class="fa-solid fa-angle-down" id="itemDecreaseQty"></i>

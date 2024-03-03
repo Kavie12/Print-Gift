@@ -109,3 +109,58 @@ if (cartDecreaseQty) {
         cartQtyAllowedNums()
     })
 }
+
+
+
+
+
+// Login Data
+
+const loginForm = document.getElementById('loginForm')
+
+if (loginForm) {
+    loginForm.addEventListener('submit', e => {
+        e.preventDefault()
+        const formEl = document.forms.loginForm
+        const formData = new FormData(formEl)
+    })
+}
+
+
+
+
+
+// Sign Up Data
+
+const signupForm = document.getElementById('signupForm')
+
+if (signupForm) {
+    signupForm.addEventListener('submit', e => {
+        e.preventDefault()
+        const formEl = document.forms.signupForm
+        const formData = new FormData(formEl)
+    })    
+}
+
+
+
+
+
+// Add to Cart Data
+
+const addToCartForm = document.getElementById('addToCartForm')
+
+if (addToCartForm) {
+    addToCartForm.addEventListener('submit', e => {
+        e.preventDefault()
+        const formEl = document.forms.addToCartForm
+        const formData = new FormData(formEl)
+    
+        // console.log(formData.get('printing_text'))
+        // console.log(formData.get('printing_text_color'))
+        // console.log(formData.get('printing_image').name)
+        // console.log(formData.get('item_wrap'))
+        // console.log(formData.get('additional_info'))
+        // console.log(formData.get('item_qty'))
+    })
+}
