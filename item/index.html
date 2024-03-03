@@ -118,7 +118,14 @@
                                 Additional Information
                             </label>
                             <textarea name="additional_info" id="additionalInfo"
-                                placeholder="Enter how your design should be printed"></textarea>
+                                placeholder="Describe how your design should be printed"></textarea>
+                        </div>
+                        <div class="qty">
+                            <input type="number" name="quantity" id="itemQty" value="1" onchange="itemQtyAllowedNums()">
+                            <div>
+                                <i class="fa-solid fa-angle-up" id="itemIncreaseQty"></i>
+                                <i class="fa-solid fa-angle-down" id="itemDecreaseQty"></i>
+                            </div>
                         </div>
                         <input type="submit" value="Add to Cart">
                     </form>
