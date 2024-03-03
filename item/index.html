@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINT GIFT - Customize a Gift for a Memorable Moment</title>
+    <link rel="stylesheet" href="../library/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="nav-logo">
+                <a href="../home/">
+                    Print.
+                    <span>GIFT</span>
+                </a>
+            </div>
+            <div class="nav-search">
+                <div class="search">
+                    <input type="search" placeholder="Search products">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+            </div>
+            <div class="nav-cart">
+                <a href="../cart/"><i class="fa-solid fa-cart-shopping"><span>2</span></i></a>
+            </div>
+            <div class="nav-list" id="navList">
+                <a href="../products/">Explore</a>
+                <a href="../about/">About</a>
+                <a href="../login/" class="login-btn">Login</a>
+                <a href="../signup/" class="sign-btn">Sign Up</a>
+            </div>
+            <div class="nav-list-control" id="navListControl">
+                <div id="navListControl1"></div>
+                <div id="navListControl2"></div>
+                <div id="navListControl3"></div>
+            </div>
+        </div>
+
+
+        <!-- Item Content -->
+        <div class="item-content">
+
+            <div class="item-tab">
+                <div class="item-image">
+                    <img src="../images/home_mug_pic.png" alt="item_image">
+                </div>
+                <div class="item-details">
+                    <h1>Custom Printed White Mug</h1>
+                    <p>Print your design on glassy white mug built with better quality</p>
+                    <span>Rs. 1100</span>
+                    <form action="" method="post">
+                        <div class="text">
+                            <label for="printingText">
+                                Enter Text if Required
+                            </label>
+                            <textarea name="printing_text" id="printingText"
+                                placeholder="Enter text you want to get printed"></textarea>
+                        </div>
+                        <div class="options">
+                            <span>Enter Text Color</span>
+                            <div class="options-list">
+                                <div>
+                                    <input type="radio" name="printing_text_color" id="printingTextColorBlack"
+                                        value="black">
+                                    <label for="printingTextColorBlack">
+                                        Black
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="printing_text_color" id="printingTextColorRed"
+                                        value="red">
+                                    <label for="printingTextColorRed">
+                                        Red
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="printing_text_color" id="printingTextColorBlue"
+                                        value="blue">
+                                    <label for="printingTextColorBlue">
+                                        Blue
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="printing_text_color" id="printingTextColorOrange"
+                                        value="orange">
+                                    <label for="printingTextColorOrange">
+                                        Orange
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="printing_text_color" id="printingTextColorPurple"
+                                        value="purple">
+                                    <label for="printingTextColorPurple">
+                                        Purple
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <label for="printingImage">
+                                Upload Image if Required
+                            </label>
+                            <input type="file" id="printingImage">
+                        </div>
+                        <div class="wrap">
+                            <input type="checkbox" name="item_wrap" id="itemWrap">
+                            <label for="itemWrap">
+                                Wrap (+ Rs. 100)
+                            </label>
+                        </div>
+                        <div class="additional_info">
+                            <label for="additionalInfo">
+                                Additional Information
+                            </label>
+                            <textarea name="additional_info" id="additionalInfo"
+                                placeholder="Enter how your design should be printed"></textarea>
+                        </div>
+                        <input type="submit" value="Add to Cart">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <script src="../library/script.js"></script>
+    <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
