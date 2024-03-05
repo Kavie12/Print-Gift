@@ -88,22 +88,16 @@ if (itemDecreaseQty) {
 const cartIncreaseQty = document.querySelectorAll('.cart_increase_qty')
 const cartDecreaseQty = document.querySelectorAll('.cart_decrease_qty')
 
-function cartQtyLimit(i) {
-    let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
-    if (qty < 1) {
-        document.querySelectorAll('.cart_qty')[i].value = 1
-    }
-}
-
 for (let i = 0; i < cartIncreaseQty.length; i++) {
 
-    document.querySelectorAll('.cart_qty')[i].addEventListener('change', () => cartQtyLimit(i));
-
+    document.querySelectorAll('.cart_qty')[i].addEventListener('change', () => cartQtyLimit(i))
+    document.querySelectorAll('.cart_qty')[i].addEventListener('change', () => checkoutUpdate(i))
 
     if (cartIncreaseQty[i]) {
         cartIncreaseQty[i].addEventListener('click', () => {
             let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
             document.querySelectorAll('.cart_qty')[i].value = qty + 1
+            checkoutUpdate(i, document.querySelectorAll('.cart_qty')[i].value)
         })
     }
     
@@ -112,9 +106,38 @@ for (let i = 0; i < cartIncreaseQty.length; i++) {
             let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
             document.querySelectorAll('.cart_qty')[i].value = qty - 1
             cartQtyLimit(i)
+            checkoutUpdate(i, document.querySelectorAll('.cart_qty')[i].value)
         })
     }
 }
+
+function cartQtyLimit(i) {
+    let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
+    if (qty < 1) {
+        document.querySelectorAll('.cart_qty')[i].value = 1
+    }
+}
+
+function checkoutUpdate(i, qty) {
+    let checkoutQty = document.querySelectorAll('.cart-content .checkout-items-list .qty')
+    let oldQty = document.querySelectorAll('.cart-content .checkout-items-list .qty')[i].innerHTML.slice(0, -1)
+    let checkoutPrice = document.querySelectorAll('.cart-content .checkout-items-list .price')
+    checkoutQty[i].innerHTML = qty + 'x'
+    checkoutPrice[i].innerHTML = checkoutPrice[i].innerHTML / oldQty * qty
+
+    calcTotalPriceCheckout()
+}
+
+function calcTotalPriceCheckout() {
+    let itemPrice = document.querySelectorAll('.cart-content .checkout-items-list .price')
+    let totalPrice = document.querySelector('.cart-content .total-price-value')
+    let total = 0
+    for (let i = 0; i < itemPrice.length; i++) {
+        total += parseInt(itemPrice[i].innerHTML)
+    }
+    totalPrice.innerHTML = total
+}
+
 
 
 
@@ -170,11 +193,3 @@ if (addToCartForm) {
         // console.log(formData.get('item_qty'))
     })
 }
-
-
-
-
-
-
-// Cart item details
-
