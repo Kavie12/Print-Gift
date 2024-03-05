@@ -85,29 +85,35 @@ if (itemDecreaseQty) {
 
 // Change Quantity in Cart Page
 
-const cartIncreaseQty = document.getElementById('cartIncreaseQty')
-const cartDecreaseQty = document.getElementById('cartDecreaseQty')
+const cartIncreaseQty = document.querySelectorAll('.cart_increase_qty')
+const cartDecreaseQty = document.querySelectorAll('.cart_decrease_qty')
 
-function cartQtyAllowedNums() {
-    let qty = parseInt(document.getElementById('cartQty').value)
+function cartQtyLimit(i) {
+    let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
     if (qty < 1) {
-        document.getElementById('cartQty').value = 1
+        document.querySelectorAll('.cart_qty')[i].value = 1
     }
 }
 
-if (cartIncreaseQty) {
-    cartIncreaseQty.addEventListener('click', () => {
-        let qty = parseInt(document.getElementById('cartQty').value)
-        document.getElementById('cartQty').value = qty + 1
-    });
-}
+for (let i = 0; i < cartIncreaseQty.length; i++) {
 
-if (cartDecreaseQty) {
-    cartDecreaseQty.addEventListener('click', () => {
-        let qty = parseInt(document.getElementById('cartQty').value)
-        document.getElementById('cartQty').value = qty - 1
-        cartQtyAllowedNums()
-    })
+    document.querySelectorAll('.cart_qty')[i].addEventListener('change', () => cartQtyLimit(i));
+
+
+    if (cartIncreaseQty[i]) {
+        cartIncreaseQty[i].addEventListener('click', () => {
+            let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
+            document.querySelectorAll('.cart_qty')[i].value = qty + 1
+        })
+    }
+    
+    if (cartDecreaseQty[i]) {
+        cartDecreaseQty[i].addEventListener('click', () => {
+            let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
+            document.querySelectorAll('.cart_qty')[i].value = qty - 1
+            cartQtyLimit(i)
+        })
+    }
 }
 
 
@@ -164,3 +170,11 @@ if (addToCartForm) {
         // console.log(formData.get('item_qty'))
     })
 }
+
+
+
+
+
+
+// Cart item details
+
