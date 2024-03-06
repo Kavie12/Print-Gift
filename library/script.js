@@ -52,17 +52,11 @@ if (filtersSidebarOpen) {
 
 
 
+
 // Change Quantity in Item Page
 
 const itemIncreaseQty = document.getElementById('itemIncreaseQty')
 const itemDecreaseQty = document.getElementById('itemDecreaseQty')
-
-function itemQtyAllowedNums() {
-    let qty = parseInt(document.getElementById('itemQty').value)
-    if (qty < 1) {
-        document.getElementById('itemQty').value = 1
-    }
-}
 
 if (itemIncreaseQty) {
     itemIncreaseQty.addEventListener('click', () => {
@@ -79,38 +73,41 @@ if (itemDecreaseQty) {
     })
 }
 
-
-
-
-
-// Change Quantity in Cart Page
-
-const cartIncreaseQty = document.querySelectorAll('.cart_increase_qty')
-const cartDecreaseQty = document.querySelectorAll('.cart_decrease_qty')
-
-for (let i = 0; i < cartIncreaseQty.length; i++) {
-
-    document.querySelectorAll('.cart_qty')[i].addEventListener('change', () => cartQtyLimit(i))
-    document.querySelectorAll('.cart_qty')[i].addEventListener('change', () => checkoutUpdate(i))
-
-    if (cartIncreaseQty[i]) {
-        cartIncreaseQty[i].addEventListener('click', () => {
-            let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
-            document.querySelectorAll('.cart_qty')[i].value = qty + 1
-            checkoutUpdate(i, document.querySelectorAll('.cart_qty')[i].value)
-        })
-    }
-    
-    if (cartDecreaseQty[i]) {
-        cartDecreaseQty[i].addEventListener('click', () => {
-            let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
-            document.querySelectorAll('.cart_qty')[i].value = qty - 1
-            cartQtyLimit(i)
-            checkoutUpdate(i, document.querySelectorAll('.cart_qty')[i].value)
-        })
+function itemQtyAllowedNums() {
+    let qty = parseInt(document.getElementById('itemQty').value)
+    if (qty < 1) {
+        document.getElementById('itemQty').value = 1
     }
 }
 
+if (document.getElementById('itemQty')) {
+    document.getElementById('itemQty').addEventListener('change', () => itemQtyAllowedNums())
+}
+
+
+
+
+
+
+
+
+
+// Cart Increase QTY
+function cartIncreaseQty(i) {
+    let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
+    document.querySelectorAll('.cart_qty')[i].value = qty + 1
+    checkoutUpdate(i, document.querySelectorAll('.cart_qty')[i].value)
+}
+
+// Cart decrease QTY
+function cartDecreaseQty(i) {
+    let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
+    document.querySelectorAll('.cart_qty')[i].value = qty - 1
+    cartQtyLimit(i)
+    checkoutUpdate(i, document.querySelectorAll('.cart_qty')[i].value)
+}
+
+// Cart QTY Limit
 function cartQtyLimit(i) {
     let qty = parseInt(document.querySelectorAll('.cart_qty')[i].value)
     if (qty < 1) {
@@ -118,16 +115,18 @@ function cartQtyLimit(i) {
     }
 }
 
+// Update Checkout QTY & Price
 function checkoutUpdate(i, qty) {
-    let checkoutQty = document.querySelectorAll('.cart-content .checkout-items-list .qty')
+    let checkoutQty = document.querySelectorAll('.cart-content .checkout-items-list .qty')[i]
     let oldQty = document.querySelectorAll('.cart-content .checkout-items-list .qty')[i].innerHTML.slice(0, -1)
-    let checkoutPrice = document.querySelectorAll('.cart-content .checkout-items-list .price')
-    checkoutQty[i].innerHTML = qty + 'x'
-    checkoutPrice[i].innerHTML = checkoutPrice[i].innerHTML / oldQty * qty
+    let checkoutPrice = document.querySelectorAll('.cart-content .checkout-items-list .price')[i]
+    checkoutQty.innerHTML = qty + 'x'
+    checkoutPrice.innerHTML = checkoutPrice.innerHTML / oldQty * qty
 
     calcTotalPriceCheckout()
 }
 
+// Update Total Price in Checkout
 function calcTotalPriceCheckout() {
     let itemPrice = document.querySelectorAll('.cart-content .checkout-items-list .price')
     let totalPrice = document.querySelector('.cart-content .total-price-value')
@@ -137,6 +136,50 @@ function calcTotalPriceCheckout() {
     }
     totalPrice.innerHTML = total
 }
+
+// Calculate Total Price when Document Loads
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.cart-content .total-price-value')) {
+        calcTotalPriceCheckout()
+    }
+})
+
+// Remove item from cart
+function removeCart(i) {
+    document.querySelectorAll('.cart-item')[i].remove()
+    numberCartItem()
+}
+
+// Number cart items
+function numberCartItem() {
+    let item = document.querySelectorAll('.cart-item .item-no')
+    for (let i = 0; i < item.length; i++) {
+        item[i].innerHTML = i + 1
+    }
+}
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelectorAll('.cart-item .item-no')) {
+        numberCartItem()
+    }
+})
+
+// Call the functions
+for (let i = 0; i < document.querySelectorAll('.cart_qty').length; i++) {
+
+    const cartIncreaseQtyValue = document.querySelectorAll('.cart_increase_qty')
+    const cartDecreaseQtyValue = document.querySelectorAll('.cart_decrease_qty')
+
+    document.querySelectorAll('.cart_qty')[i].addEventListener('change', () => cartQtyLimit(i))
+    document.querySelectorAll('.cart_qty')[i].addEventListener('change', () => checkoutUpdate(i, document.querySelectorAll('.cart_qty')[i]))
+
+    cartIncreaseQtyValue[i].addEventListener('click', () => cartIncreaseQty(i))
+    
+    cartDecreaseQtyValue[i].addEventListener('click', () => cartDecreaseQty(i))
+
+    document.querySelectorAll('.cart-item .fa-xmark')[i].addEventListener('click', () => removeCart(i))
+}
+
+
 
 
 
