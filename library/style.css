@@ -1341,6 +1341,25 @@
     }
 }
 
+@media screen and (max-width: 380px) {
+    .cart-content .cart-tab {
+        padding: 0 20px;
+    }
+
+    .cart-content .cart-tab .cart-list .cart-item .cart-item-info {
+        grid-template-areas: 'cart-item-info-remove cart-item-info-remove'
+            'cart-item-info-pic cart-item-info-pic'
+            'cart-item-info-name cart-item-info-name'
+            'cart-item-info-options cart-item-info-options'
+            'cart-item-info-price cart-item-info-price'
+            'cart-item-info-qty cart-item-info-qty';
+    }
+
+    .cart-content .cart-tab .cart-list .cart-item .cart-item-info .qty {
+        justify-self: start;
+    }
+}
+
 
 
 
