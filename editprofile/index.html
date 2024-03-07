@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINT GIFT - Customize a Gift for a Memorable Moment</title>
+    <link rel="stylesheet" href="../library/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="nav-logo">
+                <a href="../home/">
+                    Print.
+                    <span>GIFT</span>
+                </a>
+            </div>
+            <div class="nav-search">
+                <div class="search">
+                    <input type="search" placeholder="Search products">
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+            </div>
+            <div class="nav-cart">
+                <a href="../cart/"><i class="fa-solid fa-cart-shopping"><span>2</span></i></a>
+            </div>
+            <div class="nav-list" id="navList">
+                <a href="../products/">Explore</a>
+                <a href="../about/">About</a>
+                <a href="../login/" class="login-btn">Login</a>
+                <a href="../signup/" class="sign-btn">Sign Up</a>
+            </div>
+            <div class="nav-list-control" id="navListControl">
+                <div id="navListControl1"></div>
+                <div id="navListControl2"></div>
+                <div id="navListControl3"></div>
+            </div>
+        </div>
+
+
+        <!-- Account Content -->
+        <div class="account-content">
+
+            <div class="account-section">
+                <div class="links">
+                    <a href="../account/">My Profile</a>
+                    <a href="../recentorders/">Recent Orders</a>
+                </div>
+                <div class="details">
+                    <h1>Edit Profile</h1>
+                    <form class="edit-profile-details">
+                        <div>
+                            <label for="editProfileFName">First Name</label>
+                            <input type="text" name="fname" id="editProfileFName" value="Peter">
+                        </div>
+                        <div>
+                            <label for="editProfileLName">Last Name</label>
+                            <input type="text" name="lname" id="editProfileLName" value="Parker">
+                        </div>
+                        <div>
+                            <label for="editProfileTel">Phone Number</label>
+                            <input type="tel" name="tel" id="editProfileTel" value="0703467918">
+                        </div>
+                        <div>
+                            <label for="editProfileDOB">Date of Birth</label>
+                            <input type="date" name="dob" id="editProfileDOB" value="2005-04-12">
+                        </div>
+                        <div class="address-field">
+                            <label for="editProfileAddress">Address</label>
+                            <input type="text" name="address" id="editProfileAddress"
+                                value="Peter Parker, 22/A/12, Alwis Road, Kaduwela">
+                        </div>
+                        <div>
+                            <label for="editProfileCity">City</label>
+                            <input type="text" name="city" id="editProfileCity" value="Kaduwela">
+                        </div>
+                        <div>
+                            <label for="editProfilePostalCode">Postal Code</label>
+                            <input type="text" name="postalcode" id="editProfilePostalCode" value="10640">
+                        </div>
+                        <input type="submit" name="submit" id="editProfileSubmit" value="Save">
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <script src="../library/script.js"></script>
+    <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
