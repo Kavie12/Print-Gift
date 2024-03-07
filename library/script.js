@@ -115,6 +115,7 @@ function cartQtyLimit(i) {
 function removeCart(item) {
     item.remove()
     numberCartItem()
+    cartItemZero()
 }
 
 // Number cart items
@@ -125,6 +126,16 @@ function numberCartItem() {
     }
 }
 
+// Show the message if there is no items in cart
+function cartItemZero() {
+    if (document.querySelectorAll('.cart-item').length == 0) {
+        document.querySelector('.cart-item-zero').style.display = 'flex'
+        document.querySelector('.cart-tab .checkout').style.display = 'none'
+        document.querySelector('.cart-tab .cart-list').style.width = '100%'
+        document.querySelector('.cart-tab .cart-list').style.justifyContent = 'center'
+    }
+}
+
 // Call the functions
 document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < document.querySelectorAll('.cart-item').length; i++) {
@@ -132,11 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.cart_increase_qty')[i].addEventListener('click', () => cartIncreaseQty(i))
         document.querySelectorAll('.cart_decrease_qty')[i].addEventListener('click', () => cartDecreaseQty(i))
     }
-    document.querySelectorAll('.cart-item .fa-xmark').forEach((closeBtn) => {
-        closeBtn.addEventListener('click', () => removeCart(closeBtn.closest('.cart-item')))
-    })
-    if (document.querySelectorAll('.cart-item .item-no')) {
+    if (document.querySelectorAll('.cart-item')) {
+        document.querySelectorAll('.cart-item .fa-xmark').forEach((closeBtn) => {
+            closeBtn.addEventListener('click', () => removeCart(closeBtn.closest('.cart-item')))
+        })
+    }
+    if (document.querySelectorAll('.cart-item')) {
         numberCartItem()
+        cartItemZero()
     }
 })
 
