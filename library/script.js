@@ -158,6 +158,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// Sign Up Data
+
+const signupForm = document.getElementById('signupForm')
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (signupForm) {
+        signupForm.addEventListener('submit', e => {
+            const fName = document.getElementById('signUpFName')
+            const lName = document.getElementById('signUpLName')
+            const tel = document.getElementById('signUpTel')
+            const dob = document.getElementById('signUpDOB')
+            const address = document.getElementById('signUpAddress')
+            const city = document.getElementById('signUpCity')
+            const postalCode = document.getElementById('signUpPostalCode')
+            const email = document.getElementById('signUpEmail')
+            const password = document.getElementById('signUpPassword')
+            const confirmPassword = document.getElementById('signUpConfirmPassword')
+            const agreeTerms = document.getElementById('signUpAgreeTerms')
+
+            if (password.value !== confirmPassword.value) {
+                e.preventDefault()
+                document.getElementById('signUpCardMsg').innerHTML = 'Password does not match!'
+            }
+        })
+    }
+})
+
+
+
+
+
+
 
 // Login Data
 
@@ -172,20 +204,6 @@ if (loginForm) {
 }
 
 
-
-
-
-// Sign Up Data
-
-const signupForm = document.getElementById('signupForm')
-
-if (signupForm) {
-    signupForm.addEventListener('submit', e => {
-        e.preventDefault()
-        const formEl = document.forms.signupForm
-        const formData = new FormData(formEl)
-    })    
-}
 
 
 
