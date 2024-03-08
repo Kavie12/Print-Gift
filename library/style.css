@@ -580,23 +580,41 @@
     flex-direction: column;
 }
 
-.products-content .products-tab .filters .categories-list a {
-    text-decoration: none;
-    font-size: 14px;
-    font-family: Poppins;
-    color: black;
+.products-content .products-tab .filters .categories-list>div {
+    position: relative;
     border-bottom: solid 1px rgba(56, 56, 56, 0.2);
-    padding: 16px 8px;
-    transition: all .2s ease;
+    display: flex;
+    transition: all .15s ease-in-out;
 }
 
-.products-content .products-tab .filters .categories-list a:last-child {
+.products-content .products-tab .filters .categories-list>div:last-child {
     border-bottom: none;
 }
 
-.products-content .products-tab .filters .categories-list a:hover {
-    background-color: whitesmoke;
-    padding-left: 16px;
+.products-content .products-tab .filters .categories-list>div:hover {
+    background-color: rgb(234, 234, 234);
+    padding-left: 10px;
+}
+
+.products-content .products-tab .filters .categories-list div>input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.products-content .products-tab .filters .categories-list div>label {
+    font-family: Poppins;
+    font-size: 14px;
+    padding: 14px 12px;
+    width: 100%;
+}
+
+.products-content .products-tab .filters .categories-list div>input:checked+label {
+    background-color: rgb(234, 234, 234);
 }
 
 .products-content .products-tab .filters .filters-list {
@@ -743,12 +761,12 @@
         border: none;
         width: 60%;
         transition: left .25s ease-in-out;
-        overflow: scroll;
+        overflow-y: scroll;
         padding-bottom: 20px;
     }
 
     .products-content .products-tab .filters h2,
-    .products-content .products-tab .filters .categories-list a,
+    .products-content .products-tab .filters .categories-list,
     .products-content .products-tab .filters .filters-list {
         padding-left: 25px;
     }
@@ -1800,6 +1818,7 @@
 }
 
 .account-content .account-section {
+    margin: 0 20px;
     display: flex;
     background-color: white;
 }
@@ -1828,11 +1847,21 @@
     background-color: whitesmoke;
 }
 
+.account-content .account-section .links a.active {
+    color: rgb(33, 130, 69);
+}
+
 .account-content .account-section .details {
     display: flex;
     flex-direction: column;
     row-gap: 18px;
     padding: 28px 40px;
+    min-width: 600px;
+}
+
+.account-content .account-section .details .back-btn {
+    text-decoration: none;
+    color: black;
 }
 
 .account-content .account-section .details h1 {
@@ -1847,9 +1876,10 @@
     gap: 20px 18px;
 }
 
-.account-content .account-section .details .profile-details>div label {
-    font-family: Roboto;
-    font-size: 18px;
+.account-content .account-section .details .profile-details>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
 }
 
 .account-content .account-section .details .profile-details>div label {
@@ -1887,7 +1917,7 @@
     font-size: 14px;
     padding: 6px 12px;
     border-radius: 6px;
-    border: solid 2px black;
+    border: solid 1px black;
     display: flex;
     align-items: center;
 }
@@ -1914,6 +1944,47 @@
     background-color: rgb(187, 51, 48);
 }
 
+@media screen and (max-width: 950px) {
+    .account-content .account-section .details {
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .account-content .account-section .details .profile-details {
+        grid-template-columns: auto;
+    }
+
+    .account-content .account-section .details .profile-details .address-field {
+        grid-column: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .account-content .account-section {
+        flex-direction: column;
+    }
+
+    .account-content .account-section .links {
+        align-items: center;
+        border-right: none;
+        border-bottom: solid 1px rgba(56, 56, 56, 0.2);
+    }
+
+    .account-content .account-section .links a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .account-content .account-section .details .buttons {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 12px;
+    }
+}
+
 
 
 /* Edit Profile Details */
@@ -1924,9 +1995,10 @@
     gap: 20px 18px;
 }
 
-.account-content .account-section .details .edit-profile-details>div label {
-    font-family: Roboto;
-    font-size: 18px;
+.account-content .account-section .details .edit-profile-details>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
 }
 
 .account-content .account-section .details .edit-profile-details>div label {
@@ -1957,7 +2029,7 @@
     font-family: 'Source Sans 3';
     padding: 6px 12px;
     border-radius: 6px;
-    border: solid 2px black;
+    border: solid 1px black;
     background: none;
     cursor: pointer;
 }
@@ -1965,4 +2037,71 @@
 .account-content .account-section .details .edit-profile-details>input[type=submit]:hover {
     background-color: black;
     color: white;
+}
+
+@media screen and (max-width: 650px) {
+    .account-content .account-section .details .edit-profile-details {
+        grid-template-columns: auto;
+    }
+
+    .account-content .account-section .details .edit-profile-details .address-field {
+        grid-column: auto;
+    }
+
+    .account-content .account-section .details .edit-profile-details>input[type=submit] {
+        grid-column: auto;
+    }
+}
+
+
+
+/* Recent Orders */
+
+.account-content .account-section .details .recent-orders-details {
+    margin-top: 18px;
+}
+
+.account-content .account-section .details .recent-orders-details table tr th {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 550;
+    text-align: center;
+    padding: 12px;
+}
+
+.account-content .account-section .details .recent-orders-details table tr td {
+    font-family: Poppins;
+    font-size: 14px;
+    text-align: center;
+    padding: 12px;
+}
+
+.account-content .account-section .details .recent-orders-details table tr td img {
+    width: 60px;
+    height: 60px;
+    object-fit: auto;
+    border-radius: 6px;
+}
+
+.account-content .account-section .details .recent-orders-details table tr td a {
+    color: black;
+}
+
+@media screen and (max-width: 870px) {
+    .account-content .account-section .details .recent-orders-details {
+        width: 300px;
+        overflow-x: scroll;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .account-content .account-section .details .recent-orders-details {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .account-content .account-section .details .recent-orders-details {
+        width: 150px;
+    }
 }

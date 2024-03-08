@@ -143,12 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.cart_increase_qty')[i].addEventListener('click', () => cartIncreaseQty(i))
         document.querySelectorAll('.cart_decrease_qty')[i].addEventListener('click', () => cartDecreaseQty(i))
     }
-    if (document.querySelectorAll('.cart-item')) {
+    if (document.querySelectorAll('.cart-item').length > 0) {
         document.querySelectorAll('.cart-item .fa-xmark').forEach((closeBtn) => {
             closeBtn.addEventListener('click', () => removeCart(closeBtn.closest('.cart-item')))
         })
-    }
-    if (document.querySelectorAll('.cart-item')) {
         numberCartItem()
         cartItemZero()
     }
@@ -211,3 +209,133 @@ if (addToCartForm) {
         // console.log(formData.get('item_qty'))
     })
 }
+
+
+
+
+
+
+// Products In Stock Filter
+
+function inStockFilter() {
+    if (document.getElementById('productsinStockFilter').checked) {
+        for (let i = 0; i < document.querySelectorAll('.product-item.out-of-stock').length; i++) {
+            document.querySelector('.product-item.out-of-stock').style.display = 'none'
+        }
+    } else {
+        for (let i = 0; i < document.querySelectorAll('.product-item.out-of-stock').length; i++) {
+            document.querySelector('.product-item.out-of-stock').style.display = 'flex'
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('productsinStockFilter')) {
+        document.getElementById('productsinStockFilter').addEventListener('change', () => inStockFilter())
+    }
+})
+
+
+
+
+
+
+
+// Product Categories Filter
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.categories-list')) {
+        let radio = document.querySelectorAll('.categories-list div input').productCategories
+
+        let mugs = document.querySelectorAll('.product-item.mug')
+        let pens = document.querySelectorAll('.product-item.pen')
+        let tShirts = document.querySelectorAll('.product-item.t-shirt')
+        let bands = document.querySelectorAll('.product-item.band')
+
+        document.getElementById('productCategoriesAll').addEventListener('change', () => {
+            if (document.getElementById('productCategoriesAll').checked) {
+                for (let i = 0; i < mugs.length; i++) {
+                    mugs[i].style.display = 'flex'
+                }
+                for (let i = 0; i < pens.length; i++) {
+                    pens[i].style.display = 'flex'
+                }
+                for (let i = 0; i < tShirts.length; i++) {
+                    tShirts[i].style.display = 'flex'
+                }
+                for (let i = 0; i < bands.length; i++) {
+                    bands[i].style.display = 'flex'
+                }
+                inStockFilter()
+            }
+        })
+        document.getElementById('productCategoriesMugs').addEventListener('change', () => {
+            if (document.getElementById('productCategoriesMugs').checked) {
+                for (let i = 0; i < mugs.length; i++) {
+                    mugs[i].style.display = 'flex'
+                }
+                for (let i = 0; i < pens.length; i++) {
+                    pens[i].style.display = 'none'
+                }
+                for (let i = 0; i < tShirts.length; i++) {
+                    tShirts[i].style.display = 'none'
+                }
+                for (let i = 0; i < bands.length; i++) {
+                    bands[i].style.display = 'none'
+                }
+                inStockFilter()
+            }
+        })
+        document.getElementById('productCategoriesPens').addEventListener('change', () => {
+            if (document.getElementById('productCategoriesPens').checked) {
+                for (let i = 0; i < mugs.length; i++) {
+                    mugs[i].style.display = 'none'
+                }
+                for (let i = 0; i < pens.length; i++) {
+                    pens[i].style.display = 'flex'
+                }
+                for (let i = 0; i < tShirts.length; i++) {
+                    tShirts[i].style.display = 'none'
+                }
+                for (let i = 0; i < bands.length; i++) {
+                    bands[i].style.display = 'none'
+                }
+                inStockFilter()
+            }
+        })
+        document.getElementById('productCategoriesTShirts').addEventListener('change', () => {
+            if (document.getElementById('productCategoriesTShirts').checked) {
+                for (let i = 0; i < mugs.length; i++) {
+                    mugs[i].style.display = 'none'
+                }
+                for (let i = 0; i < pens.length; i++) {
+                    pens[i].style.display = 'none'
+                }
+                for (let i = 0; i < tShirts.length; i++) {
+                    tShirts[i].style.display = 'flex'
+                }
+                for (let i = 0; i < bands.length; i++) {
+                    bands[i].style.display = 'none'
+                }
+                inStockFilter()
+            }
+        })
+        document.getElementById('productCategoriesBands').addEventListener('change', () => {
+            if (document.getElementById('productCategoriesBands').checked) {
+                for (let i = 0; i < mugs.length; i++) {
+                    mugs[i].style.display = 'none'
+                }
+                for (let i = 0; i < pens.length; i++) {
+                    pens[i].style.display = 'none'
+                }
+                for (let i = 0; i < tShirts.length; i++) {
+                    tShirts[i].style.display = 'none'
+                }
+                for (let i = 0; i < bands.length; i++) {
+                    bands[i].style.display = 'flex'
+                }
+                inStockFilter()
+            }
+        })
+    }
+})
