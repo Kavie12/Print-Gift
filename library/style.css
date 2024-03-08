@@ -10,8 +10,6 @@
     position: relative;
     min-height: 100vh;
     background: #eff0f5;
-    display: flex;
-    justify-content: center;
     padding-top: 70px;
 }
 
@@ -190,7 +188,7 @@
 }
 
 .nav-profile a {
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
     color: black;
     display: flex;
@@ -254,6 +252,8 @@
 
 .home-content {
     margin-top: 150px;
+    display: flex;
+    justify-content: center;
 }
 
 .home-msg {
@@ -336,6 +336,8 @@
 
 .signup-content {
     margin-top: 42px;
+    display: flex;
+    justify-content: center;
 }
 
 .signup-section {
@@ -463,6 +465,8 @@
 
 .login-content {
     margin-top: 88px;
+    display: flex;
+    justify-content: center;
 }
 
 .login-section {
@@ -1240,6 +1244,40 @@
     column-gap: 12px;
 }
 
+.cart-content .cart-tab .cart-list .cart-item .cart-item-info .options li .color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.cart-content .cart-tab .cart-list .cart-item .cart-item-info .options li .color.black {
+    background-color: rgb(40, 40, 40);
+}
+
+.cart-content .cart-tab .cart-list .cart-item .cart-item-info .options li .color.white {
+    background-color: whitesmoke;
+}
+
+.cart-content .cart-tab .cart-list .cart-item .cart-item-info .options li .color.red {
+    background-color: rgb(194, 51, 51);
+}
+
+.cart-content .cart-tab .cart-list .cart-item .cart-item-info .options li .color.blue {
+    background-color: rgb(29, 86, 183);
+}
+
+.cart-content .cart-tab .cart-list .cart-item .cart-item-info .options li .color.orange {
+    background-color: rgb(222, 98, 45);
+}
+
+.cart-content .cart-tab .cart-list .cart-item .cart-item-info .options li .color.purple {
+    background-color: rgb(117, 49, 177);
+}
+
+.cart-content .cart-tab .cart-list .cart-item .cart-item-info .options li .color.pink {
+    background-color: rgb(201, 47, 127);
+}
+
 .cart-content .cart-tab .cart-list .cart-item .cart-item-info .options li img {
     width: 100px;
 }
@@ -1501,6 +1539,8 @@
 .item-content {
     margin: 60px 0;
     padding: 0 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .item-content .item-tab {
@@ -1657,6 +1697,10 @@
     border: solid 2px rgb(40, 40, 40);
 }
 
+.item-content .item-tab .item-details>form .options .options-list>div>#printingTextColorWhite+div {
+    border: solid 2px whitesmoke;
+}
+
 .item-content .item-tab .item-details>form .options .options-list>div>#printingTextColorRed+div {
     border: solid 2px rgb(194, 51, 51);
 }
@@ -1679,6 +1723,10 @@
 
 .item-content .item-tab .item-details>form .options .options-list>div>#printingTextColorBlack[type=radio]:checked+div {
     background-color: rgb(40, 40, 40);
+}
+
+.item-content .item-tab .item-details>form .options .options-list>div>#printingTextColorWhite[type=radio]:checked+div {
+    background-color: whitesmoke;
 }
 
 .item-content .item-tab .item-details>form .options .options-list>div>#printingTextColorRed[type=radio]:checked+div {
@@ -1923,6 +1971,8 @@
 
 .account-content {
     margin: 70px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .account-content .account-section {
@@ -2211,5 +2261,328 @@
 @media screen and (max-width: 340px) {
     .account-content .account-section .details .recent-orders-details {
         width: 150px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Admin Navbar */
+
+.admin-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: solid 1px rgba(56, 56, 56, 0.2);
+    display: flex;
+    background: #eff0f5;
+}
+
+.admin-nav>div {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    padding: 18px 28px;
+}
+
+.admin-nav .sidebar-opener {
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.admin-nav .profile {
+    margin-left: auto;
+}
+
+.admin-nav .profile span {
+    font-family: Rubik;
+}
+
+.admin-nav .logout {
+    background-color: rgb(230, 230, 230);
+    cursor: pointer;
+}
+
+.admin-nav .logout span {
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+
+
+
+
+/* Admin Sidebar */
+
+.admin-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: solid 1px rgba(56, 56, 56, 0.2);
+    background: #eff0f5;
+    border-radius: 0 26px 26px 0;
+    width: 18%;
+    transition: all .25s ease-in-out;
+}
+
+.admin-sidebar .sidebar-closer {
+    cursor: pointer;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+.admin-sidebar .logo>p {
+    margin-top: 80px;
+    font-family: Poppins;
+    font-size: 20px;
+    padding: 20px 80px;
+}
+
+.admin-sidebar .logo>p>span {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.admin-sidebar .links {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 36px;
+}
+
+.admin-sidebar .links a,
+.admin-sidebar .logout {
+    font-family: Rubik;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    transition: all .15s ease-in-out;
+}
+
+.admin-sidebar .links a.active {
+    color: rgb(0, 109, 96);
+}
+
+.admin-sidebar .links a:hover,
+.admin-sidebar .logout:hover {
+    color: rgb(0, 109, 96);
+}
+
+/* @media screen and (max-width: 1100px) {
+    .admin-sidebar {
+        width: 40%;
+    }
+} */
+
+
+
+
+
+
+
+/* Orders */
+
+.admin-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 18%;
+}
+
+.admin-content .new-orders {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+}
+
+.admin-content .new-orders h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin-content .new-orders .new-orders-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+}
+
+.admin-content .new-orders .new-orders-list .item {
+    display: flex;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info {
+    background-color: white;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-areas: 'new-order-img new-order-details new-order-user'
+        'new-order-img new-order-options new-order-pricing';
+    align-items: center;
+    column-gap: 40px;
+    row-gap: 24px;
+    width: 100%;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info>img {
+    grid-area: new-order-img;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .details {
+    grid-area: new-order-details;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    width: 280px;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .details p {
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options {
+    grid-area: new-order-options;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    width: 280px;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options li {
+    font-family: Poppins;
+    font-size: 14px;
+    display: flex;
+    column-gap: 8px;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options li .color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options li .color.black {
+    background-color: rgb(40, 40, 40);
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options li .color.white {
+    background-color: whitesmoke;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options li .color.red {
+    background-color: rgb(194, 51, 51);
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options li .color.blue {
+    background-color: rgb(29, 86, 183);
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options li .color.orange {
+    background-color: rgb(222, 98, 45);
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options li .color.purple {
+    background-color: rgb(117, 49, 177);
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options li .color.pink {
+    background-color: rgb(201, 47, 127);
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .options li img {
+    width: 100px;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .user {
+    grid-area: new-order-user;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    justify-self: end;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .user p {
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .pricing {
+    grid-area: new-order-pricing;
+    align-self: end;
+    justify-self: end;
+    background-color: orangered;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.admin-content .new-orders .new-orders-list .item .item-info .pricing p {
+    font-family: Poppins;
+    font-size: 14px;
+    color: white;
+}
+
+.admin-content .new-orders .new-orders-list .item .approval {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgb(230, 230, 230);
+    padding: 0 20px;
+}
+
+.admin-content .new-orders .new-orders-list .item .approval a {
+    text-decoration: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.admin-content .new-orders .new-orders-list .item .approval .accept {
+    background-color: rgb(42, 146, 66);
+}
+
+.admin-content .new-orders .new-orders-list .item .approval .decline {
+    background-color: rgb(212, 58, 58);
+}
+
+@media screen and (max-width: 1240px) {
+    .admin-content .new-orders .new-orders-list .item .item-info {
+        grid-template-areas: 'new-order-img' 'new-order-details'
+            'new-order-options' 'new-order-user'
+            'new-order-pricing';
+    }
+
+    .admin-content .new-orders .new-orders-list .item .item-info .details {
+        width: auto;
+    }
+
+    .admin-content .new-orders .new-orders-list .item .item-info .user {
+        justify-self: auto;
+    }
+
+    .admin-content .new-orders .new-orders-list .item .item-info .pricing {
+        justify-self: start;
+        align-self: auto;
     }
 }

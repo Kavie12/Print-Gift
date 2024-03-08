@@ -378,3 +378,30 @@ document.addEventListener('DOMContentLoaded', () => {
         FAQNumbering()
     }
 })
+
+
+
+
+
+
+
+// Close Sidebar
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.admin-sidebar')) {
+        const sidebar = document.querySelector('.admin-sidebar')
+        const content = document.querySelector('.admin-content')
+        document.querySelector('.admin-sidebar .sidebar-closer').addEventListener('click', () => {
+            if (sidebar.style.left == 0 || sidebar.style.left == '0px') {
+                sidebar.style.left = '-18%'
+                content.style.marginLeft = 0
+            }
+        })
+        document.querySelector('.admin-nav .sidebar-opener').addEventListener('click', () => {
+            if (sidebar.style.left != 0) {
+                sidebar.style.left = 0
+                content.style.marginLeft = '18%'
+            } 
+        })
+    }
+})
