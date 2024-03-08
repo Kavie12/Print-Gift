@@ -857,7 +857,8 @@
 
 .about-content .about-us-section .about-us-card {
     display: grid;
-    grid-template-areas: 'about-para about-para' 'services img-list' 'services about-explore-btn';
+    grid-template-areas: 'about-para about-para' 'about-services about-img' 'about-services about-btn' 'about-faq about-faq' 'about-links about-links';
+    column-gap: 28px;
     row-gap: 54px;
 }
 
@@ -869,7 +870,7 @@
 }
 
 .about-content .about-us-section .about-us-card .services {
-    grid-area: services;
+    grid-area: about-services;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
@@ -905,44 +906,104 @@
 }
 
 .about-content .about-us-section .about-us-card .img-list {
-    grid-area: img-list;
     display: flex;
-    justify-content: center;
-    column-gap: 18px;
-}
-
-.about-content .about-us-section .about-us-card .img-list img {
-    width: 160px;
-    height: 260px;
-    object-fit: cover;
-}
-
-.about-content .about-us-section .about-us-card>a {
-    grid-area: about-explore-btn;
-    text-decoration: none;
-    color: black;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: all .15s ease-in-out;
-    font-size: 15px;
-    font-family: 'Source Sans 3';
-    letter-spacing: 1px;
-    border: solid 2px rgb(34, 34, 34);
+    column-gap: 8px;
     justify-self: center;
 }
 
-.about-content .about-us-section .about-us-card>a:hover {
-    background-color: rgb(34, 34, 34);
+.about-content .about-us-section .about-us-card .img-list img {
+    grid-area: about-img;
+    width: 140px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.about-content .about-us-section .about-us-card .explore-btn {
+    grid-area: about-btn;
+    text-decoration: none;
+    color: black;
+    font-family: 'Source Sans 3';
+    font-size: 16px;
+    border: solid 2px black;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all .15s ease-in-out;
+    justify-self: center;
+}
+
+.about-content .about-us-section .about-us-card .explore-btn:hover {
+    background-color: black;
     color: white;
+}
+
+.about-content .about-us-section .about-us-card .faq {
+    grid-area: about-faq;
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+}
+
+.about-content .about-us-section .about-us-card .faq h3 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.about-content .about-us-section .about-us-card .faq .faq-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+}
+
+.about-content .about-us-section .about-us-card .faq .faq-list>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.about-content .about-us-section .about-us-card .faq .faq-list>div>div {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.about-content .about-us-section .about-us-card .faq .faq-list>div>div button {
+    font-family: Poppins;
+    font-size: 12px;
+    background-color: orangered;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+}
+
+.about-content .about-us-section .about-us-card .faq .faq-list>div>div span {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.about-content .about-us-section .about-us-card .faq .faq-list>div p {
+    font-family: Poppins;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.about-content .about-us-section .about-us-card .links {
+    grid-area: about-links;
+    font-family: Poppins;
+    font-size: 14px;
+    color: black;
+}
+
+.about-content .about-us-section .about-us-card .links a {
+    color: black;
 }
 
 @media screen and (max-width: 1225px) {
     .about-content .about-us-section {
         margin: 0 140px;
-    }
-
-    .about-content .about-us-section .about-us-card {
-        grid-template-areas: 'about-para' 'services' 'img-list' 'about-explore-btn';
     }
 }
 
@@ -952,37 +1013,33 @@
     }
 
     .about-content .about-us-section {
-        margin: 0 20px;
-    }
-
-    .about-us-section {
         margin: 28px;
     }
 
-    .about-content .about-us-section .about-us-card .img-list img {
-        width: 125px;
-        height: 200px;
+    .about-content .about-us-section .about-us-card {
+        grid-template-areas: 'about-para' 'about-services' 'about-img' 'about-btn' 'about-faq' 'about-links';
+        justify-items: center;
     }
 
     .about-content .about-us-section .about-us-card>p,
-    .about-content .about-us-section .about-us-card .services .service-list span,
-    .about-content .about-us-section .about-us-card>a {
+    .about-content .about-us-section .about-us-card .services .service-list span {
         font-size: 14px;
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 350px) {
     .about-content .about-us-section .about-us-card .img-list {
         flex-direction: column;
-        align-items: center;
         row-gap: 12px;
     }
 }
 
 
 
+/* Contact Us */
+
 .about-content .contact-us-section {
-    margin: 0 310px;
+    padding: 0 310px;
 }
 
 .about-content .contact-us-section h2 {
@@ -1021,7 +1078,7 @@
 
 @media screen and (max-width: 1300px) {
     .about-content .contact-us-section {
-        margin: 0 200px;
+        padding: 0 200px;
     }
 }
 
@@ -1039,8 +1096,7 @@
 
 @media screen and (max-width: 670px) {
     .about-content .contact-us-section {
-        margin-left: 20px;
-        margin-right: 20px;
+        padding: 0 20px;
     }
 
     .about-content .contact-us-section .contact-tab .contact-list span {
@@ -2131,7 +2187,7 @@
 .account-content .account-section .details .recent-orders-details table tr td img {
     width: 60px;
     height: 60px;
-    object-fit: auto;
+    object-fit: cover;
     border-radius: 6px;
 }
 
