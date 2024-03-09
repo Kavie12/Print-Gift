@@ -445,3 +445,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 })
+
+
+
+
+
+
+
+// Admin Users Search
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('.admin-content .users .search input')) {
+        let search = document.querySelector('.admin-content .users .search input')
+
+        search.addEventListener('change', () => {
+            let key = search.value
+            console.log(key)
+        })
+    }
+})

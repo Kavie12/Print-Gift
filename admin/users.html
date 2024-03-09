@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINT GIFT - Admin Dashboard</title>
+    <link rel="stylesheet" href="../library/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navbar -->
+        <div class="admin-nav">
+            <div class="sidebar-opener">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="profile">
+                <i class="fa-regular fa-circle-user"></i>
+                <span>Administrator</span>
+            </div>
+            <div class="logout">
+                <span>Logout</span>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="admin-sidebar">
+            <i class="fa-solid fa-x sidebar-closer"></i>
+            <div class="logo">
+                <p>
+                    Print.
+                    <span>GIFT</span>
+                </p>
+            </div>
+            <div class="links">
+                <a href="../admin/">
+                    <i class="fa-solid fa-truck"></i>
+                    New Orders
+                </a>
+                <a href="./pastorders.html">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Past Orders
+                </a>
+                <a href="./users.html" class="active">
+                    <i class="fa-solid fa-user"></i>
+                    Users
+                </a>
+                <a href="./products.html">
+                    <i class="fa-solid fa-box"></i>
+                    Products
+                </a>
+                <a href="./revenue.html">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    Revenue
+                </a>
+                <a href="./faq.html">
+                    <i class="fa-solid fa-circle-question"></i>
+                    FAQ
+                </a>
+            </div>
+        </div>
+
+
+        <div class="admin-content">
+
+            <!-- Users -->
+            <div class="users">
+                <h1>Users</h1>
+                <div class="search">
+                    <input type="text" placeholder="Search users">
+                </div>
+                <div class="add-user-btn">
+                    <a href="./adduser.html">Add User</a>
+                </div>
+                <div class="users-list">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th></th>
+                            <th></th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        <tr>
+                            <td>8792</td>
+                            <td>Peter Parker</td>
+                            <td><a href="./userorders.html" class="orders">Orders</a></td>
+                            <td><a href="./userprofile.html" class="view-profile">Profile</a></td>
+                            <td><a href="./edituserprofile.html" class="edit-profile"><i
+                                        class="fa-solid fa-pen-to-square"></i></a></td>
+                            <td><a href="" class="delete-profile"><i class="fa-solid fa-trash"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>6792</td>
+                            <td>Donald Trump</td>
+                            <td><a href="./userorders.html" class="orders">Orders</a></td>
+                            <td><a href="./userprofile.html" class="view-profile">Profile</a></td>
+                            <td><a href="./edituserprofile.html" class="edit-profile"><i
+                                        class="fa-solid fa-pen-to-square"></i></a></td>
+                            <td><a href="" class="delete-profile"><i class="fa-solid fa-trash"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>3126</td>
+                            <td>Albert Einstein</td>
+                            <td><a href="./userorders.html" class="orders">Orders</a></td>
+                            <td><a href="./userprofile.html" class="view-profile">Profile</a></td>
+                            <td><a href="./edituserprofile.html" class="edit-profile"><i
+                                        class="fa-solid fa-pen-to-square"></i></a></td>
+                            <td><a href="" class="delete-profile"><i class="fa-solid fa-trash"></i></a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    <script src="../library/script.js"></script>
+    <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -2014,7 +2014,7 @@
     color: rgb(33, 130, 69);
 }
 
-.account-content .account-section .details {
+.account-content .account-section>.details {
     display: flex;
     flex-direction: column;
     row-gap: 18px;
@@ -2022,35 +2022,35 @@
     min-width: 600px;
 }
 
-.account-content .account-section .details .back-btn {
+.account-content .account-section>.details .back-btn {
     text-decoration: none;
     color: black;
 }
 
-.account-content .account-section .details h1 {
+.account-content .account-section>.details h1 {
     font-family: 'Source Sans 3';
     font-weight: 600;
     font-size: 26px;
 }
 
-.account-content .account-section .details .profile-details {
+.account-content .account-section>.details .profile-details {
     display: grid;
     grid-template-columns: auto auto;
     gap: 20px 18px;
 }
 
-.account-content .account-section .details .profile-details>div {
+.account-content .account-section>.details .profile-details>div {
     display: flex;
     flex-direction: column;
     row-gap: 2px;
 }
 
-.account-content .account-section .details .profile-details>div label {
+.account-content .account-section>.details .profile-details>div label {
     font-family: Poppins;
     font-size: 13px;
 }
 
-.account-content .account-section .details .profile-details>div input {
+.account-content .account-section>.details .profile-details>div input {
     font-family: Poppins;
     font-size: 14px;
     padding: 8px 12px;
@@ -2059,21 +2059,21 @@
     width: 100%;
 }
 
-.account-content .account-section .details .profile-details>div input:focus {
+.account-content .account-section>.details .profile-details>div input:focus {
     outline-color: rgb(90, 90, 90);
 }
 
-.account-content .account-section .details .profile-details .address-field {
+.account-content .account-section>.details .profile-details .address-field {
     grid-column: 1/3;
 }
 
-.account-content .account-section .details .buttons {
+.account-content .account-section>.details .buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 12px;
 }
 
-.account-content .account-section .details .edit {
+.account-content .account-section>.details .edit {
     text-decoration: none;
     color: black;
     font-family: 'Source Sans 3';
@@ -2085,12 +2085,12 @@
     align-items: center;
 }
 
-.account-content .account-section .details .edit:hover {
+.account-content .account-section>.details .edit:hover {
     background-color: black;
     color: white;
 }
 
-.account-content .account-section .details .delete {
+.account-content .account-section>.details .delete {
     text-decoration: none;
     color: white;
     font-family: 'Source Sans 3';
@@ -2103,27 +2103,27 @@
     transition: all .25s ease-in-out;
 }
 
-.account-content .account-section .details .delete:hover {
+.account-content .account-section>.details .delete:hover {
     background-color: rgb(187, 51, 48);
 }
 
 @media screen and (max-width: 950px) {
-    .account-content .account-section .details {
+    .account-content .account-section>.details {
         min-width: auto;
     }
 }
 
 @media screen and (max-width: 650px) {
-    .account-content .account-section .details .profile-details {
+    .account-content .account-section>.details .profile-details {
         grid-template-columns: auto;
     }
 
-    .account-content .account-section .details .profile-details .address-field {
+    .account-content .account-section>.details .profile-details .address-field {
         grid-column: auto;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 580px) {
     .account-content .account-section {
         flex-direction: column;
     }
@@ -2141,7 +2141,7 @@
 }
 
 @media screen and (max-width: 350px) {
-    .account-content .account-section .details .buttons {
+    .account-content .account-section>.details .buttons {
         flex-direction: column;
         align-items: center;
         row-gap: 12px;
@@ -2152,24 +2152,24 @@
 
 /* Edit Profile Details */
 
-.account-content .account-section .details .edit-profile-details {
+.account-content .account-section>.details .edit-profile-details {
     display: grid;
     grid-template-columns: auto auto;
     gap: 20px 18px;
 }
 
-.account-content .account-section .details .edit-profile-details>div {
+.account-content .account-section>.details .edit-profile-details>div {
     display: flex;
     flex-direction: column;
     row-gap: 2px;
 }
 
-.account-content .account-section .details .edit-profile-details>div label {
+.account-content .account-section>.details .edit-profile-details>div label {
     font-family: Poppins;
     font-size: 13px;
 }
 
-.account-content .account-section .details .edit-profile-details>div input {
+.account-content .account-section>.details .edit-profile-details>div input {
     font-family: Poppins;
     font-size: 14px;
     padding: 8px 12px;
@@ -2178,15 +2178,15 @@
     width: 100%;
 }
 
-.account-content .account-section .details .edit-profile-details>div input:focus {
+.account-content .account-section>.details .edit-profile-details>div input:focus {
     outline-color: rgb(90, 90, 90);
 }
 
-.account-content .account-section .details .edit-profile-details .address-field {
+.account-content .account-section>.details .edit-profile-details .address-field {
     grid-column: 1/3;
 }
 
-.account-content .account-section .details .edit-profile-details>input[type=submit] {
+.account-content .account-section>.details .edit-profile-details>input[type=submit] {
     grid-column: 1/3;
     justify-self: end;
     font-family: 'Source Sans 3';
@@ -2197,21 +2197,21 @@
     cursor: pointer;
 }
 
-.account-content .account-section .details .edit-profile-details>input[type=submit]:hover {
+.account-content .account-section>.details .edit-profile-details>input[type=submit]:hover {
     background-color: black;
     color: white;
 }
 
 @media screen and (max-width: 650px) {
-    .account-content .account-section .details .edit-profile-details {
+    .account-content .account-section>.details .edit-profile-details {
         grid-template-columns: auto;
     }
 
-    .account-content .account-section .details .edit-profile-details .address-field {
+    .account-content .account-section>.details .edit-profile-details .address-field {
         grid-column: auto;
     }
 
-    .account-content .account-section .details .edit-profile-details>input[type=submit] {
+    .account-content .account-section>.details .edit-profile-details>input[type=submit] {
         grid-column: auto;
     }
 }
@@ -2220,58 +2220,230 @@
 
 /* Recent Orders */
 
-.account-content .account-section .details .recent-orders-details {
+.account-content .account-section>.details .recent-orders-list {
     margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
 }
 
-.account-content .account-section .details .recent-orders-details table tr th {
+.account-content .account-section>.details .recent-orders-list .item {
+    display: flex;
+    box-shadow: 0 6px 16px -16px #888888;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info {
+    background-color: whitesmoke;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-areas:
+        'recent-order-id recent-order-details recent-order-status'
+        'recent-order-img recent-order-options recent-order-pricing';
+    align-items: center;
+    column-gap: 40px;
+    row-gap: 24px;
+    width: 100%;
+    border-radius: 12px 0 0 12px;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .order-id {
+    grid-area: recent-order-id;
     font-family: Poppins;
     font-size: 14px;
-    font-weight: 550;
-    text-align: center;
-    padding: 12px;
+    background-color: rgb(42, 42, 42);
+    color: white;
+    align-self: start;
+    justify-self: start;
+    padding: 4px 8px;
+    border-radius: 12px;
 }
 
-.account-content .account-section .details .recent-orders-details table tr td {
-    font-family: Poppins;
-    font-size: 14px;
-    text-align: center;
-    padding: 12px;
-}
-
-.account-content .account-section .details .recent-orders-details table tr td img {
-    width: 60px;
-    height: 60px;
+.account-content .account-section>.details .recent-orders-list .item .item-info>img {
+    grid-area: recent-order-img;
+    width: 110px;
+    height: 110px;
     object-fit: cover;
-    border-radius: 6px;
 }
 
-.account-content .account-section .details .recent-orders-details table tr td a {
+.account-content .account-section>.details .recent-orders-list .item .item-info .order-details {
+    grid-area: recent-order-details;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    width: 280px;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .order-details p {
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options {
+    grid-area: recent-order-options;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    width: 280px;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li {
+    font-family: Poppins;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.black {
+    background-color: rgb(40, 40, 40);
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.white {
+    background-color: whitesmoke;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.red {
+    background-color: rgb(194, 51, 51);
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.blue {
+    background-color: rgb(29, 86, 183);
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.orange {
+    background-color: rgb(222, 98, 45);
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.purple {
+    background-color: rgb(117, 49, 177);
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.pink {
+    background-color: rgb(201, 47, 127);
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li img {
+    width: 100px;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li a {
+    text-decoration: none;
     color: black;
+    font-family: Poppins;
+    font-size: 12px;
+    padding: 4px 8px;
+    border: solid 1px black;
+    border-radius: 4px;
 }
 
-@media screen and (max-width: 870px) {
-    .account-content .account-section .details .recent-orders-details {
-        width: 300px;
-        overflow-x: scroll;
+.account-content .account-section>.details .recent-orders-list .item .item-info .options li a:hover {
+    background-color: black;
+    color: white;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .status {
+    background-color: rgb(0, 136, 120);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 12px;
+    padding: 6px 12px;
+    align-self: start;
+    justify-self: end;
+    width: 100%;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .status i {
+    font-size: 14px;
+    color: white;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .status p {
+    font-family: Poppins;
+    font-size: 14px;
+    color: white;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .pricing {
+    grid-area: recent-order-pricing;
+    align-self: end;
+    justify-self: end;
+    background-color: orangered;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.account-content .account-section>.details .recent-orders-list .item .item-info .pricing p {
+    font-family: Poppins;
+    font-size: 14px;
+    color: white;
+}
+
+@media screen and (max-width: 1240px) {
+    .admin-content .user-orders {
+        margin: 0;
+        margin-bottom: 28px;
+    }
+
+    .account-content .account-section>.details .recent-orders-list .item .item-info {
+        grid-template-areas:
+            'recent-order-id'
+            'recent-order-img'
+            'recent-order-details'
+            'recent-order-options'
+            'recent-order-pricing'
+            'recent-order-status';
+    }
+
+    .account-content .account-section>.details .recent-orders-list .item .item-info .order-id {
+        justify-self: center;
+    }
+
+    .account-content .account-section>.details .recent-orders-list .item .item-info>img {
+        justify-self: center;
+    }
+
+    .account-content .account-section>.details .recent-orders-list .item .item-info .order-details {
+        width: auto;
+    }
+
+    .account-content .account-section>.details .recent-orders-list .item .item-info .user {
+        justify-self: auto;
+    }
+
+    .account-content .account-section>.details .recent-orders-list .item .item-info .pricing {
+        justify-self: start;
+        align-self: auto;
     }
 }
 
-@media screen and (max-width: 600px) {
-    .account-content .account-section .details .recent-orders-details {
-        width: 250px;
+@media screen and (max-width: 540px) {
+    .account-content .account-section>.details .recent-orders-list .item {
+        flex-direction: column;
+    }
+
+    .account-content .account-section>.details .recent-orders-list .item .item-info {
+        border-radius: 12px 12px 0 0;
     }
 }
 
-@media screen and (max-width: 390px) {
-    .account-content .account-section .details .recent-orders-details {
-        width: 200px;
-    }
-}
+@media screen and (max-width: 450px) {
 
-@media screen and (max-width: 340px) {
-    .account-content .account-section .details .recent-orders-details {
-        width: 150px;
+    .account-content .account-section>.details .recent-orders-list .item .item-info .order-details,
+    .account-content .account-section>.details .recent-orders-list .item .item-info .options {
+        width: auto;
+    }
+
+    .account-content .account-section>.details .recent-orders-list .item .item-info .options li {
+        flex-direction: column;
+        align-items: start;
     }
 }
 
@@ -2312,6 +2484,7 @@
 
 .admin-nav .profile span {
     font-family: Rubik;
+    font-size: 15px;
 }
 
 .admin-nav .logout {
@@ -2354,7 +2527,7 @@
     background: #eff0f5;
     border-radius: 0 26px 26px 0;
     width: 18%;
-    transition: all .25s ease-in-out;
+    transition: all .45s ease-in-out;
 }
 
 .admin-sidebar .sidebar-closer {
@@ -2386,6 +2559,7 @@
 .admin-sidebar .links a,
 .admin-sidebar .logout {
     font-family: Rubik;
+    font-size: 15px;
     text-decoration: none;
     color: black;
     display: flex;
@@ -2416,7 +2590,7 @@
 
 
 
-/* Orders */
+/* New Orders */
 
 .admin-content {
     display: flex;
@@ -2438,6 +2612,22 @@
     font-family: Poppins;
     font-size: 24px;
     font-weight: 600;
+}
+
+.admin-content .new-orders .search {
+    align-self: end;
+}
+
+.admin-content .new-orders .search input {
+    font-family: Poppins;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: solid 1px rgba(0, 0, 0, 0.4);
+}
+
+.admin-content .new-orders .search input:focus {
+    outline: none;
 }
 
 .admin-content .new-orders .new-orders-list {
@@ -2694,5 +2884,1169 @@
     .admin-content .new-orders .new-orders-list .item .item-info .options li {
         flex-direction: column;
         align-items: start;
+    }
+}
+
+
+
+
+
+/* Past Orders */
+
+.admin-content .past-orders {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+}
+
+.admin-content .past-orders h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin-content .past-orders .search {
+    align-self: end;
+}
+
+.admin-content .past-orders .search input {
+    font-family: Poppins;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: solid 1px rgba(0, 0, 0, 0.4);
+}
+
+.admin-content .past-orders .search input:focus {
+    outline: none;
+}
+
+.admin-content .past-orders .past-orders-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+}
+
+.admin-content .past-orders .past-orders-list .item {
+    display: flex;
+    box-shadow: 0 6px 16px -16px #888888;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info {
+    background-color: white;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-areas:
+        'past-order-id past-order-details past-order-user'
+        'past-order-img past-order-options past-order-pricing';
+    align-items: center;
+    column-gap: 40px;
+    row-gap: 24px;
+    width: 100%;
+    border-radius: 12px 0 0 12px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .order-id {
+    grid-area: past-order-id;
+    font-family: Poppins;
+    font-size: 14px;
+    background-color: rgb(42, 42, 42);
+    color: white;
+    align-self: start;
+    justify-self: start;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info>img {
+    grid-area: past-order-img;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .details {
+    grid-area: past-order-details;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    width: 280px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .details p {
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options {
+    grid-area: past-order-options;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    width: 280px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li {
+    font-family: Poppins;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li .color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li .color.black {
+    background-color: rgb(40, 40, 40);
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li .color.white {
+    background-color: whitesmoke;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li .color.red {
+    background-color: rgb(194, 51, 51);
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li .color.blue {
+    background-color: rgb(29, 86, 183);
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li .color.orange {
+    background-color: rgb(222, 98, 45);
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li .color.purple {
+    background-color: rgb(117, 49, 177);
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li .color.pink {
+    background-color: rgb(201, 47, 127);
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li img {
+    width: 100px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li a {
+    text-decoration: none;
+    color: black;
+    font-family: Poppins;
+    font-size: 12px;
+    padding: 4px 8px;
+    border: solid 1px black;
+    border-radius: 4px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .options li a:hover {
+    background-color: black;
+    color: white;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .user {
+    grid-area: past-order-user;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    justify-self: end;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .user p {
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .pricing {
+    grid-area: past-order-pricing;
+    align-self: end;
+    justify-self: end;
+    background-color: orangered;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.admin-content .past-orders .past-orders-list .item .item-info .pricing p {
+    font-family: Poppins;
+    font-size: 14px;
+    color: white;
+}
+
+.admin-content .past-orders .past-orders-list .item .status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 8px;
+    background-color: rgb(255, 235, 223);
+    padding: 0 20px;
+    border-radius: 0 12px 12px 0;
+}
+
+.admin-content .past-orders .past-orders-list .item .status>div {
+    position: relative;
+    display: flex;
+}
+
+.admin-content .past-orders .past-orders-list .item .status>div input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.admin-content .past-orders .past-orders-list .item .status>div input:checked+label {
+    background-color: rgb(0, 136, 120);
+    color: rgb(255, 255, 255);
+}
+
+.admin-content .past-orders .past-orders-list .item .status>div label {
+    font-family: Poppins;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    padding: 4px 8px;
+    border: solid 2px rgb(0, 136, 120);
+    border-radius: 6px;
+}
+
+@media screen and (max-width: 1240px) {
+    .admin-content .past-orders {
+        margin: 0;
+        margin-bottom: 28px;
+    }
+
+    .admin-content .past-orders .past-orders-list .item .item-info {
+        grid-template-areas:
+            'past-order-id'
+            'past-order-img'
+            'past-order-details'
+            'past-order-options'
+            'past-order-user'
+            'past-order-pricing';
+    }
+
+    .admin-content .past-orders .past-orders-list .item .item-info .order-id {
+        justify-self: center;
+    }
+
+    .admin-content .past-orders .past-orders-list .item .item-info>img {
+        justify-self: center;
+    }
+
+    .admin-content .past-orders .past-orders-list .item .item-info .details {
+        width: auto;
+    }
+
+    .admin-content .past-orders .past-orders-list .item .item-info .user {
+        justify-self: auto;
+    }
+
+    .admin-content .past-orders .past-orders-list .item .item-info .pricing {
+        justify-self: start;
+        align-self: auto;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .admin-content {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .admin-content .past-orders .past-orders-list .item {
+        flex-direction: column;
+    }
+
+    .admin-content .past-orders .past-orders-list .item .item-info {
+        border-radius: 12px 12px 0 0;
+    }
+
+    .admin-content .past-orders .past-orders-list .item .status {
+        align-items: center;
+        padding: 20px 0;
+        border-radius: 0 0 12px 12px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .admin-content .past-orders .past-orders-list .item .item-info .details,
+    .admin-content .past-orders .past-orders-list .item .item-info .options {
+        width: auto;
+    }
+
+    .admin-content .past-orders .past-orders-list .item .item-info .options li {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+
+
+
+
+
+/* Users */
+
+.admin-content .users {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+}
+
+.admin-content .users h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin-content .users .search {
+    align-self: end;
+}
+
+.admin-content .users .search input {
+    font-family: Poppins;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: solid 1px rgba(0, 0, 0, 0.4);
+}
+
+.admin-content .users .search input:focus {
+    outline: none;
+}
+
+.admin-content .users .add-user-btn {
+    align-self: end;
+}
+
+.admin-content .users .add-user-btn a {
+    font-family: Poppins;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all .15s ease-in-out;
+    background-color: rgb(0, 156, 138);
+}
+
+.admin-content .users .add-user-btn a:hover {
+    background-color: rgb(0, 136, 120);
+}
+
+.admin-content .users .users-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    width: 900px;
+}
+
+.admin-content .users .users-list table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px -16px #888888;
+}
+
+.admin-content .users .users-list table tr:first-child {
+    background-color: rgb(230, 230, 230);
+}
+
+.admin-content .users .users-list table tr:first-child th:first-child {
+    border-radius: 12px 0 0 0;
+}
+
+.admin-content .users .users-list table tr:first-child th:last-child {
+    border-radius: 0 12px 0 0;
+}
+
+.admin-content .users .users-list table tr th {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 20px 16px;
+    text-align: center;
+}
+
+.admin-content .users .users-list table tr td {
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 20px 16px;
+    text-align: center;
+}
+
+.admin-content .users .users-list table tr td a {
+    text-decoration: none;
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all .15s ease-in-out;
+}
+
+.admin-content .users .users-list table tr td a.orders {
+    border: solid 1px rgb(0, 156, 138);
+    color: rgb(0, 156, 138);
+}
+
+.admin-content .users .users-list table tr td a.orders:hover {
+    border-color: rgb(0, 136, 120);
+    background-color: rgb(0, 136, 120);
+    color: white;
+}
+
+.admin-content .users .users-list table tr td a.view-profile {
+    background-color: rgb(0, 156, 138);
+    color: white;
+}
+
+.admin-content .users .users-list table tr td a.view-profile:hover {
+    background-color: rgb(0, 136, 120);
+}
+
+.admin-content .users .users-list table tr td a.edit-profile {
+    background-color: rgb(255, 201, 39);
+    color: rgb(0, 0, 0);
+}
+
+.admin-content .users .users-list table tr td a.edit-profile:hover {
+    background-color: rgb(228, 180, 34);
+}
+
+.admin-content .users .users-list table tr td a.delete-profile {
+    background-color: rgb(216, 56, 56);
+    color: rgb(255, 255, 255);
+}
+
+.admin-content .users .users-list table tr td a.delete-profile:hover {
+    background-color: rgb(179, 46, 46);
+}
+
+@media screen and (max-width: 1000px) {
+    .admin-content .users .users-list {
+        width: 700px;
+        overflow-x: scroll;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .admin-content .users .users-list {
+        width: 500px;
+        overflow-x: scroll;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .admin-content .users .users-list {
+        width: 300px;
+        overflow-x: scroll;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .admin-content .users .users-list {
+        width: 200px;
+        overflow-x: scroll;
+    }
+}
+
+
+
+
+
+
+/* User Profile */
+
+.admin-content .user-profile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+}
+
+.admin-content .user-profile h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin-content .user-profile .profile-details {
+    background-color: white;
+    box-shadow: 0 6px 16px -16px #888888;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px 18px;
+    padding: 28px 40px;
+    min-width: 600px;
+}
+
+.admin-content .user-profile .profile-details .back-btn {
+    text-decoration: none;
+    color: black;
+    grid-column: 1/3;
+}
+
+.admin-content .user-profile .profile-details>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+
+.admin-content .user-profile .profile-details>div label {
+    font-family: Poppins;
+    font-size: 13px;
+}
+
+.admin-content .user-profile .profile-details>div input {
+    font-family: Poppins;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    width: 100%;
+}
+
+.admin-content .user-profile .profile-details>div input:focus {
+    outline-color: rgb(90, 90, 90);
+}
+
+.admin-content .user-profile .profile-details .address-field {
+    grid-column: 1/3;
+}
+
+.admin-content .user-profile .profile-details .buttons {
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.admin-content .user-profile .profile-details .edit {
+    text-decoration: none;
+    color: black;
+    font-family: 'Source Sans 3';
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: solid 1px black;
+}
+
+.admin-content .user-profile .profile-details .edit:hover {
+    background-color: black;
+    color: white;
+}
+
+.admin-content .user-profile .profile-details .delete {
+    text-decoration: none;
+    color: white;
+    font-family: 'Source Sans 3';
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: rgb(211, 58, 56);
+    transition: all .25s ease-in-out;
+}
+
+.admin-content .user-profile .profile-details .delete:hover {
+    background-color: rgb(187, 51, 48);
+}
+
+@media screen and (max-width: 670px) {
+    .admin-content .user-profile .profile-details {
+        grid-template-columns: auto;
+        min-width: 400px;
+    }
+
+    .admin-content .user-profile .profile-details .back-btn {
+        grid-column: auto;
+    }
+
+    .admin-content .user-profile .profile-details .address-field {
+        grid-column: auto;
+    }
+
+    .admin-content .user-profile .profile-details .buttons {
+        grid-column: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .admin-content .user-profile .profile-details {
+        min-width: auto;
+    }
+
+    .admin-content .user-profile .profile-details .buttons {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 8px;
+    }
+}
+
+
+
+
+
+
+/* Edit User Profile */
+
+.admin-content .edit-user-profile {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+}
+
+.admin-content .edit-user-profile h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin-content .edit-user-profile .profile-details {
+    background-color: white;
+    box-shadow: 0 6px 16px -16px #888888;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px 18px;
+    padding: 28px 40px;
+    min-width: 600px;
+}
+
+.admin-content .edit-user-profile .profile-details .back-btn {
+    text-decoration: none;
+    color: black;
+    grid-column: 1/3;
+}
+
+.admin-content .edit-user-profile .profile-details>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+
+.admin-content .edit-user-profile .profile-details>div label {
+    font-family: Poppins;
+    font-size: 13px;
+}
+
+.admin-content .edit-user-profile .profile-details>div input {
+    font-family: Poppins;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    width: 100%;
+}
+
+.admin-content .edit-user-profile .profile-details>div input:focus {
+    outline-color: rgb(90, 90, 90);
+}
+
+.admin-content .edit-user-profile .profile-details .address-field {
+    grid-column: 1/3;
+}
+
+.admin-content .edit-user-profile .profile-details .buttons {
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+
+.admin-content .edit-user-profile .profile-details .save {
+    text-decoration: none;
+    color: black;
+    font-family: 'Source Sans 3';
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: solid 1px black;
+    margin-left: auto;
+}
+
+.admin-content .edit-user-profile .profile-details .save:hover {
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 670px) {
+    .admin-content .edit-user-profile .profile-details {
+        grid-template-columns: auto;
+        min-width: 400px;
+    }
+
+    .admin-content .edit-user-profile .profile-details .back-btn {
+        grid-column: auto;
+    }
+
+    .admin-content .edit-user-profile .profile-details .address-field {
+        grid-column: auto;
+    }
+
+    .admin-content .edit-user-profile .profile-details .buttons {
+        grid-column: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .admin-content .edit-user-profile .profile-details {
+        min-width: auto;
+    }
+
+    .admin-content .edit-user-profile .profile-details .buttons {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 8px;
+    }
+}
+
+
+
+
+
+
+/* User Orders */
+
+.admin-content .user-orders {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+}
+
+.admin-content .user-orders h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin-content .user-orders .back-btn-and-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-content .user-orders .back-btn-and-search .back-btn {
+    text-decoration: none;
+    color: black;
+}
+
+.admin-content .user-orders .back-btn-and-search .search {
+    align-self: end;
+}
+
+.admin-content .user-orders .back-btn-and-search .search input {
+    font-family: Poppins;
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: solid 1px rgba(0, 0, 0, 0.4);
+}
+
+.admin-content .user-orders .back-btn-and-search .search input:focus {
+    outline: none;
+}
+
+.admin-content .user-orders .user-orders-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+}
+
+.admin-content .user-orders .user-orders-list .item {
+    display: flex;
+    box-shadow: 0 6px 16px -16px #888888;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info {
+    background-color: white;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-areas:
+        'user-order-id user-order-details user-order-details'
+        'user-order-img user-order-options user-order-pricing';
+    align-items: center;
+    column-gap: 40px;
+    row-gap: 24px;
+    width: 100%;
+    border-radius: 12px 0 0 12px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .order-id {
+    grid-area: user-order-id;
+    font-family: Poppins;
+    font-size: 14px;
+    background-color: rgb(42, 42, 42);
+    color: white;
+    align-self: start;
+    justify-self: start;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info>img {
+    grid-area: user-order-img;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .details {
+    grid-area: user-order-details;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    width: 280px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .details p {
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options {
+    grid-area: user-order-options;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    width: 280px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li {
+    font-family: Poppins;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li .color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li .color.black {
+    background-color: rgb(40, 40, 40);
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li .color.white {
+    background-color: whitesmoke;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li .color.red {
+    background-color: rgb(194, 51, 51);
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li .color.blue {
+    background-color: rgb(29, 86, 183);
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li .color.orange {
+    background-color: rgb(222, 98, 45);
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li .color.purple {
+    background-color: rgb(117, 49, 177);
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li .color.pink {
+    background-color: rgb(201, 47, 127);
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li img {
+    width: 100px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li a {
+    text-decoration: none;
+    color: black;
+    font-family: Poppins;
+    font-size: 12px;
+    padding: 4px 8px;
+    border: solid 1px black;
+    border-radius: 4px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .options li a:hover {
+    background-color: black;
+    color: white;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .user {
+    grid-area: user-order-user;
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    justify-self: end;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .user p {
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .pricing {
+    grid-area: user-order-pricing;
+    align-self: end;
+    justify-self: end;
+    background-color: orangered;
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.admin-content .user-orders .user-orders-list .item .item-info .pricing p {
+    font-family: Poppins;
+    font-size: 14px;
+    color: white;
+}
+
+.admin-content .user-orders .user-orders-list .item .status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 8px;
+    background-color: rgb(255, 235, 223);
+    padding: 0 20px;
+    border-radius: 0 12px 12px 0;
+}
+
+.admin-content .user-orders .user-orders-list .item .status>div {
+    position: relative;
+    display: flex;
+}
+
+.admin-content .user-orders .user-orders-list .item .status>div input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.admin-content .user-orders .user-orders-list .item .status>div input:checked+label {
+    background-color: rgb(0, 136, 120);
+    color: rgb(255, 255, 255);
+}
+
+.admin-content .user-orders .user-orders-list .item .status>div label {
+    font-family: Poppins;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+    padding: 4px 8px;
+    border: solid 2px rgb(0, 136, 120);
+    border-radius: 6px;
+}
+
+@media screen and (max-width: 1240px) {
+    .admin-content .user-orders {
+        margin: 0;
+        margin-bottom: 28px;
+    }
+
+    .admin-content .user-orders .user-orders-list .item .item-info {
+        grid-template-areas:
+            'user-order-id'
+            'user-order-img'
+            'user-order-details'
+            'user-order-options'
+            'user-order-pricing';
+    }
+
+    .admin-content .user-orders .user-orders-list .item .item-info .order-id {
+        justify-self: center;
+    }
+
+    .admin-content .user-orders .user-orders-list .item .item-info>img {
+        justify-self: center;
+    }
+
+    .admin-content .user-orders .user-orders-list .item .item-info .details {
+        width: auto;
+    }
+
+    .admin-content .user-orders .user-orders-list .item .item-info .user {
+        justify-self: auto;
+    }
+
+    .admin-content .user-orders .user-orders-list .item .item-info .pricing {
+        justify-self: start;
+        align-self: auto;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .admin-content {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .admin-content .user-orders .user-orders-list .item {
+        flex-direction: column;
+    }
+
+    .admin-content .user-orders .user-orders-list .item .item-info {
+        border-radius: 12px 12px 0 0;
+    }
+
+    .admin-content .user-orders .user-orders-list .item .status {
+        align-items: center;
+        padding: 20px 0;
+        border-radius: 0 0 12px 12px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .admin-content .user-orders .user-orders-list .item .item-info .details,
+    .admin-content .user-orders .user-orders-list .item .item-info .options {
+        width: auto;
+    }
+
+    .admin-content .user-orders .user-orders-list .item .item-info .options li {
+        flex-direction: column;
+        align-items: start;
+    }
+}
+
+
+
+
+
+
+/* Add User */
+
+.admin-content .add-user {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+}
+
+.admin-content .add-user h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.admin-content .add-user .add-user-section {
+    background-color: white;
+    box-shadow: 0 6px 16px -16px #888888;
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    padding: 36px 48px;
+    min-width: 600px;
+}
+
+.admin-content .add-user .add-user-section .back-btn {
+    text-decoration: none;
+    color: black;
+    grid-column: 1/3;
+}
+
+.admin-content .add-user .add-user-section .add-user-card {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px 18px;
+}
+
+.admin-content .add-user .add-user-section .add-user-card>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.admin-content .add-user .add-user-section .add-user-card>div label {
+    font-family: Poppins;
+    font-size: 13px;
+}
+
+.admin-content .add-user .add-user-section .add-user-card>div input {
+    font-family: Poppins;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    width: 100%;
+}
+
+.admin-content .add-user .add-user-section .add-user-card>div input:focus {
+    outline-color: rgb(90, 90, 90);
+}
+
+.admin-content .add-user .add-user-section .add-user-card .email-field {
+    grid-column: 1/3;
+}
+
+.admin-content .add-user .add-user-section .add-user-card .address-field {
+    grid-column: 1/3;
+}
+
+.admin-content .add-user .add-user-section .add-user-card button {
+    grid-column: 1/3;
+    justify-self: end;
+    padding: 6px 12px;
+    font-family: Poppins;
+    font-size: 13px;
+    cursor: pointer;
+    background: none;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    transition: all .15s ease-in-out;
+}
+
+.admin-content .add-user .add-user-section .add-user-card button:hover {
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+
+@media screen and (max-width: 750px) {
+    .admin-content .add-user .add-user-section {
+        min-width: 400px;
+    }
+
+    .admin-content .add-user .add-user-section .add-user-card {
+        grid-template-columns: auto;
+    }
+
+    .admin-content .add-user .add-user-section .add-user-card .email-field,
+    .admin-content .add-user .add-user-section .add-user-card .address-field,
+    .admin-content .add-user .add-user-section .add-user-card button,
+    .admin-content .add-user .add-user-section .add-user-card p {
+        grid-column: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .admin-content .add-user .add-user-section {
+        padding: 36px 28px;
+        min-width: auto;
     }
 }
