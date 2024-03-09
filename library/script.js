@@ -235,12 +235,16 @@ if (addToCartForm) {
 
 // Products In Stock Filter
 
-function inStockFilter() {
+function inStockFilterOn() {
     if (document.getElementById('productsinStockFilter').checked) {
         for (let i = 0; i < document.querySelectorAll('.product-item.out-of-stock').length; i++) {
             document.querySelector('.product-item.out-of-stock').style.display = 'none'
         }
-    } else {
+    }
+}
+
+function inStockFilterOff() {
+    if (!(document.getElementById('productsinStockFilter').checked)) {
         for (let i = 0; i < document.querySelectorAll('.product-item.out-of-stock').length; i++) {
             document.querySelector('.product-item.out-of-stock').style.display = 'flex'
         }
@@ -249,7 +253,10 @@ function inStockFilter() {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('productsinStockFilter')) {
-        document.getElementById('productsinStockFilter').addEventListener('change', () => inStockFilter())
+        document.getElementById('productsinStockFilter').addEventListener('change', () => {
+            inStockFilterOn()
+            inStockFilterOff()
+        })
     }
 })
 
@@ -284,8 +291,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (let i = 0; i < bands.length; i++) {
                     bands[i].style.display = 'flex'
                 }
-                inStockFilter()
             }
+            inStockFilterOn()
         })
         document.getElementById('productCategoriesMugs').addEventListener('change', () => {
             if (document.getElementById('productCategoriesMugs').checked) {
@@ -301,8 +308,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (let i = 0; i < bands.length; i++) {
                     bands[i].style.display = 'none'
                 }
-                inStockFilter()
             }
+            inStockFilterOn()
         })
         document.getElementById('productCategoriesPens').addEventListener('change', () => {
             if (document.getElementById('productCategoriesPens').checked) {
@@ -318,8 +325,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (let i = 0; i < bands.length; i++) {
                     bands[i].style.display = 'none'
                 }
-                inStockFilter()
             }
+            inStockFilterOn()
         })
         document.getElementById('productCategoriesTShirts').addEventListener('change', () => {
             if (document.getElementById('productCategoriesTShirts').checked) {
@@ -335,8 +342,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (let i = 0; i < bands.length; i++) {
                     bands[i].style.display = 'none'
                 }
-                inStockFilter()
             }
+            inStockFilterOn()
         })
         document.getElementById('productCategoriesBands').addEventListener('change', () => {
             if (document.getElementById('productCategoriesBands').checked) {
@@ -352,8 +359,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (let i = 0; i < bands.length; i++) {
                     bands[i].style.display = 'flex'
                 }
-                inStockFilter()
             }
+            inStockFilterOn()
         })
     }
 })
@@ -385,23 +392,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// Close Sidebar
+// Close / Open Sidebar
 
 document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.admin-sidebar')) {
         const sidebar = document.querySelector('.admin-sidebar')
         const content = document.querySelector('.admin-content')
         document.querySelector('.admin-sidebar .sidebar-closer').addEventListener('click', () => {
-            if (sidebar.style.left == 0 || sidebar.style.left == '0px') {
+            if (window.matchMedia("(max-width: 1100px)").matches) {
+                sidebar.style.left = '-60%'
+            } else {
                 sidebar.style.left = '-18%'
-                content.style.marginLeft = 0
+                content.style.marginLeft = 0  
             }
         })
         document.querySelector('.admin-nav .sidebar-opener').addEventListener('click', () => {
-            if (sidebar.style.left != 0) {
+            if (window.matchMedia("(max-width: 1100px)").matches) {
+                sidebar.style.left = 0
+            } else {
                 sidebar.style.left = 0
                 content.style.marginLeft = '18%'
-            } 
+            }
         })
+    }
+})
+
+
+
+
+
+
+
+// New order accept or decline
+
+document.addEventListener('DOMContentLoaded', () => {
+    if(document.querySelector('.new-orders-list')) {
+        const orders = document.querySelectorAll('.new-orders-list .item')
+        const orderID = document.querySelectorAll('.new-orders-list .order-id')
+        const accept = document.querySelectorAll('.new-orders-list .item .accept')
+        const decline = document.querySelectorAll('.new-orders-list .item .decline')
+        for (let i = 0; i < orders.length; i++) {
+            accept[i].addEventListener('click', () => {
+                let orderIDNo = parseInt(orderID[i].innerHTML.substring(10))
+                console.log(orderIDNo + ' - Accept')
+                orders[i].remove()
+            })
+            decline[i].addEventListener('click', () => {
+                let orderIDNo = parseInt(orderID[i].innerHTML.substring(10))
+                console.log(orderIDNo + ' - Decline')
+                orders[i].remove()
+            })
+        }
     }
 })
