@@ -7,5 +7,5 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         const email = document.getElementById("loginEmail");
         const password = document.getElementById("loginPassword");
-    })
+    });
 });

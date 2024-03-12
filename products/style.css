@@ -1,7 +1,7 @@
 /* Products Content */
 
 .products-content {
-    margin-top: 60px;
+    padding-top: 60px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -284,13 +284,13 @@
 /* Item Content */
 
 .item-content {
-    margin: 60px 0;
     padding: 0 20px;
     display: flex;
     justify-content: center;
 }
 
 .item-content .item-tab {
+    margin: 60px 0;
     background-color: white;
     padding: 40px 48px;
     display: flex;

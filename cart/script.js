@@ -68,6 +68,7 @@ function confirmOrder() {
     successCardCloseBtn.addEventListener("click", () => {
         successCard.style.display = "none";
     });
+    console.log("Order Success");
 }
 
 // Call the functions
