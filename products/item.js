@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const addToCartData = document.getElementById("addToCartForm");
+    const addToCartForm = document.getElementById("addToCartForm");
 
-    addToCartData.addEventListener("submit", e => {
+    addToCartForm.addEventListener("submit", e => {
         e.preventDefault();
+
     });
 });

@@ -12,6 +12,7 @@
 }
 
 .cart-content .cart-tab .cart-list {
+    position: relative;
     min-height: 70vh;
     background-color: white;
     padding: 48px 40px;
@@ -49,6 +50,48 @@
 }
 
 .cart-content .cart-tab .cart-list .cart-item-zero a:hover {
+    background-color: black;
+    color: white;
+}
+
+.cart-content .cart-tab .cart-list .order-success {
+    position: absolute;
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 40px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-content .cart-tab .cart-list .order-success i {
+    align-self: end;
+    cursor: pointer;
+    margin-bottom: auto;
+}
+
+.cart-content .cart-tab .cart-list .order-success h2 {
+    font-family: Poppins;
+    text-align: center;
+}
+
+.cart-content .cart-tab .cart-list .order-success a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Source Sans 3';
+    border: solid 1px black;
+    padding: 6px 12px;
+    text-align: center;
+    transition: all .15s ease-in-out;
+    margin-bottom: auto;
+}
+
+.cart-content .cart-tab .cart-list .order-success a:hover {
     background-color: black;
     color: white;
 }
