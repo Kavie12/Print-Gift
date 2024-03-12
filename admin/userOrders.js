@@ -1,7 +1,7 @@
-// Past Orders Search
+// User Orders Search
 
 document.addEventListener("DOMContentLoaded", () => {
-    const search = document.querySelector(".admin-content .past-orders .search input");
+    const search = document.querySelector(".admin-content .user-orders .search input");
 
     search.addEventListener("change", () => {
         const key = search.value;
@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Past Orders Status
+// User Orders Status
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    let orders = document.querySelectorAll(".past-orders-list .item .status");
+    let orders = document.querySelectorAll(".user-orders-list .item .status");
 
     orders.forEach(order => {
         let orderID = order.closest(".item").getAttribute("data-order-id");
@@ -30,22 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
 
             let formData = new FormData(order);
-            let status = formData.get("past-order-status-" + orderID);
+            let status = formData.get("user-order-status-" + orderID);
 
             console.log(orderID + " - " + status);
         });
 
 
         // Change save button style
-        let declined = document.getElementById("pastOrderStatusDeclined" + orderID);
-        let confirmed = document.getElementById("pastOrderStatusConfirmed" + orderID);
-        let processing = document.getElementById("pastOrderStatusProcessing" + orderID);
-        let dispatched = document.getElementById("pastOrderStatusDispatched" + orderID);
-        let delivered = document.getElementById("pastOrderStatusDelivered" + orderID);
+        let declined = document.getElementById("userOrderStatusDeclined" + orderID);
+        let confirmed = document.getElementById("userOrderStatusConfirmed" + orderID);
+        let processing = document.getElementById("userOrderStatusProcessing" + orderID);
+        let dispatched = document.getElementById("userOrderStatusDispatched" + orderID);
+        let delivered = document.getElementById("userOrderStatusDelivered" + orderID);
 
         let switches = [declined, confirmed, processing, dispatched, delivered];
 
-        let saveBtn = document.getElementById("pastOrderStatusSave" + orderID);
+        let saveBtn = document.getElementById("userOrderStatusSave" + orderID);
 
         switches.forEach(switchItem => {
             switchItem.addEventListener("change", () => {

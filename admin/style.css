@@ -1,3 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    background: #eff0f5;
+    padding-top: 70px;
+}
+
+@media screen and (max-width: 1220px) {
+    .container {
+        padding-top: 120px;
+    }
+}
+
+
+
+
+
+
+
+
 /* Admin Navbar */
 
 .admin-nav {
@@ -8,6 +36,7 @@
     border-bottom: solid 1px rgba(56, 56, 56, 0.2);
     display: flex;
     background: #eff0f5;
+    z-index: 1;
 }
 
 .admin-nav>div {
@@ -72,6 +101,7 @@
     border-radius: 0 26px 26px 0;
     width: 18%;
     transition: all .45s ease-in-out;
+    z-index: 2;
 }
 
 .admin-sidebar .sidebar-closer {
@@ -627,7 +657,7 @@
     justify-content: center;
     row-gap: 8px;
     background-color: rgb(255, 235, 223);
-    padding: 0 20px;
+    padding: 18px 20px;
     border-radius: 0 12px 12px 0;
 }
 
@@ -659,6 +689,20 @@
     padding: 4px 8px;
     border: solid 2px rgb(0, 136, 120);
     border-radius: 6px;
+}
+
+.admin-content .past-orders .past-orders-list .item .status>input[type=submit] {
+    margin-top: 12px;
+    font-family: Poppins;
+    font-size: 13px;
+    text-align: center;
+    border: solid 1px black;
+    background: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
 }
 
 @media screen and (max-width: 1240px) {
@@ -836,7 +880,8 @@
     text-align: center;
 }
 
-.admin-content .users .users-list table tr td a {
+.admin-content .users .users-list table tr td a,
+.admin-content .users .users-list table tr td p {
     text-decoration: none;
     border: none;
     background-color: none;
@@ -875,12 +920,13 @@
     background-color: rgb(228, 180, 34);
 }
 
-.admin-content .users .users-list table tr td a.delete-profile {
+.admin-content .users .users-list table tr td p.delete-profile {
     background-color: rgb(216, 56, 56);
     color: rgb(255, 255, 255);
+    display: inline;
 }
 
-.admin-content .users .users-list table tr td a.delete-profile:hover {
+.admin-content .users .users-list table tr td p.delete-profile:hover {
     background-color: rgb(179, 46, 46);
 }
 
@@ -1008,6 +1054,8 @@
     border-radius: 6px;
     background-color: rgb(211, 58, 56);
     transition: all .25s ease-in-out;
+    border: none;
+    cursor: pointer;
 }
 
 .admin-content .user-profile .profile-details .delete:hover {
@@ -1065,7 +1113,7 @@
     font-weight: 600;
 }
 
-.admin-content .edit-user-profile .profile-details {
+.admin-content .edit-user-profile .edit-profile-details {
     background-color: white;
     box-shadow: 0 6px 16px -16px #888888;
     display: grid;
@@ -1075,24 +1123,24 @@
     min-width: 600px;
 }
 
-.admin-content .edit-user-profile .profile-details .back-btn {
+.admin-content .edit-user-profile .edit-profile-details .back-btn {
     text-decoration: none;
     color: black;
     grid-column: 1/3;
 }
 
-.admin-content .edit-user-profile .profile-details>div {
+.admin-content .edit-user-profile .edit-profile-details>div {
     display: flex;
     flex-direction: column;
     row-gap: 2px;
 }
 
-.admin-content .edit-user-profile .profile-details>div label {
+.admin-content .edit-user-profile .edit-profile-details>div label {
     font-family: Poppins;
     font-size: 13px;
 }
 
-.admin-content .edit-user-profile .profile-details>div input {
+.admin-content .edit-user-profile .edit-profile-details>div input {
     font-family: Poppins;
     font-size: 14px;
     padding: 8px 12px;
@@ -1101,66 +1149,56 @@
     width: 100%;
 }
 
-.admin-content .edit-user-profile .profile-details>div input:focus {
+.admin-content .edit-user-profile .edit-profile-details>div input:focus {
     outline-color: rgb(90, 90, 90);
 }
 
-.admin-content .edit-user-profile .profile-details .address-field {
+.admin-content .edit-user-profile .edit-profile-details .address-field {
     grid-column: 1/3;
 }
 
-.admin-content .edit-user-profile .profile-details .buttons {
+.admin-content .edit-user-profile .edit-profile-details>input[type=submit] {
     grid-column: 1/3;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 12px;
-}
-
-.admin-content .edit-user-profile .profile-details .save {
-    text-decoration: none;
-    color: black;
+    background: none;
     font-family: 'Source Sans 3';
     font-size: 14px;
     padding: 6px 12px;
     border-radius: 6px;
     border: solid 1px black;
     margin-left: auto;
+    margin-top: 12px;
+    cursor: pointer;
 }
 
-.admin-content .edit-user-profile .profile-details .save:hover {
+.admin-content .edit-user-profile .edit-profile-details>input[type=submit]:hover {
     background-color: black;
     color: white;
 }
 
+#adminEditUserCardMsg {
+    font-family: Poppins;
+    font-size: 14px;
+    text-align: center;
+    grid-column: 1/3;
+}
+
 @media screen and (max-width: 670px) {
-    .admin-content .edit-user-profile .profile-details {
+    .admin-content .edit-user-profile .edit-profile-details {
         grid-template-columns: auto;
         min-width: 400px;
     }
 
-    .admin-content .edit-user-profile .profile-details .back-btn {
-        grid-column: auto;
-    }
-
-    .admin-content .edit-user-profile .profile-details .address-field {
-        grid-column: auto;
-    }
-
-    .admin-content .edit-user-profile .profile-details .buttons {
+    .admin-content .edit-user-profile .edit-profile-details .back-btn,
+    .admin-content .edit-user-profile .edit-profile-details .address-field,
+    .admin-content .edit-user-profile .edit-profile-details>input[type=submit],
+    #adminEditUserCardMsg {
         grid-column: auto;
     }
 }
 
 @media screen and (max-width: 500px) {
-    .admin-content .edit-user-profile .profile-details {
+    .admin-content .edit-user-profile .edit-profile-details {
         min-width: auto;
-    }
-
-    .admin-content .edit-user-profile .profile-details .buttons {
-        flex-direction: column;
-        align-items: center;
-        row-gap: 8px;
     }
 }
 
@@ -1404,6 +1442,20 @@
     padding: 4px 8px;
     border: solid 2px rgb(0, 136, 120);
     border-radius: 6px;
+}
+
+.admin-content .user-orders .user-orders-list .item .status>input[type=submit] {
+    margin-top: 12px;
+    font-family: Poppins;
+    font-size: 13px;
+    text-align: center;
+    border: solid 1px black;
+    background: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
 }
 
 @media screen and (max-width: 1240px) {

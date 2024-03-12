@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRINT GIFT - Admin Dashboard</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="../library/global.css">
 </head>
 
 <body>
@@ -69,7 +68,7 @@
             <!-- User Profile -->
             <div class="user-profile">
                 <h1>Profile of Peter</h1>
-                <div class="profile-details">
+                <div class="profile-details" data-user-id="1234">
                     <a href="../admin/users.html" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
@@ -104,7 +103,7 @@
                     </div>
                     <div class="buttons">
                         <a href="./edituserprofile.html" class="edit">Edit Profile</a>
-                        <a href="#" class="delete">Delete Account</a>
+                        <span class="delete">Delete Account</span>
                     </div>
                 </div>
             </div>
@@ -117,8 +116,8 @@
 
     </div>
 
+    <script src="./userProfile.js"></script>
     <script src="./script.js"></script>
-    <script src="../library/global.js"></script>
     <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
 </body>
 

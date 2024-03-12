@@ -39,7 +39,7 @@
                     <i class="fa-solid fa-truck"></i>
                     New Orders
                 </a>
-                <a href="./pastorders.html" class="active">
+                <a href="./pastorders.html">
                     <i class="fa-solid fa-paper-plane"></i>
                     Past Orders
                 </a>
@@ -47,7 +47,7 @@
                     <i class="fa-solid fa-user"></i>
                     Users
                 </a>
-                <a href="./products.html">
+                <a href="./products.html" class="active">
                     <i class="fa-solid fa-box"></i>
                     Products
                 </a>
@@ -65,73 +65,58 @@
 
         <div class="admin-content">
 
-            <!-- Past Orders -->
-            <div class="past-orders">
-                <h1>Past Orders</h1>
+            <!-- Products -->
+            <div class="products">
+                <h1>Products</h1>
                 <div class="search">
                     <input type="text" placeholder="Search orders">
                 </div>
-                <div class="past-orders-list">
-                    <div class="item" data-order-id="1234">
+                <div class="products-list">
+                    <div class="item">
                         <div class="item-info">
-                            <p class="order-id">Order ID: 1234</p>
+                            <p class="product-id">Product ID: 12189</p>
                             <img src="../images/home_mug_pic.png" alt="image">
-                            <div class="details">
-                                <p class="date">Date: 2024-01-01</p>
-                                <p class="product-id">Product ID: 1792</p>
-                                <p class="item-name">Custom Printed White Mug</p>
-                            </div>
-                            <ul class="options">
-                                <li>Packaging: Wrapped</li>
-                                <li>Text: "Wish You Happy New Year!"</li>
-                                <li>Color: <div class="color red"></div>
-                                </li>
-                                <li>Comments: Text should be bigger</li>
-                            </ul>
-                            <div class="user">
-                                <p>User ID: 293</p>
-                                <p>User Name: Peter Parker</p>
-                                <p>Address: 293/7, Kaduwela Rd, Malabe</p>
-                            </div>
-                            <div class="pricing">
-                                <p class="qty">Quantity: 1</p>
-                                <p class="price">Rs. 1100</p>
+                            <p class="item-name">Custom Printed White Mug</p>
+                            <p class="item-desc">Print your design on glassy white mug built with better quality</p>
+                            <p class="price">Rs. 1100</p>
+                            <div class="availability">
+                                <input type="checkbox" id="changeAvailability">
+                                <label for="changeAvailability">In Stock</label>
                             </div>
                         </div>
-                        <form class="status">
+                        <div class="status">
                             <!-- Fix same ID and name issues -->
                             <div>
-                                <input type="radio" name="past-order-status-1234" id="pastOrderStatusDeclined1234"
-                                    value="declined">
-                                <label for="pastOrderStatusDeclined1234">Declined</label>
+                                <input type="radio" name="product-status" id="pastOrderStatusDeclined" value="declined">
+                                <label for="pastOrderStatusDeclined">Declined</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-1234" id="pastOrderStatusConfirmed1234"
+                                <input type="radio" name="product-status" id="pastOrderStatusConfirmed"
                                     value="confirmed" checked>
-                                <label for="pastOrderStatusConfirmed1234">Confirmed</label>
+                                <label for="pastOrderStatusConfirmed">Confirmed</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-1234" id="pastOrderStatusProcessing1234"
+                                <input type="radio" name="product-status" id="pastOrderStatusProcessing"
                                     value="processing">
-                                <label for="pastOrderStatusProcessing1234">Processing</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="past-order-status-1234" id="pastOrderStatusDispatched1234"
-                                    value="dispatched">
-                                <label for="pastOrderStatusDispatched1234">Dispatched</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="past-order-status-1234" id="pastOrderStatusDelivered1234"
-                                    value="delivered">
-                                <label for="pastOrderStatusDelivered1234">Delivered</label>
-                            </div>
+                                <label for="pastOrderStatusProcessing">Processing</label>
 
-                            <input type="submit" value="Saved!" id="pastOrderStatusSave1234">
-                        </form>
+                            </div>
+                            <div>
+                                <input type="radio" name="product-status" id="pastOrderStatusDispatched"
+                                    value="dispatched">
+                                <label for="pastOrderStatusDispatched">Dispatched</label>
+
+                            </div>
+                            <div>
+                                <input type="radio" name="product-status" id="pastOrderStatusDelivered"
+                                    value="delivered">
+                                <label for="pastOrderStatusDelivered">Delivered</label>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item" data-order-id="5678">
+                    <div class="item">
                         <div class="item-info">
-                            <p class="order-id">Order ID: 5678</p>
+                            <p class="order-id">Product ID: 7283</p>
                             <img src="../images/about-img-1.jpg" alt="product_image">
                             <div class="details">
                                 <p class="date">Date: 2023-12-29</p>
@@ -157,36 +142,33 @@
                                 <p class="price">Rs. 2800</p>
                             </div>
                         </div>
-                        <form class="status">
-                            <!-- Fix same ID and name issues -->
+                        <div class="status">
                             <div>
-                                <input type="radio" name="past-order-status-5678" id="pastOrderStatusDeclined5678"
+                                <input type="radio" name="past-order-status-7283" id="pastOrderStatusDeclined"
                                     value="declined">
-                                <label for="pastOrderStatusDeclined5678">Declined</label>
+                                <label for="pastOrderStatusDeclined">Declined</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-5678" id="pastOrderStatusConfirmed5678"
-                                    value="confirmed" checked>
-                                <label for="pastOrderStatusConfirmed5678">Confirmed</label>
+                                <input type="radio" name="past-order-status-7283" id="pastOrderStatusConfirmed"
+                                    value="confirmed">
+                                <label for="pastOrderStatusConfirmed">Confirmed</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-5678" id="pastOrderStatusProcessing5678"
+                                <input type="radio" name="past-order-status-7283" id="pastOrderStatusProcessing"
                                     value="processing">
-                                <label for="pastOrderStatusProcessing5678">Processing</label>
+                                <label for="pastOrderStatusProcessing">Processing</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-5678" id="pastOrderStatusDispatched5678"
+                                <input type="radio" name="past-order-status-7283" id="pastOrderStatusDispatched"
                                     value="dispatched">
-                                <label for="pastOrderStatusDispatched5678">Dispatched</label>
+                                <label for="pastOrderStatusDispatched">Dispatched</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-5678" id="pastOrderStatusDelivered5678"
-                                    value="delivered">
-                                <label for="pastOrderStatusDelivered5678">Delivered</label>
+                                <input type="radio" name="past-order-status-7283" id="pastOrderStatusDelivered"
+                                    value="delivered" checked>
+                                <label for="pastOrderStatusDelivered">Delivered</label>
                             </div>
-
-                            <input type="submit" value="Saved!" id="pastOrderStatusSave5678">
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,7 +180,7 @@
 
     </div>
 
-    <script src="./pastOrders.js"></script>
+    <script src="./pastorders.html"></script>
     <script src="./script.js"></script>
     <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
 </body>

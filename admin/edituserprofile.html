@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRINT GIFT - Admin Dashboard</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="../library/global.css">
 </head>
 
 <body>
@@ -69,7 +68,7 @@
             <!-- Edit User Profile -->
             <div class="edit-user-profile">
                 <h1>Edit Profile of Peter</h1>
-                <div class="profile-details">
+                <form class="edit-profile-details" id="adminEditUserForm">
                     <a href="../admin/users.html" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
@@ -102,10 +101,20 @@
                         <label for="adminEditUserProfilePostalCode">Postal Code</label>
                         <input type="text" name="postalcode" id="adminEditUserProfilePostalCode" value="10640">
                     </div>
-                    <div class="buttons">
-                        <a href="./editprofile.html" class="save">Save</a>
+                    <div>
+                        <label for="adminEditUserPassword">Password</label>
+                        <input type="password" name="password" id="adminEditUserPassword" placeholder="Enter password"
+                            required>
                     </div>
-                </div>
+                    <div>
+                        <label for="adminEditUserConfirmPassword">Confirm Password</label>
+                        <input type="password" name="confirm-password" id="adminEditUserConfirmPassword"
+                            placeholder="Confirm password">
+                    </div>
+
+                    <input type="submit" value="Save">
+                    <p id="adminEditUserCardMsg"></p>
+                </form>
             </div>
         </div>
 
@@ -116,8 +125,8 @@
 
     </div>
 
+    <script src="./editUserProfile.js"></script>
     <script src="./script.js"></script>
-    <script src="../library/global.js"></script>
     <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
 </body>
 

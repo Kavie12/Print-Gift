@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRINT GIFT - Admin Dashboard</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="../library/global.css">
 </head>
 
 <body>
@@ -78,9 +77,9 @@
                     </div>
                 </div>
                 <div class="user-orders-list">
-                    <div class="item">
+                    <div class="item" data-order-id="1234">
                         <div class="item-info">
-                            <p class="order-id">Order ID: 12189</p>
+                            <p class="order-id">Order ID: 1234</p>
                             <img src="../images/home_mug_pic.png" alt="image">
                             <div class="details">
                                 <p class="date">Date: 2024-01-01</p>
@@ -99,40 +98,42 @@
                                 <p class="price">Rs. 1100</p>
                             </div>
                         </div>
-                        <div class="status">
+                        <form class="status">
                             <!-- Fix same ID and name issues -->
                             <div>
-                                <input type="radio" name="past-order-status-12189" id="pastOrderStatusDeclined"
+                                <input type="radio" name="user-order-status-1234" id="userOrderStatusDeclined1234"
                                     value="declined">
-                                <label for="pastOrderStatusDeclined">Declined</label>
+                                <label for="userOrderStatusDeclined1234">Declined</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-12189" id="pastOrderStatusConfirmed"
+                                <input type="radio" name="user-order-status-1234" id="userOrderStatusConfirmed1234"
                                     value="confirmed" checked>
-                                <label for="pastOrderStatusConfirmed">Confirmed</label>
+                                <label for="userOrderStatusConfirmed1234">Confirmed</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-12189" id="pastOrderStatusProcessing"
+                                <input type="radio" name="user-order-status-1234" id="userOrderStatusProcessing1234"
                                     value="processing">
-                                <label for="pastOrderStatusProcessing">Processing</label>
+                                <label for="userOrderStatusProcessing1234">Processing</label>
 
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-12189" id="pastOrderStatusDispatched"
+                                <input type="radio" name="user-order-status-1234" id="userOrderStatusDispatched1234"
                                     value="dispatched">
-                                <label for="pastOrderStatusDispatched">Dispatched</label>
+                                <label for="userOrderStatusDispatched1234">Dispatched</label>
 
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-12189" id="pastOrderStatusDelivered"
+                                <input type="radio" name="user-order-status-1234" id="userOrderStatusDelivered1234"
                                     value="delivered">
-                                <label for="pastOrderStatusDelivered">Delivered</label>
+                                <label for="userOrderStatusDelivered1234">Delivered</label>
                             </div>
-                        </div>
+
+                            <input type="submit" value="Saved!" id="userOrderStatusSave1234">
+                        </form>
                     </div>
-                    <div class="item">
+                    <div class="item" data-order-id="5678">
                         <div class="item-info">
-                            <p class="order-id">Order ID: 7283</p>
+                            <p class="order-id">Order ID: 5678</p>
                             <img src="../images/about-img-1.jpg" alt="product_image">
                             <div class="details">
                                 <p class="date">Date: 2023-12-29</p>
@@ -153,33 +154,35 @@
                                 <p class="price">Rs. 2800</p>
                             </div>
                         </div>
-                        <div class="status">
+                        <form class="status">
                             <div>
-                                <input type="radio" name="past-order-status-7283" id="pastOrderStatusDeclined"
+                                <input type="radio" name="user-order-status-5678" id="userOrderStatusDeclined5678"
                                     value="declined">
-                                <label for="pastOrderStatusDeclined">Declined</label>
+                                <label for="userOrderStatusDeclined5678">Declined</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-7283" id="pastOrderStatusConfirmed"
+                                <input type="radio" name="user-order-status-5678" id="userOrderStatusConfirmed5678"
                                     value="confirmed">
-                                <label for="pastOrderStatusConfirmed">Confirmed</label>
+                                <label for="userOrderStatusConfirmed5678">Confirmed</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-7283" id="pastOrderStatusProcessing"
+                                <input type="radio" name="user-order-status-5678" id="userOrderStatusProcessing5678"
                                     value="processing">
-                                <label for="pastOrderStatusProcessing">Processing</label>
+                                <label for="userOrderStatusProcessing5678">Processing</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-7283" id="pastOrderStatusDispatched"
+                                <input type="radio" name="user-order-status-5678" id="userOrderStatusDispatched5678"
                                     value="dispatched">
-                                <label for="pastOrderStatusDispatched">Dispatched</label>
+                                <label for="userOrderStatusDispatched5678">Dispatched</label>
                             </div>
                             <div>
-                                <input type="radio" name="past-order-status-7283" id="pastOrderStatusDelivered"
+                                <input type="radio" name="user-order-status-5678" id="userOrderStatusDelivered5678"
                                     value="delivered" checked>
-                                <label for="pastOrderStatusDelivered">Delivered</label>
+                                <label for="userOrderStatusDelivered5678">Delivered</label>
                             </div>
-                        </div>
+
+                            <input type="submit" value="Saved!" id="userOrderStatusSave5678">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -191,8 +194,8 @@
 
     </div>
 
+    <script src="./userOrders.js"></script>
     <script src="./script.js"></script>
-    <script src="../library/global.js"></script>
     <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
 </body>
 
