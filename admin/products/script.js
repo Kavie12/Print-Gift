@@ -55,3 +55,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+
+
+
+
+
+// Delete Products
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    let deleteProduct = document.querySelectorAll(".item-info .delete");
+
+    deleteProduct.forEach(del => {
+        let productID = del.closest(".item").getAttribute("data-product-id");
+
+        del.addEventListener("click", () => {
+            const confirmDelete = confirm("Please confirm delete product!");
+            if (confirmDelete == true) {
+                del.closest(".item").remove();
+                console.log(productID + " - delete");
+            }
+        });
+    });
+
+});

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINT GIFT - Admin Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../admin.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navbar -->
+        <div class="admin-nav">
+            <div class="sidebar-opener">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="profile">
+                <i class="fa-regular fa-circle-user"></i>
+                <span>Administrator</span>
+            </div>
+            <div class="logout">
+                <span>Logout</span>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="admin-sidebar">
+            <i class="fa-solid fa-x sidebar-closer"></i>
+            <div class="logo">
+                <p>
+                    Print.
+                    <span>GIFT</span>
+                </p>
+            </div>
+            <div class="links">
+                <a href="../neworders/">
+                    <i class="fa-solid fa-truck"></i>
+                    New Orders
+                </a>
+                <a href="../pastorders/">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Past Orders
+                </a>
+                <a href="../users/">
+                    <i class="fa-solid fa-user"></i>
+                    Users
+                </a>
+                <a href="../products/" class="active">
+                    <i class="fa-solid fa-box"></i>
+                    Products
+                </a>
+                <a href="../revenue/">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    Revenue
+                </a>
+                <a href="../faq/">
+                    <i class="fa-solid fa-circle-question"></i>
+                    FAQ
+                </a>
+            </div>
+        </div>
+
+
+        <div class="admin-content">
+
+            <!-- Add User -->
+            <div class="add-product">
+                <h1>Add Product</h1>
+                <div class="add-product-section">
+                    <a href="../products/" class="back-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <form class="add-product-card" id="addProductForm">
+                        <div>
+                            <label for="addProductTitle">Product Title</label>
+                            <input type="text" name="title" id="addProductTitle" placeholder="Enter product title">
+                        </div>
+                        <div>
+                            <label for="addProductDesc">Product Description</label>
+                            <textarea name="desc" id="addProductDesc" placeholder="Add product description"></textarea>
+                        </div>
+                        <div>
+                            <label for="addProductPrice">Unit Price (Rs.)</label>
+                            <input type="number" name="price" id="addProductPrice" placeholder="Enter product price"
+                                value="0">
+                        </div>
+                        <div>
+                            <label for="addProductImage">Add Image</label>
+                            <input type="file" accept="image/*" name="image" id="addProductImage">
+                        </div>
+                        <button type="submit" id="addProductSubmit">Add</button>
+                        <p id="addProductCardMsg"></p>
+                    </form>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+    <script src="./addProducts.js"></script>
+    <script src="../admin.js"></script>
+    <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

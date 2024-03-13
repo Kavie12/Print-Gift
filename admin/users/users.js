@@ -22,9 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let userId = del.closest(".user-info").getAttribute("data-user-id");
 
         del.addEventListener("click", () => {
-
-            console.log(userId + " - delete");
-            
+            const confirmDelete = confirm("Please confirm delete user!");
+            if (confirmDelete == true) {
+                del.closest(".user-info").remove();
+                console.log(userId + " - delete");
+            }
         });
     });
 

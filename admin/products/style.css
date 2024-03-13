@@ -5,6 +5,7 @@
     flex-direction: column;
     row-gap: 28px;
     margin: 28px 0;
+    padding: 0 40px;
 }
 
 .products h1 {
@@ -27,6 +28,28 @@
 
 .products .search input:focus {
     outline: none;
+}
+
+.products .add-product-btn {
+    align-self: end;
+}
+
+.products .add-product-btn a {
+    font-family: Poppins;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all .15s ease-in-out;
+    background-color: rgb(0, 156, 138);
+}
+
+.products .add-product-btn a:hover {
+    background-color: rgb(0, 136, 120);
 }
 
 .products .products-list {
@@ -92,12 +115,16 @@
     justify-content: space-around;
 }
 
-.products .products-list .item .item-info .buttons a {
+.products .products-list .item .item-info .buttons a,
+.products .products-list .item .item-info .buttons span {
     text-decoration: none;
     font-family: Poppins;
     font-size: 14px;
     padding: 6px 12px;
     border-radius: 6px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .products .products-list .item .item-info .buttons .edit {
@@ -181,6 +208,10 @@
 }
 
 @media screen and (max-width: 450px) {
+    .products {
+        padding: 0;
+    }
+
     .products .products-list .item {
         flex-direction: column;
     }
@@ -191,5 +222,254 @@
 
     .products .products-list .item .status {
         align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+/* Add Products */
+
+.add-product {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+}
+
+.add-product h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.add-product .add-product-section {
+    background-color: white;
+    box-shadow: 0 6px 16px -16px #888888;
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    padding: 36px 48px;
+    min-width: 600px;
+}
+
+.add-product .add-product-section .back-btn {
+    text-decoration: none;
+    color: black;
+    grid-column: 1/3;
+}
+
+.add-product .add-product-section .add-product-card {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    gap: 20px 18px;
+}
+
+.add-product .add-product-section .add-product-card>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.add-product .add-product-section .add-product-card>div label {
+    font-family: Poppins;
+    font-size: 13px;
+}
+
+.add-product .add-product-section .add-product-card>div input {
+    font-family: Poppins;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    width: 100%;
+}
+
+.add-product .add-product-section .add-product-card>div input:focus {
+    outline-color: rgb(90, 90, 90);
+}
+
+.add-product .add-product-section .add-product-card>div textarea {
+    font-family: Poppins;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    width: 100%;
+    resize: verticalx;
+}
+
+.add-product .add-product-section .add-product-card button {
+    padding: 6px 12px;
+    font-family: Poppins;
+    font-size: 13px;
+    cursor: pointer;
+    background: none;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    transition: all .15s ease-in-out;
+}
+
+.add-product .add-product-section .add-product-card button:hover {
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+
+#adminAddUserCardMsg {
+    font-family: Poppins;
+    font-size: 14px;
+    text-align: center;
+}
+
+#addProductCardMsg {
+    font-family: Poppins;
+    font-size: 14px;
+    text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+    .add-product .add-product-section {
+        min-width: 400px;
+    }
+
+    .add-product .add-product-section .add-product-card {
+        grid-template-columns: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .add-product .add-product-section {
+        padding: 36px 28px;
+        min-width: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Edit Products */
+
+.edit-product {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+}
+
+.edit-product h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.edit-product .edit-product-section {
+    background-color: white;
+    box-shadow: 0 6px 16px -16px #888888;
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    padding: 36px 48px;
+    min-width: 600px;
+}
+
+.edit-product .edit-product-section .back-btn {
+    text-decoration: none;
+    color: black;
+    grid-column: 1/3;
+}
+
+.edit-product .edit-product-section .edit-product-card {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    gap: 20px 18px;
+}
+
+.edit-product .edit-product-section .edit-product-card>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.edit-product .edit-product-section .edit-product-card>div label {
+    font-family: Poppins;
+    font-size: 13px;
+}
+
+.edit-product .edit-product-section .edit-product-card>div input {
+    font-family: Poppins;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    width: 100%;
+}
+
+.edit-product .edit-product-section .edit-product-card>div input:focus {
+    outline-color: rgb(90, 90, 90);
+}
+
+.edit-product .edit-product-section .edit-product-card>div textarea {
+    font-family: Poppins;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    width: 100%;
+    resize: verticalx;
+}
+
+.edit-product .edit-product-section .edit-product-card button {
+    padding: 6px 12px;
+    font-family: Poppins;
+    font-size: 13px;
+    cursor: pointer;
+    background: none;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    transition: all .15s ease-in-out;
+}
+
+.edit-product .edit-product-section .edit-product-card button:hover {
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+
+#admineditUserCardMsg {
+    font-family: Poppins;
+    font-size: 14px;
+    text-align: center;
+}
+
+#editProductCardMsg {
+    font-family: Poppins;
+    font-size: 14px;
+    text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+    .edit-product .edit-product-section {
+        min-width: 400px;
+    }
+
+    .edit-product .edit-product-section .edit-product-card {
+        grid-template-columns: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .edit-product .edit-product-section {
+        padding: 36px 28px;
+        min-width: auto;
     }
 }
