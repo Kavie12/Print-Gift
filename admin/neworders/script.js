@@ -10,11 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
             let orderIDNo = parseInt(orderID[i].innerHTML.substring(10));
             console.log(orderIDNo + " - Accept");
             orders[i].remove();
+            noNewOrders();
         });
         decline[i].addEventListener("click", () => {
             let orderIDNo = parseInt(orderID[i].innerHTML.substring(10));
             console.log(orderIDNo + " - Decline");
             orders[i].remove();
+            noNewOrders();
         });
     }
 });
@@ -33,3 +35,23 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(key);
     });
 });
+
+
+
+
+
+
+
+// If there is no new orders
+
+function noNewOrders() {
+    const msg = document.getElementById("noNewOrdersMsg");
+    const search = document.querySelector(".admin-content .new-orders .search");
+
+    if (document.querySelectorAll(".new-orders-list .item").length < 1) {
+        msg.style.display = "flex";
+        search.style.display = "none";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => noNewOrders());

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRINT GIFT - Admin Dashboard</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../admin.css">
 </head>
 
 <body>
@@ -35,27 +36,27 @@
                 </p>
             </div>
             <div class="links">
-                <a href="../admin/">
+                <a href="../neworders/">
                     <i class="fa-solid fa-truck"></i>
                     New Orders
                 </a>
-                <a href="./pastorders.html">
+                <a href="../pastorders/">
                     <i class="fa-solid fa-paper-plane"></i>
                     Past Orders
                 </a>
-                <a href="./users.html" class="active">
+                <a href="../users/" class="active">
                     <i class="fa-solid fa-user"></i>
                     Users
                 </a>
-                <a href="./products.html">
+                <a href="../products/">
                     <i class="fa-solid fa-box"></i>
                     Products
                 </a>
-                <a href="./revenue.html">
+                <a href="../revenue/">
                     <i class="fa-solid fa-dollar-sign"></i>
                     Revenue
                 </a>
-                <a href="./faq.html">
+                <a href="../faq/">
                     <i class="fa-solid fa-circle-question"></i>
                     FAQ
                 </a>
@@ -68,8 +69,8 @@
             <!-- Edit User Profile -->
             <div class="edit-user-profile">
                 <h1>Edit Profile of Peter</h1>
-                <form class="edit-profile-details" id="adminEditUserForm">
-                    <a href="../admin/users.html" class="back-btn">
+                <form class="edit-profile-details" id="adminEditUserForm" data-user-id="1234">
+                    <a href="../users/" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                     <div>
@@ -102,13 +103,13 @@
                         <input type="text" name="postalcode" id="adminEditUserProfilePostalCode" value="10640">
                     </div>
                     <div>
-                        <label for="adminEditUserPassword">Password</label>
-                        <input type="password" name="password" id="adminEditUserPassword" placeholder="Enter password"
-                            required>
+                        <label for="adminEditUserProfilePassword">New Password (If required)</label>
+                        <input type="password" name="password" id="adminEditUserProfilePassword"
+                            placeholder="Enter password">
                     </div>
                     <div>
-                        <label for="adminEditUserConfirmPassword">Confirm Password</label>
-                        <input type="password" name="confirm-password" id="adminEditUserConfirmPassword"
+                        <label for="adminEditUserProfileConfirmPassword">Confirm Password</label>
+                        <input type="password" name="confirm-password" id="adminEditUserProfileConfirmPassword"
                             placeholder="Confirm password">
                     </div>
 
@@ -126,7 +127,7 @@
     </div>
 
     <script src="./editUserProfile.js"></script>
-    <script src="./script.js"></script>
+    <script src="../admin.js"></script>
     <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
 </body>
 
