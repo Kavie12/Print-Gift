@@ -52,11 +52,11 @@
                     <i class="fa-solid fa-box"></i>
                     Products
                 </a>
-                <a href="../statics/" class="active">
+                <a href="../statics/">
                     <i class="fa-solid fa-chart-simple"></i>
                     Statics
                 </a>
-                <a href="../faq/">
+                <a href="../faq/" class="active">
                     <i class="fa-solid fa-circle-question"></i>
                     FAQ
                 </a>
@@ -66,26 +66,25 @@
 
         <div class="admin-content">
 
-            <!-- Statics -->
-            <div class="statics">
-                <h1>Statics</h1>
-                <select name="duration" id="adminStaticDurationFilter">
-                    <option value="all" selected>All Time</option>
-                    <option value="month">30 Days</option>
-                </select>
-                <div class="statics-cards">
-                    <div class="users">
-                        <h3>Total Users</h3>
-                        <span>395</span>
-                    </div>
-                    <div class="orders">
-                        <h3>Total Orders</h3>
-                        <span>309</span>
-                    </div>
-                    <div class="revenue">
-                        <h3>Total Revenue</h3>
-                        <span>Rs. 43000</span>
-                    </div>
+            <!-- Edit FAQ -->
+            <div class="edit-faq">
+                <h1>Edit FAQ</h1>
+                <div class="faq-section">
+                    <a href="../faq/" class="back-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <form id="editFAQForm" data-faq-id="3">
+                        <div>
+                            <label for="editFAQQ">Question</label>
+                            <textarea name="edit-faq-q" id="editFAQQ">How is the product quality?</textarea>
+                        </div>
+                        <div>
+                            <label for="editFAQA">Answer</label>
+                            <textarea name="edit-faq-a" id="editFAQA">We provide quality products</textarea>
+                        </div>
+                        <input type="submit" name="edit" id="editFAQSubmit" value="Edit">
+                        <p id="editFAQMsg"></p>
+                    </form>
                 </div>
             </div>
 
@@ -96,7 +95,7 @@
 
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./editFAQ.js"></script>
     <script src="../admin.js"></script>
     <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
 </body>

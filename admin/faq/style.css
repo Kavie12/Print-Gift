@@ -1,0 +1,322 @@
+/* FAQ */
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+    padding: 0 40px;
+}
+
+.faq h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.faq .add-faq-btn {
+    align-self: end;
+}
+
+.faq .add-faq-btn a {
+    font-family: Poppins;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all .15s ease-in-out;
+    background-color: orangered;
+}
+
+.faq .add-faq-btn a:hover {
+    background-color: rgb(226, 60, 0)
+}
+
+.faq .faq-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+}
+
+.faq .faq-list>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.faq .faq-list>div>div {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.faq .faq-list>div>div button {
+    font-family: Poppins;
+    font-size: 12px;
+    background-color: orangered;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+}
+
+.faq .faq-list>div>div span {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.faq .faq-list>div p {
+    font-family: Poppins;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.faq .faq-list>div .buttons {
+    display: flex;
+}
+
+.faq .faq-list>div .buttons .edit {
+    font-family: Poppins;
+    text-decoration: none;
+    color: black;
+    border: solid 1px black;
+    align-self: start;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+.faq .faq-list>div .buttons .edit:hover {
+    color: white;
+    background-color: black;
+}
+
+.faq .faq-list>div .buttons .delete {
+    background-color: rgb(211, 58, 56);
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.faq .faq-list>div .buttons .delete:hover {
+    background-color: rgb(187, 51, 48);
+}
+
+@media screen and (max-width: 950px) {
+    .faq {
+        padding: 0;
+    }
+}
+
+
+
+
+
+
+
+/* Add FAQ */
+
+.add-faq {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+    padding: 0 40px;
+}
+
+.add-faq h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.add-faq .faq-section {
+    background-color: white;
+    box-shadow: 0 6px 16px -16px #888888;
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    padding: 36px 48px;
+    min-width: 600px;
+}
+
+.add-faq .faq-section .back-btn {
+    text-decoration: none;
+    color: black;
+}
+
+.add-faq .faq-section form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.add-faq .faq-section form>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+
+.add-faq .faq-section form>div label {
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.add-faq .faq-section form>div textarea {
+    font-family: Poppins;
+    width: 100%;
+    padding: 4px 8px;
+}
+
+.add-faq .faq-section form>input[type=submit] {
+    font-family: Poppins;
+    align-self: end;
+    background: none;
+    padding: 4px 8px;
+    border: solid 1px black;
+    cursor: pointer;
+}
+
+.add-faq .faq-section form>input[type=submit]:hover {
+    background-color: black;
+    color: white;
+}
+
+#addFAQMsg {
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 700px) {
+    .add-faq .faq-section {
+        min-width: 500px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .add-faq .faq-section {
+        min-width: 400px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .add-faq {
+        padding: 0;
+    }
+
+    .add-faq .faq-section {
+        min-width: auto;
+        padding: 36px 28px;
+    }
+}
+
+
+
+
+
+
+
+
+/* Add FAQ */
+
+.edit-faq {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+    padding: 0 40px;
+}
+
+.edit-faq h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.edit-faq .faq-section {
+    background-color: white;
+    box-shadow: 0 6px 16px -16px #888888;
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    padding: 36px 48px;
+    min-width: 600px;
+}
+
+.edit-faq .faq-section .back-btn {
+    text-decoration: none;
+    color: black;
+}
+
+.edit-faq .faq-section form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.edit-faq .faq-section form>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+}
+
+.edit-faq .faq-section form>div label {
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+.edit-faq .faq-section form>div textarea {
+    font-family: Poppins;
+    width: 100%;
+    padding: 4px 8px;
+}
+
+.edit-faq .faq-section form>input[type=submit] {
+    font-family: Poppins;
+    align-self: end;
+    background: none;
+    padding: 4px 8px;
+    border: solid 1px black;
+    cursor: pointer;
+}
+
+.edit-faq .faq-section form>input[type=submit]:hover {
+    background-color: black;
+    color: white;
+}
+
+#editFAQMsg {
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 700px) {
+    .edit-faq .faq-section {
+        min-width: 500px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .edit-faq .faq-section {
+        min-width: 400px;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .edit-faq {
+        padding: 0;
+    }
+
+    .edit-faq .faq-section {
+        min-width: auto;
+        padding: 36px 28px;
+    }
+}

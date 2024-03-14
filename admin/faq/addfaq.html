@@ -52,11 +52,11 @@
                     <i class="fa-solid fa-box"></i>
                     Products
                 </a>
-                <a href="../statics/" class="active">
+                <a href="../statics/">
                     <i class="fa-solid fa-chart-simple"></i>
                     Statics
                 </a>
-                <a href="../faq/">
+                <a href="../faq/" class="active">
                     <i class="fa-solid fa-circle-question"></i>
                     FAQ
                 </a>
@@ -66,26 +66,25 @@
 
         <div class="admin-content">
 
-            <!-- Statics -->
-            <div class="statics">
-                <h1>Statics</h1>
-                <select name="duration" id="adminStaticDurationFilter">
-                    <option value="all" selected>All Time</option>
-                    <option value="month">30 Days</option>
-                </select>
-                <div class="statics-cards">
-                    <div class="users">
-                        <h3>Total Users</h3>
-                        <span>395</span>
-                    </div>
-                    <div class="orders">
-                        <h3>Total Orders</h3>
-                        <span>309</span>
-                    </div>
-                    <div class="revenue">
-                        <h3>Total Revenue</h3>
-                        <span>Rs. 43000</span>
-                    </div>
+            <!-- Add FAQ -->
+            <div class="add-faq">
+                <h1>Add FAQ</h1>
+                <div class="faq-section">
+                    <a href="../faq/" class="back-btn">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <form id="addFAQForm">
+                        <div>
+                            <label for="addFAQQ">Question</label>
+                            <textarea name="add-faq-q" id="addFAQQ" placeholder="Enter Question"></textarea>
+                        </div>
+                        <div>
+                            <label for="addFAQA">Answer</label>
+                            <textarea name="add-faq-a" id="addFAQA" placeholder="Enter Answer"></textarea>
+                        </div>
+                        <input type="submit" name="add" id="addFAQSubmit" value="Add">
+                        <p id="addFAQMsg"></p>
+                    </form>
                 </div>
             </div>
 
@@ -96,7 +95,7 @@
 
     </div>
 
-    <script src="./script.js"></script>
+    <script src="./addFAQ.js"></script>
     <script src="../admin.js"></script>
     <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
 </body>

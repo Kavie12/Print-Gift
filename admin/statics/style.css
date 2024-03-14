@@ -13,3 +13,54 @@
     font-size: 24px;
     font-weight: 600;
 }
+
+.statics select {
+    border: solid 1px black;
+    background: none;
+    padding: 4px 8px;
+    align-self: end;
+}
+
+.statics select:focus {
+    outline: none;
+}
+
+.statics select option {
+    font-family: Poppins;
+}
+
+.statics-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.statics-cards>div {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    padding: 28px 36px;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px -16px #888888;
+}
+
+.statics-cards>div h3 {
+    font-family: Poppins;
+    font-weight: 600;
+}
+
+.statics-cards>div span {
+    font-family: Poppins;
+}
+
+@media screen and (max-width: 750px) {
+    .statics-cards {
+        grid-template-columns: auto;
+    }
+
+    .statics {
+        padding: 0 20px;
+    }
+}
