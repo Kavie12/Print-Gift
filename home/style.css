@@ -1,7 +1,8 @@
 .home-content {
     margin-top: 150px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .home-msg {
@@ -72,4 +73,428 @@
     .home-msg a {
         font-size: 16px;
     }
+}
+
+
+
+
+
+
+
+/* Home Products */
+
+.home-products {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    padding: 240px 0;
+}
+
+.home-products h2 {
+    font-family: Roboto;
+    font-weight: 600;
+}
+
+.home-products .product-list {
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+    background-color: black;
+    padding: 28px 80px;
+}
+
+.home-products .product-list .product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(89, 65, 74);
+    padding-bottom: 18px;
+    transition: all .25s ease-in-out;
+}
+
+.home-products .product-list .product-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.home-products .product-list .product-item span {
+    font-family: Poppins;
+}
+
+.home-products .product-list .product-item:hover {
+    background-color: rgb(119, 88, 99);
+}
+
+@media screen and (max-width: 1000px) {
+    .home-products .product-list {
+        flex-direction: column;
+        row-gap: 24px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .home-products .product-list {
+        padding: 28px 20px;
+    }
+
+    .home-products {
+        padding: 140px 20px;
+    }
+
+    .home-products .product-list .product-item img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* About Content */
+
+.about-us-section {
+    margin: 0 262px;
+    margin-top: 100px;
+}
+
+.about-us-section h2 {
+    font-family: Poppins;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.about-us-section .about-us-card {
+    display: grid;
+    grid-template-areas: 'about-para about-para' 'about-services about-img' 'about-services about-btn' 'about-faq about-faq' 'about-links about-links';
+    column-gap: 28px;
+    row-gap: 54px;
+}
+
+.about-us-section .about-us-card>p {
+    grid-area: about-para;
+    font-family: Poppins;
+    font-size: 15px;
+    line-height: 26px;
+}
+
+.about-us-section .about-us-card .services {
+    grid-area: about-services;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+}
+
+.about-us-section .about-us-card .services h3 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.about-us-section .about-us-card .services .service-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us-section .about-us-card .services .service-list span {
+    font-family: Poppins;
+    font-size: 15px;
+    padding: 16px 0;
+    border-top: solid 1px rgba(56, 56, 56, 0.2);
+}
+
+.about-us-section .about-us-card .services .service-list span:last-child {
+    border-bottom: solid 1px rgba(56, 56, 56, 0.2);
+}
+
+.about-us-section .about-us-card .services .service-list span i {
+    margin-right: 8px;
+    color: rgb(0, 136, 120);
+    transition: all .15s ease-in-out;
+}
+
+.about-us-section .about-us-card .img-list {
+    display: flex;
+    column-gap: 8px;
+    justify-self: center;
+}
+
+.about-us-section .about-us-card .img-list img {
+    grid-area: about-img;
+    width: 140px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.about-us-section .about-us-card .explore-btn {
+    grid-area: about-btn;
+    text-decoration: none;
+    color: black;
+    font-family: 'Source Sans 3';
+    font-size: 16px;
+    border: solid 2px black;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all .15s ease-in-out;
+    justify-self: center;
+}
+
+.about-us-section .about-us-card .explore-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.about-us-section .about-us-card .faq {
+    grid-area: about-faq;
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin-top: 80px;
+}
+
+.about-us-section .about-us-card .faq h3 {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.about-us-section .about-us-card .faq .faq-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+}
+
+.about-us-section .about-us-card .faq .faq-list>div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.about-us-section .about-us-card .faq .faq-list>div>div {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.about-us-section .about-us-card .faq .faq-list>div>div button {
+    font-family: Poppins;
+    font-size: 12px;
+    background-color: orangered;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+}
+
+.about-us-section .about-us-card .faq .faq-list>div>div span {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.about-us-section .about-us-card .faq .faq-list>div p {
+    font-family: Poppins;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.about-us-section .about-us-card .links {
+    grid-area: about-links;
+    font-family: Poppins;
+    font-size: 14px;
+    color: black;
+}
+
+.about-us-section .about-us-card .links a {
+    color: black;
+}
+
+@media screen and (max-width: 1225px) {
+    .about-us-section {
+        margin: 0 140px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .about-us-section {
+        margin: 28px;
+    }
+
+    .about-us-section .about-us-card {
+        grid-template-areas: 'about-para' 'about-services' 'about-img' 'about-btn' 'about-faq' 'about-links';
+        justify-items: center;
+    }
+
+    .about-us-section .about-us-card>p,
+    .about-us-section .about-us-card .services .service-list span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .about-us-section .about-us-card .img-list {
+        flex-direction: column;
+        row-gap: 12px;
+    }
+}
+
+
+
+/* Contact Us */
+
+.contact-us-section {
+    width: 100%;
+    padding: 20px 310px;
+    margin-top: 180px;
+    background-color: black;
+}
+
+.contact-us-section h2 {
+    font-family: Poppins;
+    font-size: 24px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: white;
+}
+
+.contact-us-section .contact-tab {
+    display: flex;
+    justify-content: start;
+}
+
+.contact-us-section .contact-tab .contact-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us-section .contact-tab .contact-list span {
+    font-family: Poppins;
+    font-size: 15px;
+    padding: 16px 0;
+    color: white;
+}
+
+.contact-us-section .contact-tab .contact-list span i {
+    margin-right: 8px;
+    color: rgb(0, 136, 120);
+    transition: all .15s ease-in-out;
+}
+
+@media screen and (max-width: 1300px) {
+    .contact-us-section {
+        padding: 20px 200px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .contact-us-section h2 {
+        text-align: center;
+    }
+
+    .contact-us-section .contact-tab {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 80px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .contact-us-section {
+        padding: 20px;
+
+    }
+
+    .contact-us-section .contact-tab .contact-list span {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .contact-us-section .contact-tab .contact-list span {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+
+/* Policy Content */
+
+.policy-content {
+    padding: 65px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 140px;
+}
+
+.policy-content .policy-section {
+    margin: 0 262px;
+}
+
+.policy-content .policy-section h2 {
+    font-family: Poppins;
+    font-size: 24px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.policy-content .policy-section .policy-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.policy-content .policy-section .policy-card {
+    font-family: 'Source Sans 3';
+}
+
+
+
+
+
+
+
+/* Terms & Conditions Content */
+
+.terms-content {
+    padding: 65px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 140px;
+}
+
+.terms-content .terms-section {
+    margin: 0 262px;
+}
+
+.terms-content .terms-section h2 {
+    font-family: Poppins;
+    font-size: 24px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.terms-content .terms-section .terms-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.terms-content .terms-section .terms-card li {
+    font-family: 'Source Sans 3';
 }

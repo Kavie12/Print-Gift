@@ -1,0 +1,15 @@
+/* Past Orders */
+
+.statics {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+    padding: 0 40px;
+}
+
+.statics h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
