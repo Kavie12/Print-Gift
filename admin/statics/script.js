@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     const filter = document.getElementById("adminStaticDurationFilter");
 
     const usersTitle = document.querySelector(".statics-cards .users h3");
@@ -8,11 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const usersValue = document.querySelector(".statics-cards .users span");
     const ordersValue = document.querySelector(".statics-cards .orders span");
     const revenueValue = document.querySelector(".statics-cards .revenue span");
+    
 
-
-    filter.addEventListener("change", () => {
-        console.log(filter.value);
-
+    function changeValues() {
         if (filter.value !== "all") {
             usersTitle.innerHTML = "Users - 30 Days";
             ordersTitle.innerHTML = "Orders - 30 Days";
@@ -30,6 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
             ordersValue.innerHTML = "309";
             revenueValue.innerHTML = "Rs. 43000";
         }
+    }
 
-    });
+    changeValues();
+
+    filter.addEventListener("change", () => changeValues());
+
 });
