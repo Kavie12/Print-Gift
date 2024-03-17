@@ -59,7 +59,7 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                     <h1>Edit Profile</h1>
-                    <form class="edit-profile-details">
+                    <form class="edit-profile-details" id="editProfileForm">
                         <div>
                             <label for="editProfileFName">First Name</label>
                             <input type="text" name="fname" id="editProfileFName" value="Peter">
@@ -89,7 +89,18 @@
                             <label for="editProfilePostalCode">Postal Code</label>
                             <input type="text" name="postalcode" id="editProfilePostalCode" value="10640">
                         </div>
+                        <div>
+                            <label for="editProfilePassword">New Password (If Required)</label>
+                            <input type="password" name="password" id="editProfilePassword"
+                                placeholder="Enter new password">
+                        </div>
+                        <div>
+                            <label for="editProfileConfirmPassword">Confirm Password</label>
+                            <input type="password" name="confirm-password" id="editProfileConfirmPassword"
+                                placeholder="Confirm password">
+                        </div>
                         <input type="submit" name="submit" id="editProfileSubmit" value="Save">
+                        <p id="editProfileCardMsg"></p>
                     </form>
                 </div>
             </div>
@@ -101,6 +112,7 @@
 
     </div>
 
+    <script src="./editProfile.js"></script>
     <script src="../library/global.js"></script>
     <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
 </body>

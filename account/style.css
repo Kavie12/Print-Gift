@@ -1,3 +1,5 @@
+/* Template Card */
+
 .account-content {
     padding: 70px 0;
     display: flex;
@@ -239,16 +241,21 @@
     color: white;
 }
 
+#editProfileCardMsg {
+    font-family: Poppins;
+    font-size: 14px;
+    text-align: center;
+    grid-column: 1/3;
+}
+
 @media screen and (max-width: 650px) {
     .account-content .account-section>.details .edit-profile-details {
         grid-template-columns: auto;
     }
 
-    .account-content .account-section>.details .edit-profile-details .address-field {
-        grid-column: auto;
-    }
-
-    .account-content .account-section>.details .edit-profile-details>input[type=submit] {
+    .account-content .account-section>.details .edit-profile-details .address-field,
+    .account-content .account-section>.details .edit-profile-details>input[type=submit],
+    #editProfileCardMsg {
         grid-column: auto;
     }
 }

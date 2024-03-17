@@ -25,16 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("adminAddUserCardMsg").innerHTML = "All fields must be filled!";
         } else if (!(/^(?:7|0|(?:\+94))[0-9]{9,10}$/.test(tel.value))) {
             document.getElementById("adminAddUserCardMsg").innerHTML = "Enter a valid phone number!";
-        } else if (isNaN(postalCode.value)) {
+        } else if (isNaN(postalCode.value) || !(postalCode.value.length == 5)) {
             document.getElementById("adminAddUserCardMsg").innerHTML = "Enter a valid postal code!";
-        } else if (!(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value))) {
-            document.getElementById("adminAddUserCardMsg").innerHTML = "Enter a valid email!";
         } else if (password.value !== confirmPassword.value) {
             document.getElementById("adminAddUserCardMsg").innerHTML = "Password does not match!";
         } else {
             document.getElementById("adminAddUserCardMsg").innerHTML = "Adding user...";
         }
-        
+
     });
 
 });

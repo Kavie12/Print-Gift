@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const signupForm = document.getElementById('signupForm');
 
     signupForm.addEventListener('submit', e => {
+        e.preventDefault();
+
         const fName = document.getElementById('signUpFName');
         const lName = document.getElementById('signUpLName');
         const tel = document.getElementById('signUpTel');
@@ -17,9 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const confirmPassword = document.getElementById('signUpConfirmPassword');
         const agreeTerms = document.getElementById('signUpAgreeTerms');
 
-        if (password.value !== confirmPassword.value) {
-            e.preventDefault();
-            document.getElementById('signUpCardMsg').innerHTML = 'Password does not match!';
+        if (fName.value == "" | lName.value == "" | tel.value == "" || dob.value == "" || address.value == "" || city.value == "" || postalCode.value == "" || password.value == "") {
+            document.getElementById("signUpCardMsg").innerHTML = "All fields must be filled!";
+        } else if (!(/^(?:7|0|(?:\+94))[0-9]{9,10}$/.test(tel.value))) {
+            document.getElementById("signUpCardMsg").innerHTML = "Enter a valid phone number!";
+        } else if (isNaN(postalCode.value) || !(postalCode.value.length == 5)) {
+            document.getElementById("signUpCardMsg").innerHTML = "Enter a valid postal code!";
+        } else if (password.value !== confirmPassword.value) {
+            document.getElementById("signUpCardMsg").innerHTML = "Password does not match!";
+        } else {
+            document.getElementById("signUpCardMsg").innerHTML = "Saving...";
         }
     });
 

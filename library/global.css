@@ -180,7 +180,7 @@
     background-color: black;
     height: 2px;
     width: 20px;
-    transition: all .45s ease;
+    transition: all .25s ease-in-out;
 }
 
 .nav-profile {

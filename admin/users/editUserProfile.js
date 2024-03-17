@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("adminEditUserCardMsg").innerHTML = "All fields must be filled!";
         } else if (!(/^(?:7|0|(?:\+94))[0-9]{9,10}$/.test(tel.value))) {
             document.getElementById("adminEditUserCardMsg").innerHTML = "Enter a valid phone number!";
-        } else if (isNaN(postalCode.value)) {
+        } else if (isNaN(postalCode.value) || !(postalCode.value.length == 5)) {
             document.getElementById("adminEditUserCardMsg").innerHTML = "Enter a valid postal code!";
         } else if (password.value !== confirmPassword.value) {
             document.getElementById("adminEditUserCardMsg").innerHTML = "Password does not match!";
