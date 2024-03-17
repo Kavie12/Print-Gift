@@ -22,10 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     faqDelete.forEach(faq => {
         faq.addEventListener("click", () => {
-            faqID = faq.closest(".faq-item").getAttribute("data-faq-id");
-            console.log(faqID);
-            faq.closest(".faq-item").remove();
-            FAQNumbering();
+            
+            const confirmDelete = confirm("Please confirm delete FAQ!");
+            if (confirmDelete == true) {
+                faqID = faq.closest(".faq-item").getAttribute("data-faq-id");
+                console.log(faqID);
+                faq.closest(".faq-item").remove();
+                FAQNumbering();
+            }
         });
     });
 });
