@@ -39,13 +39,18 @@ function inStockFilterOff() {
         }
     }
     
-    catFilter()
+    catFilter();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("productsinStockFilter").addEventListener("change", () => {
-        inStockFilterOn();
-        inStockFilterOff();
+    const inStockFilter = document.getElementById("productsinStockFilter");
+
+    inStockFilter.addEventListener("change", () => {
+        if (inStockFilter.checked) {
+            inStockFilterOn();
+        } else {
+            inStockFilterOff();
+        }
     })
 })
 
