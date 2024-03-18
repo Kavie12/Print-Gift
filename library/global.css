@@ -134,6 +134,7 @@
     display: flex;
     align-items: stretch;
     column-gap: 22px;
+    z-index: 1;
 }
 
 .nav-list a {
@@ -185,14 +186,51 @@
 
 .nav-profile {
     grid-area: nav-profile;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
 }
 
-.nav-profile a {
+.nav-profile i {
     font-size: 18px;
     text-decoration: none;
     color: black;
     display: flex;
     align-items: center;
+}
+
+.nav-profile-list {
+    position: absolute;
+    top: 180%;
+    left: -220%;
+    display: none;
+    flex-direction: column;
+    width: max-content;
+    background-color: white;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.nav-profile-list a,
+.nav-profile-list button {
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    font-family: Roboto;
+    padding: 12px 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.nav-profile-list a:hover,
+.nav-profile-list button:hover {
+    background-color: whitesmoke;
+}
+
+.nav-profile-list button {
+    border-top: solid 1px rgba(56, 56, 56, 0.2);
 }
 
 @media screen and (max-width: 1300px) {
