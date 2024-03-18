@@ -1,6 +1,4 @@
-/* Past Orders */
-
-.statics {
+.statistics {
     display: flex;
     flex-direction: column;
     row-gap: 28px;
@@ -8,35 +6,35 @@
     padding: 0 40px;
 }
 
-.statics h1 {
+.statistics h1 {
     font-family: Poppins;
     font-size: 24px;
     font-weight: 600;
 }
 
-.statics select {
+.statistics select {
     border: solid 1px black;
     background: none;
     padding: 4px 8px;
     align-self: end;
 }
 
-.statics select:focus {
+.statistics select:focus {
     outline: none;
 }
 
-.statics select option {
+.statistics select option {
     font-family: Poppins;
 }
 
-.statics-cards {
+.statistics-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     row-gap: 20px;
 }
 
-.statics-cards>div {
+.statistics-cards>div {
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -46,21 +44,21 @@
     box-shadow: 0 6px 16px -16px #888888;
 }
 
-.statics-cards>div h3 {
+.statistics-cards>div h3 {
     font-family: Poppins;
     font-weight: 600;
 }
 
-.statics-cards>div span {
+.statistics-cards>div span {
     font-family: Poppins;
 }
 
 @media screen and (max-width: 750px) {
-    .statics-cards {
+    .statistics-cards {
         grid-template-columns: auto;
     }
 
-    .statics {
+    .statistics {
         padding: 0 20px;
     }
 }

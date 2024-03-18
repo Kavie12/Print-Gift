@@ -38,6 +38,8 @@ function inStockFilterOff() {
             outOfStockProducts[i].style.display = "flex";
         }
     }
+    
+    catFilter()
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -53,7 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Product Categories Filter
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => catFilter());
+
+function catFilter() {
     const mugs = document.querySelectorAll(".product-item.mug");
     const pens = document.querySelectorAll(".product-item.pen");
     const tShirts = document.querySelectorAll(".product-item.t-shirt");
@@ -78,6 +82,15 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     categoriesSwitch.forEach((switchBtn, switchIndex) => {
+        // If a button is already checked
+        if (switchBtn.checked) {
+            products.forEach((itemType, itemTypeIndex) => {
+                itemType.forEach(item => {
+                    item.style.display = displayPattern[switchIndex][itemTypeIndex];
+                });
+            });
+        }
+        // If a button is checked later
         switchBtn.addEventListener("change", () => {
             if (switchBtn.checked) {
                 products.forEach((itemType, itemTypeIndex) => {
@@ -89,4 +102,4 @@ document.addEventListener("DOMContentLoaded", () => {
             inStockFilterOn();
         });
     });
-});
+}

@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const filter = document.getElementById("adminStaticDurationFilter");
+    const filter = document.getElementById("adminStatisticsDurationFilter");
 
-    const usersTitle = document.querySelector(".statics-cards .users h3");
-    const ordersTitle = document.querySelector(".statics-cards .orders h3");
-    const revenueTitle = document.querySelector(".statics-cards .revenue h3");
+    const usersTitle = document.querySelector(".statistics-cards .users h3");
+    const ordersTitle = document.querySelector(".statistics-cards .orders h3");
+    const revenueTitle = document.querySelector(".statistics-cards .revenue h3");
 
-    const usersValue = document.querySelector(".statics-cards .users span");
-    const ordersValue = document.querySelector(".statics-cards .orders span");
-    const revenueValue = document.querySelector(".statics-cards .revenue span");
+    const usersValue = document.querySelector(".statistics-cards .users span");
+    const ordersValue = document.querySelector(".statistics-cards .orders span");
+    const revenueValue = document.querySelector(".statistics-cards .revenue span");
     
 
     function changeValues() {
