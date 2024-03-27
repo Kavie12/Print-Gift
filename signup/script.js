@@ -19,17 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const confirmPassword = document.getElementById('signUpConfirmPassword');
         const agreeTerms = document.getElementById('signUpAgreeTerms');
 
-        if (fName.value == "" | lName.value == "" | tel.value == "" || dob.value == "" || address.value == "" || city.value == "" || postalCode.value == "" || password.value == "") {
-            document.getElementById("signUpCardMsg").innerHTML = "All fields must be filled!";
-        } else if (!(/^(?:7|0|(?:\+94))[0-9]{9,10}$/.test(tel.value))) {
-            document.getElementById("signUpCardMsg").innerHTML = "Enter a valid phone number!";
-        } else if (isNaN(postalCode.value) || !(postalCode.value.length == 5)) {
-            document.getElementById("signUpCardMsg").innerHTML = "Enter a valid postal code!";
-        } else if (password.value !== confirmPassword.value) {
+        if (!(password.value == confirmPassword.value)) {
             document.getElementById("signUpCardMsg").innerHTML = "Password does not match!";
         } else {
             document.getElementById("signUpCardMsg").innerHTML = "Saving...";
         }
+
+        // if (fName.value == "" | lName.value == "" | tel.value == "" || dob.value == "" || address.value == "" || city.value == "" || postalCode.value == "" || password.value == "") {
+        //     document.getElementById("signUpCardMsg").innerHTML = "All fields must be filled!";
+        // } else if (!(/^(?:7|0|(?:\+94))[0-9]{9,10}$/.test(tel.value))) {
+        //     document.getElementById("signUpCardMsg").innerHTML = "Enter a valid phone number!";
+        // } else if (isNaN(postalCode.value) || !(postalCode.value.length == 5)) {
+        //     document.getElementById("signUpCardMsg").innerHTML = "Enter a valid postal code!";
+        // } else if (password.value !== confirmPassword.value) {
+        //     document.getElementById("signUpCardMsg").innerHTML = "Password does not match!";
+        // } else {
+        //     document.getElementById("signUpCardMsg").innerHTML = "Saving...";
+        // }
     });
 
 });

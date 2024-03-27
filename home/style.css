@@ -310,17 +310,6 @@
     line-height: 24px;
 }
 
-.about-us-section .about-us-card .links {
-    grid-area: about-links;
-    font-family: Poppins;
-    font-size: 14px;
-    color: black;
-}
-
-.about-us-section .about-us-card .links a {
-    color: black;
-}
-
 @media screen and (max-width: 1225px) {
     .about-us-section {
         margin: 0 140px;
@@ -355,56 +344,109 @@
 
 /* Contact Us */
 
-.contact-us-section {
+.footer {
     width: 100%;
-    padding: 20px 310px;
-    margin-top: 180px;
     background-color: black;
 }
 
-.contact-us-section h2 {
-    font-family: Poppins;
-    font-size: 24px;
-    margin-bottom: 24px;
-    font-weight: 600;
-    color: white;
-}
-
-.contact-us-section .contact-tab {
+.footer .top {
     display: flex;
-    justify-content: start;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 32px 0;
 }
 
-.contact-us-section .contact-tab .contact-list {
+.footer .nav-links {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 70px;
+    row-gap: 20px;
+}
+
+.footer .nav-links a {
+    text-decoration: none;
+    color: rgb(222, 222, 222);
+    font-family: Poppins;
+    font-size: 14px;
+    transition: all .15s ease;
+}
+
+.footer .contact-tab {
     display: flex;
     flex-direction: column;
 }
 
-.contact-us-section .contact-tab .contact-list span {
+.footer .contact-tab span {
     font-family: Poppins;
-    font-size: 15px;
-    padding: 16px 0;
-    color: white;
+    font-size: 14px;
+    padding: 12px 0;
+    color: rgb(222, 222, 222);
 }
 
-.contact-us-section .contact-tab .contact-list span i {
+.footer .contact-tab span i {
+    font-size: 14px;
     margin-right: 8px;
     color: rgb(0, 136, 120);
     transition: all .15s ease-in-out;
 }
 
-@media screen and (max-width: 1300px) {
-    .contact-us-section {
-        padding: 20px 200px;
+.footer .bottom {
+    display: flex;
+    justify-content: end;
+    column-gap: 24px;
+    margin: 8px 20px;
+}
+
+.footer .bottom span {
+    color: rgb(222, 222, 222);
+    font-family: Poppins;
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.footer .bottom a {
+    text-decoration: none;
+    color: rgb(222, 222, 222);
+    font-family: Poppins;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 700px) {
+    .footer .top {
+        flex-direction: column;
+        row-gap: 60px;
     }
 }
 
-@media screen and (max-width: 1100px) {
-    .contact-us-section h2 {
+@media screen and (max-width: 550px) {
+    .footer .bottom {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .footer .bottom span {
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .footer .nav-links a {
+        font-size: 12px;
+    }
+
+    .footer .contact-tab span {
+        font-size: 12px;
+    }
+}
+
+/* @media screen and (max-width: 1100px) {
+    .footer h2 {
         text-align: center;
     }
 
-    .contact-us-section .contact-tab {
+    .footer .contact-tab {
         flex-direction: column;
         align-items: center;
         row-gap: 80px;
@@ -412,21 +454,18 @@
 }
 
 @media screen and (max-width: 670px) {
-    .contact-us-section {
-        padding: 20px;
-
-    }
-
-    .contact-us-section .contact-tab .contact-list span {
+    .footer .contact-tab .contact-list span {
         font-size: 14px;
     }
 }
 
 @media screen and (max-width: 320px) {
-    .contact-us-section .contact-tab .contact-list span {
+    .footer .contact-tab .contact-list span {
         font-size: 12px;
     }
-}
+} */
+
+
 
 
 

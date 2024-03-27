@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Login state Control
 
 document.addEventListener("DOMContentLoaded", () => {
-    let loginState = 1;
+    let loginState = 0;
 
     const loginBtn = document.querySelector(".navbar .login-btn");
     const signBtn = document.querySelector(".navbar .sign-btn");
