@@ -19,6 +19,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+// In Stock, Out of Stock Status
+
+document.addEventListener("DOMContentLoaded", () => {
+    const products = document.querySelectorAll(".product-item");
+    const productsStatus = document.querySelectorAll(".product-item .productsStatus");
+    products.forEach((item, index) => {
+        if (item.classList.contains("out-of-stock")) {
+            productsStatus[index].innerHTML = 
+            '<i class="fa-solid fa-circle"></i><span>Out of Stock</span>';
+        } else {
+            productsStatus[index].innerHTML = 
+            '<i class="fa-solid fa-check"></i><span>In Stock</span>';
+        }
+    });
+});
+
+
+
+
+
 // Products In Stock Filter
 
 function inStockFilterOn() {

@@ -87,7 +87,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 40px;
-    padding: 240px 0;
+    padding: 180px 0;
 }
 
 .home-products h2 {
@@ -96,8 +96,8 @@
 }
 
 .home-products .product-list {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 40px;
     background-color: black;
     padding: 28px 80px;
@@ -129,16 +129,28 @@
     background-color: rgb(119, 88, 99);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1180px) {
     .home-products .product-list {
-        flex-direction: column;
+        grid-template-columns: repeat(3, 1fr);
         row-gap: 24px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .home-products .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .home-products .product-list {
+        grid-template-columns: auto;
     }
 }
 
 @media screen and (max-width: 450px) {
     .home-products .product-list {
-        padding: 28px 20px;
+        padding: 28px 26px;
     }
 
     .home-products {
@@ -163,7 +175,6 @@
 
 .about-us-section {
     margin: 0 262px;
-    margin-top: 100px;
 }
 
 .about-us-section h2 {
@@ -272,7 +283,7 @@
 .about-us-section .about-us-card .faq .faq-list {
     display: flex;
     flex-direction: column;
-    row-gap: 28px;
+    row-gap: 36px;
 }
 
 .about-us-section .about-us-card .faq .faq-list>div {
@@ -345,6 +356,7 @@
 /* Contact Us */
 
 .footer {
+    margin-top: 60px;
     width: 100%;
     background-color: black;
 }
@@ -440,30 +452,6 @@
         font-size: 12px;
     }
 }
-
-/* @media screen and (max-width: 1100px) {
-    .footer h2 {
-        text-align: center;
-    }
-
-    .footer .contact-tab {
-        flex-direction: column;
-        align-items: center;
-        row-gap: 80px;
-    }
-}
-
-@media screen and (max-width: 670px) {
-    .footer .contact-tab .contact-list span {
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .footer .contact-tab .contact-list span {
-        font-size: 12px;
-    }
-} */
 
 
 
