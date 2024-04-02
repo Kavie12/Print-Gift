@@ -313,6 +313,7 @@
     font-family: Poppins;
     font-size: 16px;
     font-weight: 500;
+    width: 100%;
 }
 
 .about-us-section .about-us-card .faq .faq-list>div p {
@@ -450,6 +451,15 @@
 
     .footer .contact-tab span {
         font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .footer .contact-tab span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 6px;
     }
 }
 
