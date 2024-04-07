@@ -13,41 +13,9 @@
     <div class="container">
 
         <!-- Navbar -->
-        <div class="navbar">
-            <div class="nav-logo">
-                <a href="../home/">
-                    Print.
-                    <span>GIFT</span>
-                </a>
-            </div>
-            <div class="nav-search">
-                <div class="search">
-                    <input type="search" placeholder="Search products">
-                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </div>
-            </div>
-            <div class="nav-cart">
-                <a href="../cart/"><i class="fa-solid fa-cart-shopping"><span></span></i></a>
-            </div>
-            <div class="nav-list" id="navList">
-                <a href="../home/">Home</a>
-                <a href="../products/">Products</a>
-                <a href="../login/" class="login-btn">Login</a>
-                <a href="../signup/" class="sign-btn">Sign Up</a>
-            </div>
-            <div class="nav-profile">
-                <i class="fa-regular fa-circle-user"></i>
-                <div class="nav-profile-list">
-                    <a href="../account/">My Profile</a>
-                    <button>Logout</button>
-                </div>
-            </div>
-            <div class="nav-list-control" id="navListControl">
-                <div id="navListControl1"></div>
-                <div id="navListControl2"></div>
-                <div id="navListControl3"></div>
-            </div>
-        </div>
+        <?php
+            include '../library/Navbar.php';
+        ?>
 
 
         <!-- Home Content -->
@@ -68,19 +36,19 @@
             <div class="home-products">
                 <h2>Best Selling Products</h2>
                 <div class="product-list">
-                    <a href="../products/index.html?filter=mugs" class="product-item">
+                    <a href="../products/index.php?filter=mugs" class="product-item">
                         <img src="../images/about-img-1.jpg" alt="img">
                         <span>Mugs</span>
                     </a>
-                    <a href="../products/index.html?filter=tshirts" class="product-item">
+                    <a href="../products/index.php?filter=tshirts" class="product-item">
                         <img src="../images/about-img-2.jpg" alt="img">
                         <span>T-Shirts</span>
                     </a>
-                    <a href="../products/index.html?filter=pens" class="product-item">
+                    <a href="../products/index.php?filter=pens" class="product-item">
                         <img src="../images/product-img-1.jpg" alt="img">
                         <span>Pens</span>
                     </a>
-                    <a href="../products/index.html?filter=bands" class="product-item">
+                    <a href="../products/index.php?filter=bands" class="product-item">
                         <img src="../images/product-img-2.jpg" alt="img">
                         <span>Wrist Bands</span>
                     </a>
@@ -169,8 +137,8 @@
 
                 <div class="bottom">
                     <span>© 2024 Print Gift, All Rights Reserved</span>
-                    <a href="./privacy-policy.html">Privacy Policy</a>
-                    <a href="./terms-conditions.html">Terms & Conditions</a>
+                    <a href="./privacy-policy.php">Privacy Policy</a>
+                    <a href="./terms-conditions.php">Terms & Conditions</a>
                 </div>
 
             </div>
