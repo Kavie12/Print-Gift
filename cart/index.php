@@ -140,6 +140,10 @@
         </div>
 
 
+        <!-- Footer -->
+        <?php
+            include '../library/Footer.php';
+        ?>
 
 
     </div>

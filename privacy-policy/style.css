@@ -1,0 +1,42 @@
+/* Policy Content */
+
+.policy-content {
+    padding-top: 135px;
+    padding-bottom: 320px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 140px;
+}
+
+.policy-content .policy-section {
+    margin: 0 262px;
+}
+
+.policy-content .policy-section h2 {
+    font-family: Poppins;
+    font-size: 24px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.policy-content .policy-section .policy-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.policy-content .policy-section .policy-card {
+    font-family: 'Source Sans 3';
+}
+
+@media screen and (max-width: 700px) {
+    .policy-content {
+        padding-bottom: 480px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .policy-content {
+        padding-bottom: 580px;
+    }
+}

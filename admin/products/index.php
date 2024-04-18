@@ -38,10 +38,11 @@
                             <p class="product-id">Product ID: 1234</p>
                             <img src="../../images/home_mug_pic.png" alt="image">
                             <p class="item-name">Custom Printed White Mug</p>
+                            <p class="item-category">Category - Mugs</p>
                             <p class="item-desc">Print your design on glassy white mug built with better quality</p>
                             <p class="price">Rs. 1100</p>
                             <div class="buttons">
-                                <a href="./editproducts.php" class="edit">Edit</a>
+                                <a href="./editproduct.php" class="edit">Edit</a>
                                 <span class="delete">Delete</span>
                             </div>
                         </div>
@@ -71,10 +72,11 @@
                             <p class="product-id">Product ID: 5678</p>
                             <img src="../../images/about-img-1.jpg" alt="image">
                             <p class="item-name">Custom Printed Black Mug</p>
+                            <p class="item-category">Category - Mugs</p>
                             <p class="item-desc">Print your design on glassy black mug built with better quality</p>
                             <p class="price">Rs. 1100</p>
                             <div class="buttons">
-                                <a href="./editproducts.php" class="edit">Edit</a>
+                                <a href="./editproduct.php" class="edit">Edit</a>
                                 <span class="delete">Delete</span>
                             </div>
                         </div>
@@ -99,15 +101,16 @@
                         </form>
                     </div>
 
-                    <div class="item" data-product-id="9999">
+                    <div class="item" data-product-id="4321">
                         <div class="item-info">
                             <p class="product-id">Product ID: 9999</p>
-                            <img src="../../images/about-img-1.jpg" alt="image">
-                            <p class="item-name">Custom Printed Black Mug</p>
+                            <img src="../../images/about-img-2.jpg" alt="image">
+                            <p class="item-name">Custom Printed T shirt</p>
+                            <p class="item-category">Category - T-Shirts</p>
                             <p class="item-desc">Print your design on glassy black mug built with better quality</p>
                             <p class="price">Rs. 1100</p>
                             <div class="buttons">
-                                <a href="./editproducts.php" class="edit">Edit</a>
+                                <a href="./editproduct.php" class="edit">Edit</a>
                                 <span class="delete">Delete</span>
                             </div>
                         </div>

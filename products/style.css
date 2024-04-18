@@ -1,7 +1,8 @@
 /* Products Content */
 
 .products-content {
-    padding-top: 60px;
+    padding-top: 130px;
+    padding-bottom: 320px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -215,10 +216,6 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .products-content {
-        margin-top: 0;
-    }
-
     .products-content .products-tab .filters {
         min-width: auto;
         position: fixed;
@@ -269,9 +266,21 @@
     }
 }
 
+@media screen and (max-width: 700px) {
+    .products-content {
+        padding-bottom: 480px;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .products-content .products-tab {
         padding: 28px 40px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .products-content {
+        padding-bottom: 580px;
     }
 }
 
@@ -284,13 +293,12 @@
 /* Item Content */
 
 .item-content {
-    padding: 0 20px;
+    padding: 130px 20px 320px 20px;
     display: flex;
     justify-content: center;
 }
 
 .item-content .item-tab {
-    margin: 60px 0;
     background-color: white;
     padding: 40px 48px;
     display: flex;
@@ -662,6 +670,12 @@
     }
 }
 
+@media screen and (max-width: 700px) {
+    .item-content {
+        padding-bottom: 480px;
+    }
+}
+
 @media screen and (max-width: 510px) {
     .item-content .item-tab .item-details>form .options .options-list {
         grid-template-columns: repeat(5, auto);
@@ -702,5 +716,11 @@
 
     .item-content .item-tab .item-details>form .options .options-list {
         grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .item-content {
+        padding-bottom: 580px;
     }
 }

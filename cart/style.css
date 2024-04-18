@@ -1,5 +1,6 @@
 .cart-content {
-    padding: 40px 0;
+    padding-top: 110px;
+    padding-bottom: 320px;
     width: 100%;
 }
 
@@ -451,6 +452,12 @@
     }
 }
 
+@media screen and (max-width: 700px) {
+    .cart-content {
+        padding-bottom: 480px;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .cart-content .cart-tab .cart-list {
         padding: 48px 28px;
@@ -487,5 +494,11 @@
 
     .cart-content .cart-tab .cart-list .cart-item .cart-item-info .qty {
         justify-self: start;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .cart-content {
+        padding-bottom: 580px;
     }
 }

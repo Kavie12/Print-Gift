@@ -1,5 +1,6 @@
 .signup-content {
-    margin-top: 42px;
+    padding-top: 112px;
+    padding-bottom: 320px;
     display: flex;
     justify-content: center;
 }
@@ -102,6 +103,12 @@
     color: black;
 }
 
+@media screen and (max-width: 700px) {
+    .signup-content {
+        padding-bottom: 480px;
+    }
+}
+
 @media screen and (max-width: 750px) {
     .signup-card {
         grid-template-columns: auto;
@@ -118,5 +125,11 @@
     .signup-card button,
     .signup-card p {
         grid-column: inherit;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .signup-content {
+        padding-bottom: 580px;
     }
 }

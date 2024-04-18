@@ -1,3 +1,6 @@
+<?php
+    include '../library/sql/GuestNoAccess.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +27,7 @@
             <div class="account-section">
                 <div class="links">
                     <a href="../account/" class="active">My Profile</a>
-                    <a href="./recentorders.html">Recent Orders</a>
+                    <a href="./recentorders.php">Recent Orders</a>
                 </div>
                 <div class="details">
                     <a href="../account/" class="back-btn">
@@ -80,6 +83,10 @@
         </div>
 
 
+        <!-- Footer -->
+        <?php
+            include '../library/Footer.php';
+        ?>
 
 
     </div>

@@ -31,21 +31,20 @@
 }
 
 .products .add-product-btn {
-    align-self: end;
+    align-self: flex-end;
 }
 
 .products .add-product-btn a {
+    display: inline-block;
     font-family: Poppins;
     color: white;
     font-size: 14px;
     text-decoration: none;
-    border: none;
-    background-color: none;
-    cursor: pointer;
     padding: 4px 8px;
     border-radius: 4px;
     transition: all .15s ease-in-out;
     background-color: rgb(0, 156, 138);
+    text-align: center;
 }
 
 .products .add-product-btn a:hover {
@@ -97,6 +96,12 @@
 .products .products-list .item .item-info .item-name {
     font-family: Poppins;
     font-size: 16px;
+    font-weight: 500;
+}
+
+.products .products-list .item .item-info .item-category {
+    font-family: Poppins;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -304,6 +309,19 @@
     resize: verticalx;
 }
 
+.add-product .add-product-section .add-product-card>div select {
+    font-family: Poppins;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    width: 100%;
+}
+
+.add-product .add-product-section .add-product-card>div select:focus {
+    outline-color: rgb(90, 90, 90);
+}
+
 .add-product .add-product-section .add-product-card button {
     padding: 6px 12px;
     font-family: Poppins;
@@ -426,7 +444,20 @@
     border-radius: 4px;
     border: solid 1px rgb(34, 34, 34);
     width: 100%;
-    resize: verticalx;
+    resize: vertical;
+}
+
+.edit-product .edit-product-section .edit-product-card>div select {
+    font-family: Poppins;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: solid 1px rgb(34, 34, 34);
+    width: 100%;
+}
+
+.edit-product .edit-product-section .edit-product-card>div select:focus {
+    outline-color: rgb(90, 90, 90);
 }
 
 .edit-product .edit-product-section .edit-product-card button {

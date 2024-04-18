@@ -18,26 +18,31 @@
         ?>
 
 
-        <!-- Policy Content -->
-        <div class="policy-content">
+        <!-- Terms & Conditions Content -->
+        <div class="terms-content">
 
-            <div class="policy-section">
-                <h2>Privacy Policy</h2>
-                <div class="policy-card">
-                    <p>
-                        We understand the importance of your privacy and we are committed to protecting it. We collect
-                        your name, address, email, phone number and all the order details and we use them to provide
-                        service to the customers. As well as, all the password that has been entered through the system
-                        are encrypted.
-                    </p>
-                </div>
+            <div class="terms-section">
+                <h2>Terms & Conditions</h2>
+                <ol class="terms-card">
+                    <li>
+                        We do not guarantee the product after the service.
+                    </li>
+                    <li>
+                        We do not allow returning.
+                    </li>
+                    <li>
+                        We do not refund in any case.
+                    </li>
+                </ol>
             </div>
-
-
-
 
         </div>
 
+
+        <!-- Footer -->
+        <?php
+            include '../library/Footer.php';
+        ?>
 
 
 

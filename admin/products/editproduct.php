@@ -36,6 +36,15 @@
                                 value="White Mug">
                         </div>
                         <div>
+                            <label for="editProductCategory">Product Category</label>
+                            <select name="category" id="editProductCategory">
+                                <option value="mug" selected>Mug</option>
+                                <option value="pen">Pen</option>
+                                <option value="t-shirt">T-Shirt</option>
+                                <option value="wrist-band">Wrist Band</option>
+                            </select>
+                        </div>
+                        <div>
                             <label for="editProductDesc">Product Description</label>
                             <textarea name="desc" id="editProductDesc"
                                 placeholder="edit product description">Print your design on glassy white mug built with better quality</textarea>
@@ -62,7 +71,7 @@
 
     </div>
 
-    <script src="./editProfile.js"></script>
+    <script src="./editProduct.js"></script>
     <script src="../../library/admin.js"></script>
     <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
 </body>

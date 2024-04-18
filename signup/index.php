@@ -23,44 +23,42 @@
 
             <div class="signup-section">
                 <h1>Sign Up</h1>
-                <form class="signup-card" id="signupForm" action="" method="post">
+                <form class="signup-card" id="signupForm" action="./sql/register.php" method="post">
                     <div>
                         <label for="signUpFName">First Name</label>
-                        <input type="text" name="fname" id="signUpFName" placeholder="Enter your first name" required>
+                        <input type="text" name="fname" id="signUpFName" placeholder="Enter your first name">
                     </div>
                     <div>
                         <label for="signUpLName">Last Name</label>
-                        <input type="text" name="lname" id="signUpLName" placeholder="Enter your last name" required>
+                        <input type="text" name="lname" id="signUpLName" placeholder="Enter your last name">
                     </div>
                     <div>
                         <label for="signUpTel">Phone Number</label>
-                        <input type="tel" name="tel" id="signUpTel" placeholder="Enter your phone number" required>
+                        <input type="tel" name="tel" id="signUpTel" placeholder="Enter your phone number">
                     </div>
                     <div>
                         <label for="signUpDOB">Date of Birth</label>
-                        <input type="date" name="dob" id="signUpDOB" required>
+                        <input type="date" name="dob" id="signUpDOB">
                     </div>
                     <div class="address-field">
                         <label for="signUpAddress">Address</label>
-                        <input type="text" name="address" id="signUpAddress" placeholder="Enter your address" required>
+                        <input type="text" name="address" id="signUpAddress" placeholder="Enter your address">
                     </div>
                     <div>
                         <label for="signUpCity">City</label>
-                        <input type="text" name="city" id="signUpCity" placeholder="Enter your city" required>
+                        <input type="text" name="city" id="signUpCity" placeholder="Enter your city">
                     </div>
                     <div>
                         <label for="signUpPostalCode">Postal Code</label>
-                        <input type="text" name="postalcode" id="signUpPostalCode" placeholder="Enter your postal code"
-                            required>
+                        <input type="text" name="postalcode" id="signUpPostalCode" placeholder="Enter your postal code">
                     </div>
                     <div class="email-field">
                         <label for="signUpEmail">Email</label>
-                        <input type="email" name="email" id="signUpEmail" placeholder="Enter yout email" required>
+                        <input type="email" name="email" id="signUpEmail" placeholder="Enter yout email">
                     </div>
                     <div>
                         <label for="signUpPassword">Password</label>
-                        <input type="password" name="password" id="signUpPassword" placeholder="Enter your password"
-                            required>
+                        <input type="password" name="password" id="signUpPassword" placeholder="Enter your password">
                     </div>
                     <div>
                         <label for="signUpConfirmPassword">Confirm Password</label>
@@ -68,10 +66,10 @@
                             placeholder="Confirm your password">
                     </div>
                     <div class="agree-terms-field">
-                        <input type="checkbox" name="agree-terms" id="signUpAgreeTerms" required>
+                        <input type="checkbox" name="agree-terms" id="signUpAgreeTerms">
                         <label for="signUpAgreeTerms">I hereby agree to terms and conditions</label>
                     </div>
-                    <button type="submit" id="signUpSubmit">Sign Up</button>
+                    <button type="submit" id="signUpSubmit" name="submit">Sign Up</button>
                     <p id="signUpCardMsg">If you have already registered, <a href="../login/">click here</a> to
                         login!</p>
                 </form>
@@ -80,6 +78,10 @@
         </div>
 
 
+        <!-- Footer -->
+        <?php
+            include '../library/Footer.php';
+        ?>
 
 
     </div>

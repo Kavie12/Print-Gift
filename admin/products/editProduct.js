@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
 
         const title = document.getElementById("editProductTitle");
+        const category = document.getElementById("editProductCategory");
         const desc = document.getElementById("editProductDesc");
         const price = document.getElementById("editProductPrice");
         const image = document.getElementById("editProductImage");
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         console.log(title.value);
+        console.log(category.value);
         console.log(desc.value);
         console.log(price.value);
         // console.log(image.files[0].name);

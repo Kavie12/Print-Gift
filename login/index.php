@@ -23,17 +23,16 @@
 
             <div class="login-section">
                 <h1>Login</h1>
-                <form class="login-card" id="loginForm" action="" method="post">
+                <form class="login-card" id="loginForm" action="./sql/login.php" method="post">
                     <div>
                         <label for="loginEmail">Email</label>
-                        <input type="email" name="email" id="loginEmail" placeholder="Enter yout email" required>
+                        <input type="email" name="email" id="loginEmail" placeholder="Enter yout email">
                     </div>
                     <div>
                         <label for="loginPassword">Password</label>
-                        <input type="password" name="password" id="loginPassword" placeholder="Enter your password"
-                            required>
+                        <input type="password" name="password" id="loginPassword" placeholder="Enter your password">
                     </div>
-                    <button type="submit" id="loginSubmit">Login</button>
+                    <button type="submit" id="loginSubmit" name="loginbtn">Login</button>
                     <p id="loginCardMsg">If you do not have an account yet, <a href="../signup/">click here</a> to
                         register!</p>
                 </form>
@@ -42,6 +41,10 @@
         </div>
 
 
+        <!-- Footer -->
+        <?php
+            include '../library/Footer.php';
+        ?>
 
 
     </div>

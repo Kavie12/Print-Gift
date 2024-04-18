@@ -1,5 +1,6 @@
 .login-content {
-    margin-top: 88px;
+    padding-top: 158px;
+    padding-bottom: 320px;
     display: flex;
     justify-content: center;
 }
@@ -81,8 +82,20 @@
     color: black;
 }
 
+@media screen and (max-width: 700px) {
+    .login-content {
+        padding-bottom: 480px;
+    }
+}
+
 @media screen and (max-width: 420px) {
     .login-card {
         min-width: auto;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .login-content {
+        padding-bottom: 580px;
     }
 }

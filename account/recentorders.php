@@ -1,3 +1,6 @@
+<?php
+    include '../library/sql/GuestNoAccess.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +90,11 @@
 
         </div>
 
-
+        
+        <!-- Footer -->
+        <?php
+            include '../library/Footer.php';
+        ?>
 
 
     </div>

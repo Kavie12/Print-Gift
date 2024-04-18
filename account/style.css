@@ -1,7 +1,8 @@
 /* Template Card */
 
 .account-content {
-    padding: 70px 0;
+    padding-top: 140px;
+    padding-bottom: 320px;
     display: flex;
     justify-content: center;
 }
@@ -59,6 +60,19 @@
     font-weight: 600;
     font-size: 26px;
 }
+
+@media screen and (max-width: 700px) {
+    .account-content {
+        padding-bottom: 480px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .account-content {
+        padding-bottom: 580px;
+    }
+}
+
 
 
 
@@ -156,6 +170,12 @@
     .account-content .account-section>.details .profile-details .address-field {
         grid-column: auto;
     }
+
+    .account-content .account-section>.details .buttons {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 12px;
+    }
 }
 
 @media screen and (max-width: 580px) {
@@ -172,14 +192,6 @@
     .account-content .account-section .links a {
         width: 100%;
         text-align: center;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .account-content .account-section>.details .buttons {
-        flex-direction: column;
-        align-items: center;
-        row-gap: 12px;
     }
 }
 

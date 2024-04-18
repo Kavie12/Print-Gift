@@ -35,6 +35,16 @@
                             <input type="text" name="title" id="addProductTitle" placeholder="Enter product title">
                         </div>
                         <div>
+                            <label for="addProductCategory">Product Category</label>
+                            <select name="category" id="addProductCategory">
+                                <option value="none">Select category</option>
+                                <option value="mug">Mug</option>
+                                <option value="pen">Pen</option>
+                                <option value="t-shirt">T-Shirt</option>
+                                <option value="wrist-band">Wrist Band</option>
+                            </select>
+                        </div>
+                        <div>
                             <label for="addProductDesc">Product Description</label>
                             <textarea name="desc" id="addProductDesc" placeholder="Add product description"></textarea>
                         </div>
@@ -60,7 +70,7 @@
 
     </div>
 
-    <script src="./addProducts.js"></script>
+    <script src="./addProduct.js"></script>
     <script src="../../library/admin.js"></script>
     <script src="https://kit.fontawesome.com/ca52502f1e.js" crossorigin="anonymous"></script>
 </body>
