@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const editProfileForm = document.getElementById('editProfileForm');
 
     editProfileForm.addEventListener('submit', e => {
-        e.preventDefault();
 
         const fName = document.getElementById('editProfileFName');
         const lName = document.getElementById('editProfileLName');
@@ -15,17 +14,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const password = document.getElementById('editProfilePassword');
         const confirmPassword = document.getElementById('editProfileConfirmPassword');
 
-        if (fName.value == "" | lName.value == "" | tel.value == "" || dob.value == "" || address.value == "" || city.value == "" || postalCode.value == "" || password.value == "") {
+        if (fName.value == "" || lName.value == "" || tel.value == "" || dob.value == "" || address.value == "" || city.value == "" || postalCode.value == "") {
             document.getElementById("editProfileCardMsg").innerHTML = "All fields must be filled!";
-        } else if (!(/^(?:7|0|(?:\+94))[0-9]{9,10}$/.test(tel.value))) {
-            document.getElementById("editProfileCardMsg").innerHTML = "Enter a valid phone number!";
-        } else if (isNaN(postalCode.value) || !(postalCode.value.length == 5)) {
+            e.preventDefault();
+        } else if (postalCode.value.length !== 5) {
             document.getElementById("editProfileCardMsg").innerHTML = "Enter a valid postal code!";
-        } else if (password.value !== confirmPassword.value) {
+            e.preventDefault();
+        } else if (password.value !== "" && (password.value !== confirmPassword.value)) {
             document.getElementById("editProfileCardMsg").innerHTML = "Password does not match!";
         } else {
             document.getElementById("editProfileCardMsg").innerHTML = "Saving...";
         }
     });
+
+
+    // Display data
+    function displayData() {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+
+                let data = JSON.parse(this.responseText);
+
+                document.getElementById("editProfileFName").value = data[0].fname;
+                document.getElementById("editProfileLName").value = data[0].lname;
+                document.getElementById("editProfileTel").value = data[0].phone;
+                document.getElementById("editProfileDOB").value = data[0].dob;
+                document.getElementById("editProfileAddress").value = data[0].address;
+                document.getElementById("editProfileCity").value = data[0].city;
+                document.getElementById("editProfilePostalCode").value = data[0].postalcode;
+
+            }
+        }
+        xhttp.open('GET', './sql/userdetails.php', true);
+        xhttp.send();
+    }
+
+    displayData();
+
 
 });

@@ -9,3 +9,5 @@ if (isset($_POST['logoutbtn'])) {
     header("Location: ../../login");
 
 }
+
+?>

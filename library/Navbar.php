@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $login_state = false;
     if (isset($_SESSION['user'])) {
         $login_state = true;

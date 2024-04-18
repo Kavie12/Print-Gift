@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include '../library/sql/GuestNoAccess.php';
 ?>
 <!DOCTYPE html>
@@ -29,7 +30,7 @@
                     <a href="../account/" class="active">My Profile</a>
                     <a href="./recentorders.php">Recent Orders</a>
                 </div>
-                <div class="details" data-user-id="1234">
+                <div class="details">
                     <h1>My Profile</h1>
                     <div class="profile-details">
                         <div>
@@ -63,7 +64,7 @@
                     </div>
                     <div class="buttons">
                         <a href="./editprofile.php" class="edit">Edit Profile</a>
-                        <a href="#" class="delete">Delete Account</a>
+                        <a href="./sql/deleteuser.php" class="delete">Delete Account</a>
                     </div>
                 </div>
             </div>

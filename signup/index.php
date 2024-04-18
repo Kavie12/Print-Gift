@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include '../library/sql/UserNoAccess.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 

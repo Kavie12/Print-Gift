@@ -7,25 +7,42 @@ if (isset($_POST['loginbtn'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    $sql = "SELECT id, email, password FROM `users` WHERE email='$email'";
+    $sql1 = "SELECT id, email, password FROM `admin` WHERE email='$email' AND status='active'";
 
-    $result = mysqli_query($conn, $sql);
+    $admin_result = mysqli_query($conn, $sql1);
 
-    if (mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
+    if (mysqli_num_rows($admin_result) > 0) {
+        while ($row = mysqli_fetch_assoc($admin_result)) {
             if (password_verify($password, $row['password'])) {
                 session_start();
-                $_SESSION['user'] = $row['id'];
-                header("Location: ../../products");
+                $_SESSION['admin'] = $row['id'];
+                header("Location: ../../admin");
             } else {
                 header("Location: ../index.php?error=1");
             }
         }
     } else {
-        header("Location: ../index.php?error=1");
+        $sql2 = "SELECT id, email, password FROM `users` WHERE email='$email' AND status='active'";
+
+        $user_result = mysqli_query($conn, $sql2);
+    
+        if (mysqli_num_rows($user_result) > 0) {
+            while ($row = mysqli_fetch_assoc($user_result)) {
+                if (password_verify($password, $row['password'])) {
+                    session_start();
+                    $_SESSION['user'] = $row['id'];
+                    header("Location: ../../products");
+                } else {
+                    header("Location: ../index.php?error=1");
+                }
+            }
+        } else {
+            header("Location: ../index.php?error=1");
+        }
     }
 
 
 
-
 }
+
+?>

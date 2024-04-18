@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include '../library/sql/GuestNoAccess.php';
 ?>
 <!DOCTYPE html>

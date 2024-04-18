@@ -1,15 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const deleteBtn = document.querySelector(".account-section .details .buttons .delete");
-    deleteBtn.addEventListener("click", () => {
-        const userID = deleteBtn.closest(".details").getAttribute("data-user-id");
-
-        console.log("Delete - " + userID);
+    deleteBtn.addEventListener("click", e => {
+        const confirmDelete = confirm("Please confirm delete account!");
+        if (confirmDelete == true) {
+            del.closest(".user-info").remove();
+            console.log(userId + " - delete");
+        } else {
+            e.preventDefault();
+        }
     });
 
 
-    // Form data
-    function userData() {
+
+
+    // Display data
+    function displayData() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -30,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         xhttp.send();
     }
 
-    userData();
+    displayData();
 
 });
 

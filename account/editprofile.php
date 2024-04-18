@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include '../library/sql/GuestNoAccess.php';
 ?>
 <!DOCTYPE html>
@@ -34,35 +35,34 @@
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                     <h1>Edit Profile</h1>
-                    <form class="edit-profile-details" id="editProfileForm">
+                    <form class="edit-profile-details" id="editProfileForm" action="./sql/edituserdetails.php" method="POST">
                         <div>
                             <label for="editProfileFName">First Name</label>
-                            <input type="text" name="fname" id="editProfileFName" value="Peter">
+                            <input type="text" name="fname" id="editProfileFName">
                         </div>
                         <div>
                             <label for="editProfileLName">Last Name</label>
-                            <input type="text" name="lname" id="editProfileLName" value="Parker">
+                            <input type="text" name="lname" id="editProfileLName">
                         </div>
                         <div>
                             <label for="editProfileTel">Phone Number</label>
-                            <input type="tel" name="tel" id="editProfileTel" value="0703467918">
+                            <input type="tel" name="tel" id="editProfileTel">
                         </div>
                         <div>
                             <label for="editProfileDOB">Date of Birth</label>
-                            <input type="date" name="dob" id="editProfileDOB" value="2005-04-12">
+                            <input type="date" name="dob" id="editProfileDOB">
                         </div>
                         <div class="address-field">
                             <label for="editProfileAddress">Address</label>
-                            <input type="text" name="address" id="editProfileAddress"
-                                value="Peter Parker, 22/A/12, Alwis Road, Kaduwela">
+                            <input type="text" name="address" id="editProfileAddress">
                         </div>
                         <div>
                             <label for="editProfileCity">City</label>
-                            <input type="text" name="city" id="editProfileCity" value="Kaduwela">
+                            <input type="text" name="city" id="editProfileCity">
                         </div>
                         <div>
                             <label for="editProfilePostalCode">Postal Code</label>
-                            <input type="text" name="postalcode" id="editProfilePostalCode" value="10640">
+                            <input type="text" name="postalcode" id="editProfilePostalCode">
                         </div>
                         <div>
                             <label for="editProfilePassword">New Password (If Required)</label>
