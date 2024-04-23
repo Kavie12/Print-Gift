@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include '../../library/sql/AdminAccess.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +13,7 @@
     <link rel="stylesheet" href="../../library/admin.css">
 </head>
 
-<body>
+<body data-page='products'>
     <div class="container">
 
         <?php
@@ -29,7 +33,7 @@
                     <a href="../products/" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
-                    <form class="add-product-card" id="addProductForm">
+                    <form class="add-product-card" id="addProductForm" action="./sql/addproduct.php" method="POST" enctype="multipart/form-data">
                         <div>
                             <label for="addProductTitle">Product Title</label>
                             <input type="text" name="title" id="addProductTitle" placeholder="Enter product title">
@@ -57,7 +61,7 @@
                             <label for="addProductImage">Add Image</label>
                             <input type="file" accept="image/*" name="image" id="addProductImage">
                         </div>
-                        <button type="submit" id="addProductSubmit">Add</button>
+                        <button type="submit" id="addProductSubmit" name="submit">Add</button>
                         <p id="addProductCardMsg"></p>
                     </form>
                 </div>

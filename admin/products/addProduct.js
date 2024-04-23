@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("addProductForm");
 
     form.addEventListener("submit", e => {
-        e.preventDefault();
 
         const title = document.getElementById("addProductTitle");
         const category = document.getElementById("addProductCategory");
@@ -10,17 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const price = document.getElementById("addProductPrice");
         const image = document.getElementById("addProductImage");
 
-
-        if (title.value == "" || desc.value == "" || price.value == "" || category.value == "none") {
-            document.getElementById("addProductCardMsg").innerHTML = "Please complete relavant details!";
+        if (title.value == "" || desc.value == "" || price.value == "" || category.value == "none" || image.value == "") {
+            e.preventDefault();
+            document.getElementById("addProductCardMsg").innerHTML = "Please complete all the details!";
         } else {
             document.getElementById("addProductCardMsg").innerHTML = "Adding...";
-        };
+        }
 
-        console.log(title.value);
-        console.log(category.value);
-        console.log(desc.value);
-        console.log(price.value);
-        // console.log(image.files[0].name);
     });
+
 });

@@ -7,6 +7,6 @@
         <span>Administrator</span>
     </div>
     <div class="logout">
-        <span>Logout</span>
+        <a href="../../library/sql/adminlogout.php">Logout</a>
     </div>
 </div>

@@ -29,33 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Login state Control
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     let loginState = 0;
-
-//     const loginBtn = document.querySelector(".navbar .login-btn");
-//     const signBtn = document.querySelector(".navbar .sign-btn");
-//     const navProfile = document.querySelector(".navbar .nav-profile");
-//     const navCart = document.querySelector(".navbar .nav-cart");
-
-//     if (loginState) {
-//         loginBtn.style.display = "none";
-//         signBtn.style.display = "none";
-//         navProfile.style.display = "flex";
-//         navCart.style.display = "flex";
-//     } else {
-//         loginBtn.style.display = "flex";
-//         signBtn.style.display = "flex";
-//         navProfile.style.display = "none";
-//         navCart.style.display = "none";
-//     }
-// });
-
-
-
-
-
 // Account Dropdown
 
 document.addEventListener("DOMContentLoaded", () => {

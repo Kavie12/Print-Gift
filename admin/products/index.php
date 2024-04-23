@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    include '../../library/sql/AdminAccess.php';
+
+    include '../../library/sql/dbconn.php';
+    $sql = "SELECT id, img, title, category, description, price, status FROM items WHERE status != 'removed'";
+    $result = mysqli_query($conn, $sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +17,7 @@
     <link rel="stylesheet" href="../../library/admin.css">
 </head>
 
-<body>
+<body data-page='products'>
     <div class="container">
 
         <?php
@@ -33,107 +41,43 @@
                 </div>
                 <div class="products-list">
 
-                    <div class="item" data-product-id="1234">
+                    <?php
+                        if (mysqli_num_rows($result) > 0) {
+                            while($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <div class="item" data-product-id="<?php echo $row['id']; ?>">
                         <div class="item-info">
-                            <p class="product-id">Product ID: 1234</p>
-                            <img src="../../images/home_mug_pic.png" alt="image">
-                            <p class="item-name">Custom Printed White Mug</p>
-                            <p class="item-category">Category - Mugs</p>
-                            <p class="item-desc">Print your design on glassy white mug built with better quality</p>
-                            <p class="price">Rs. 1100</p>
+                            <p class="product-id">Product ID: <?php echo $row['id']; ?></p>
+                            <img src="../../images/uploads/items/<?php echo $row['img']; ?>" alt="image">
+                            <p class="item-name"><?php echo $row['title']; ?></p>
+                            <p class="item-category">Category - <?php echo $row['category']; ?></p>
+                            <p class="item-desc"><?php echo $row['description']; ?></p>
+                            <p class="price">Rs. <?php echo $row['price']; ?></p>
                             <div class="buttons">
-                                <a href="./editproduct.php" class="edit">Edit</a>
+                                <a href="./editproduct.php?id=<?php echo $row['id']; ?>" class="edit">Edit</a>
                                 <span class="delete">Delete</span>
                             </div>
                         </div>
                         <form class="status">
-                            <!-- Fix same ID and name issues -->
                             <div>
-                                <input type="radio" name="product-status-1234" id="productStatusInStock1234"
-                                    value="In Stock" checked>
-                                <label for="productStatusInStock1234">In Stock</label>
+                                <input type="radio" name="product-status-<?php echo $row['id']; ?>" id="productStatusInStock<?php echo $row['id']; ?>"
+                                    value="instock" <?php echo ($row['status'] == 'instock') ? 'checked' : null; ?>>
+                                <label for="productStatusInStock<?php echo $row['id']; ?>">In Stock</label>
                             </div>
                             <div>
-                                <input type="radio" name="product-status-1234" id="productStatusOutOfStock1234"
-                                    value="Out of Stock">
-                                <label for="productStatusOutOfStock1234">Out of Stock</label>
+                                <input type="radio" name="product-status-<?php echo $row['id']; ?>" id="productStatusOutOfStock<?php echo $row['id']; ?>"
+                                    value="outofstock" <?php echo ($row['status'] == 'outofstock') ? 'checked' : null; ?>>
+                                <label for="productStatusOutOfStock<?php echo $row['id']; ?>">Out of Stock</label>
                             </div>
                             <div>
-                                <input type="radio" name="product-status-1234" id="productStatusHide1234" value="Hide">
-                                <label for="productStatusHide1234">Hide</label>
+                                <input type="radio" name="product-status-<?php echo $row['id']; ?>" id="productStatusHide<?php echo $row['id']; ?>" value="hide" <?php echo ($row['status'] == 'hide') ? 'checked' : null; ?>>
+                                <label for="productStatusHide<?php echo $row['id']; ?>">Hide</label>
                             </div>
 
-                            <input type="submit" value="Saved!" id="productStatusSave1234">
+                            <input type="submit" value="Saved!" id="productStatusSave<?php echo $row['id']; ?>">
                         </form>
                     </div>
-
-                    <div class="item" data-product-id="5678">
-                        <div class="item-info">
-                            <p class="product-id">Product ID: 5678</p>
-                            <img src="../../images/about-img-1.jpg" alt="image">
-                            <p class="item-name">Custom Printed Black Mug</p>
-                            <p class="item-category">Category - Mugs</p>
-                            <p class="item-desc">Print your design on glassy black mug built with better quality</p>
-                            <p class="price">Rs. 1100</p>
-                            <div class="buttons">
-                                <a href="./editproduct.php" class="edit">Edit</a>
-                                <span class="delete">Delete</span>
-                            </div>
-                        </div>
-                        <form class="status">
-                            <!-- Fix same ID and name issues -->
-                            <div>
-                                <input type="radio" name="product-status-5678" id="productStatusInStock5678"
-                                    value="In Stock" checked>
-                                <label for="productStatusInStock5678">In Stock</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="product-status-5678" id="productStatusOutOfStock5678"
-                                    value="Out of Stock">
-                                <label for="productStatusOutOfStock5678">Out of Stock</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="product-status-5678" id="productStatusHide5678" value="Hide">
-                                <label for="productStatusHide5678">Hide</label>
-                            </div>
-
-                            <input type="submit" value="Saved!" id="productStatusSave5678">
-                        </form>
-                    </div>
-
-                    <div class="item" data-product-id="4321">
-                        <div class="item-info">
-                            <p class="product-id">Product ID: 9999</p>
-                            <img src="../../images/about-img-2.jpg" alt="image">
-                            <p class="item-name">Custom Printed T shirt</p>
-                            <p class="item-category">Category - T-Shirts</p>
-                            <p class="item-desc">Print your design on glassy black mug built with better quality</p>
-                            <p class="price">Rs. 1100</p>
-                            <div class="buttons">
-                                <a href="./editproduct.php" class="edit">Edit</a>
-                                <span class="delete">Delete</span>
-                            </div>
-                        </div>
-                        <form class="status">
-                            <!-- Fix same ID and name issues -->
-                            <div>
-                                <input type="radio" name="product-status-9999" id="productStatusInStock9999"
-                                    value="In Stock" checked>
-                                <label for="productStatusInStock9999">In Stock</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="product-status-9999" id="productStatusOutOfStock9999"
-                                    value="Out of Stock">
-                                <label for="productStatusOutOfStock9999">Out of Stock</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="product-status-9999" id="productStatusHide9999" value="Hide">
-                                <label for="productStatusHide9999">Hide</label>
-                            </div>
-
-                            <input type="submit" value="Saved!" id="productStatusSave9999">
-                        </form>
-                    </div>
+                    <?php }} ?>
 
                 </div>
             </div>

@@ -1,4 +1,5 @@
 .login-content {
+    min-height: 132vh;
     padding-top: 158px;
     padding-bottom: 320px;
     display: flex;
@@ -27,7 +28,7 @@
     display: grid;
     grid-template-columns: auto;
     gap: 20px 18px;
-    min-width: 320px;
+    width: 480px;
     box-shadow: 0 6px 16px -16px #888888;
 }
 
@@ -88,9 +89,9 @@
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 610px) {
     .login-card {
-        min-width: auto;
+        width: auto;
     }
 }
 

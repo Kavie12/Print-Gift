@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include '../../library/sql/AdminAccess.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +13,7 @@
     <link rel="stylesheet" href="../../library/admin.css">
 </head>
 
-<body>
+<body data-page='products'>
     <div class="container">
 
         <?php
@@ -29,16 +33,15 @@
                     <a href="../products/" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
-                    <form class="edit-product-card" id="editProductForm">
+                    <form class="edit-product-card" id="editProductForm" enctype="multipart/form-data" method="POST" action="./sql/editproduct.php?id=<?php echo $_GET['id']; ?>">
                         <div>
                             <label for="editProductTitle">Product Title</label>
-                            <input type="text" name="title" id="editProductTitle" placeholder="Enter product title"
-                                value="White Mug">
+                            <input type="text" name="title" id="editProductTitle" placeholder="Enter product title">
                         </div>
                         <div>
                             <label for="editProductCategory">Product Category</label>
                             <select name="category" id="editProductCategory">
-                                <option value="mug" selected>Mug</option>
+                                <option value="mug">Mug</option>
                                 <option value="pen">Pen</option>
                                 <option value="t-shirt">T-Shirt</option>
                                 <option value="wrist-band">Wrist Band</option>
@@ -47,18 +50,17 @@
                         <div>
                             <label for="editProductDesc">Product Description</label>
                             <textarea name="desc" id="editProductDesc"
-                                placeholder="edit product description">Print your design on glassy white mug built with better quality</textarea>
+                                placeholder="edit product description"></textarea>
                         </div>
                         <div>
                             <label for="editProductPrice">Unit Price (Rs.)</label>
-                            <input type="number" name="price" id="editProductPrice" placeholder="Enter product price"
-                                value="1400">
+                            <input type="number" name="price" id="editProductPrice" placeholder="Enter product price">
                         </div>
                         <div>
                             <label for="editProductImage">Add New Image</label>
                             <input type="file" accept="image/*" name="image" id="editProductImage">
                         </div>
-                        <button type="submit" id="editProductSubmit">Edit</button>
+                        <button type="submit" id="editProductSubmit" name="submit">Edit</button>
                         <p id="editProductCardMsg"></p>
                     </form>
                 </div>

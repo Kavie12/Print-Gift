@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../library/admin.css">
 </head>
 
-<body>
+<body data-page='statics'>
     <div class="container">
 
         <?php

@@ -68,7 +68,9 @@
     cursor: pointer;
 }
 
-.admin-nav .logout span {
+.admin-nav .logout a {
+    text-decoration: none;
+    color: black;
     font-family: Poppins;
     font-size: 14px;
 }
@@ -143,10 +145,6 @@
     align-items: center;
     column-gap: 12px;
     transition: all .15s ease-in-out;
-}
-
-.admin-sidebar .links a.active {
-    color: rgb(0, 109, 96);
 }
 
 .admin-sidebar .links a:hover,

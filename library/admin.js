@@ -40,4 +40,35 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+
+
+
+
+    // Active page
+    const pageName = document.body.getAttribute('data-page');
+    const activeColor = 'rgb(0, 109, 96)';
+    console.log(pageName);
+    switch(pageName) {
+        case 'neworders':
+            document.getElementById("newOrdersLink").style.color = activeColor;
+            break;
+        case 'pastorders':
+            document.getElementById("pastOrdersLink").style.color = activeColor;
+            break;
+        case 'users':
+            document.getElementById("usersLink").style.color = activeColor;
+            break;
+        case 'products':
+            document.getElementById("productsLink").style.color = activeColor;
+            break;
+        case 'statics':
+            document.getElementById("staticsLink").style.color = activeColor;
+            break;
+        case 'faq':
+            document.getElementById("faqLink").style.color = activeColor;
+            break;
+        default:
+            console.log('Error');
+    }
+
 });

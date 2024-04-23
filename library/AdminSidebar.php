@@ -7,27 +7,27 @@
         </p>
     </div>
     <div class="links">
-        <a href="../neworders/">
+        <a href="../neworders/" id="newOrdersLink">
             <i class="fa-solid fa-truck"></i>
             New Orders
         </a>
-        <a href="../pastorders/">
+        <a href="../pastorders/" id="pastOrdersLink">
             <i class="fa-solid fa-paper-plane"></i>
             Past Orders
         </a>
-        <a href="../users/">
+        <a href="../users/" id="usersLink">
             <i class="fa-solid fa-user"></i>
             Users
         </a>
-        <a href="../products/">
+        <a href="../products/" id="productsLink">
             <i class="fa-solid fa-box"></i>
             Products
         </a>
-        <a href="../statistics/">
+        <a href="../statistics/" id="staticsLink">
             <i class="fa-solid fa-chart-simple"></i>
             Statistics
         </a>
-        <a href="../faq/">
+        <a href="../faq/" id="faqLink">
             <i class="fa-solid fa-circle-question"></i>
             FAQ
         </a>
