@@ -32,4 +32,10 @@
             FAQ
         </a>
     </div>
+    <div class="bottom-links">
+        <a href="../account" id="accountLink">
+            <i class="fa-solid fa-user"></i>
+            Account
+        </a>
+    </div>
 </div>

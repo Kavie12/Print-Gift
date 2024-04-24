@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
         while ($row = mysqli_fetch_assoc($result)) {
             if (password_verify($password, $row['password'])) {
                 session_start();
-                $_SESSION['admin'] = $row['id'];
+                $_SESSION['admin'] = 1;
                 header("Location: ../../");
             } else {
                 header("Location: ../index.php?error=1");

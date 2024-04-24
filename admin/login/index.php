@@ -38,8 +38,7 @@
                         <input type="password" name="password" id="loginPassword" placeholder="Enter your password">
                     </div>
                     <button type="submit" id="loginSubmit" name="submit">Login</button>
-                    <p id="loginCardMsg">If you do not have an account yet, <a href="../signup/">click here</a> to
-                        register!</p>
+                    <p id="loginCardMsg"></p>
                 </form>
             </div>
 
