@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include '../../library/sql/AdminAccess.php';
+    include '../../library/sql/AdminGuestNoAccess.php';
 
     include '../../library/sql/dbconn.php';
     $sql = "SELECT id, img, title, category, description, price, status FROM items WHERE status != 'removed'";
@@ -50,7 +50,17 @@
                             <p class="product-id">Product ID: <?php echo $row['id']; ?></p>
                             <img src="../../images/uploads/items/<?php echo $row['img']; ?>" alt="image">
                             <p class="item-name"><?php echo $row['title']; ?></p>
-                            <p class="item-category">Category - <?php echo $row['category']; ?></p>
+                            <p class="item-category">Category - 
+                                <?php
+                                    echo
+                                        $row['category'] == 'mug' ? 'Mug'
+                                            :
+                                            ($row['category'] == 'pen' ? 'Pen'
+                                                : ($row['category'] == 't-shirt' ? 'T-Shirt'
+                                                : ($row['category'] == 'wrist-band' ? 'Wrist Band'
+                                                : 'Error'))) ;
+                                ?>
+                            </p>
                             <p class="item-desc"><?php echo $row['description']; ?></p>
                             <p class="price">Rs. <?php echo $row['price']; ?></p>
                             <div class="buttons">

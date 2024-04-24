@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include '../../library/sql/AdminGuestNoAccess.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +33,7 @@
                     <a href="../users/" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
-                    <form class="add-user-card" id="adminAddUserForm" action="" method="post">
+                    <form class="add-user-card" id="adminAddUserForm" action="./sql/adduser.php" method="post">
                         <div>
                             <label for="adminAddUserFName">First Name</label>
                             <input type="text" name="fname" id="adminAddUserFName" placeholder="Enter first name">
@@ -73,7 +77,7 @@
                             <input type="password" name="confirm-password" id="adminAddUserConfirmPassword"
                                 placeholder="Confirm password">
                         </div>
-                        <button type="submit" id="adminAddUserSubmit">Add User</button>
+                        <button type="submit" id="adminAddUserSubmit" name="submit">Add User</button>
                         <p id="adminAddUserCardMsg"></p>
                     </form>
                 </div>

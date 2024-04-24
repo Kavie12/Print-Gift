@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include '../../library/sql/AdminGuestNoAccess.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,39 +28,38 @@
 
             <!-- Edit User Profile -->
             <div class="edit-user-profile">
-                <h1>Edit Profile of Peter</h1>
-                <form class="edit-profile-details" id="adminEditUserForm" data-user-id="1234">
-                    <a href="../users/" class="back-btn">
+                <h1 id="header"></h1>
+                <form class="edit-profile-details" id="adminEditUserForm" method="POST" action="./sql/edituserdetails.php?id=<?php echo $_GET['id']; ?>">
+                    <a href="./userprofile.php?id=<?php echo $_GET['id']; ?>" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                     <div>
                         <label for="adminEditUserProfileFName">First Name</label>
-                        <input type="text" name="fname" id="adminEditUserProfileFName" value="Peter">
+                        <input type="text" name="fname" id="adminEditUserProfileFName">
                     </div>
                     <div>
                         <label for="adminEditUserProfileLName">Last Name</label>
-                        <input type="text" name="lname" id="adminEditUserProfileLName" value="Parker">
+                        <input type="text" name="lname" id="adminEditUserProfileLName">
                     </div>
                     <div>
                         <label for="adminEditUserProfileTel">Phone Number</label>
-                        <input type="tel" name="tel" id="adminEditUserProfileTel" value="0703467918">
+                        <input type="tel" name="tel" id="adminEditUserProfileTel">
                     </div>
                     <div>
                         <label for="adminEditUserProfileDOB">Date of Birth</label>
-                        <input type="date" name="dob" id="adminEditUserProfileDOB" value="2005-04-12">
+                        <input type="date" name="dob" id="adminEditUserProfileDOB">
                     </div>
                     <div class="address-field">
                         <label for="adminEditUserProfileAddress">Address</label>
-                        <input type="text" name="address" id="adminEditUserProfileAddress"
-                            value="Peter Parker, 22/A/12, Alwis Road, Kaduwela">
+                        <input type="text" name="address" id="adminEditUserProfileAddress">
                     </div>
                     <div>
                         <label for="adminEditUserProfileCity">City</label>
-                        <input type="text" name="city" id="adminEditUserProfileCity" value="Kaduwela">
+                        <input type="text" name="city" id="adminEditUserProfileCity">
                     </div>
                     <div>
                         <label for="adminEditUserProfilePostalCode">Postal Code</label>
-                        <input type="text" name="postalcode" id="adminEditUserProfilePostalCode" value="10640">
+                        <input type="text" name="postalcode" id="adminEditUserProfilePostalCode">
                     </div>
                     <div>
                         <label for="adminEditUserProfilePassword">New Password (If required)</label>
@@ -69,7 +72,7 @@
                             placeholder="Confirm password">
                     </div>
 
-                    <input type="submit" value="Save">
+                    <input type="submit" name="submit" value="Save">
                     <p id="adminEditUserCardMsg"></p>
                 </form>
             </div>

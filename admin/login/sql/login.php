@@ -1,14 +1,13 @@
 <?php
 
-if (isset($_POST['loginbtn'])) {
+if (isset($_POST['submit'])) {
 
-    include '../../library/sql/dbconn.php';
+    include '../../../library/sql/dbconn.php';
 
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-
-    $sql = "SELECT id, email, password FROM `users` WHERE email='$email' AND status='active'";
+    $sql = "SELECT id, username, password FROM `admin` WHERE username='$username' AND status='active'";
 
     $result = mysqli_query($conn, $sql);
 
@@ -16,8 +15,8 @@ if (isset($_POST['loginbtn'])) {
         while ($row = mysqli_fetch_assoc($result)) {
             if (password_verify($password, $row['password'])) {
                 session_start();
-                $_SESSION['user'] = $row['id'];
-                header("Location: ../../products");
+                $_SESSION['admin'] = $row['id'];
+                header("Location: ../../");
             } else {
                 header("Location: ../index.php?error=1");
             }

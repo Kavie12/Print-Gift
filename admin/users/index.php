@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    include '../../library/sql/AdminGuestNoAccess.php';
+
+    include '../../library/sql/dbconn.php';
+    $sql = "SELECT id, fname, lname FROM users WHERE status != 'deleted'";
+    $result = mysqli_query($conn, $sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,39 +49,24 @@
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
-                        <tr class="user-info" data-user-id="8792">
-                            <td>8792</td>
-                            <td>Peter Parker</td>
-                            <td><a href="./userorders.php" class="orders">Orders</a></td>
-                            <td><a href="./userprofile.php" class="view-profile">Profile</a></td>
-                            <td><a href="./edituserprofile.php" class="edit-profile"><i
+
+                        <?php
+                            if (mysqli_num_rows($result) > 0) {
+                                while($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                        <tr class="user-info" data-user-id="<?php echo $row['id']; ?>">
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['fname'] . ' ' . $row['lname']; ?></td>
+                            <td><a href="./userorders.php?id=<?php echo $row['id']; ?>" class="orders">Orders</a></td>
+                            <td><a href="./userprofile.php?id=<?php echo $row['id']; ?>" class="view-profile">Profile</a></td>
+                            <td><a href="./edituserprofile.php?id=<?php echo $row['id']; ?>" class="edit-profile"><i
                                         class="fa-solid fa-pen-to-square"></i></a></td>
                             <td>
                                 <p class="delete-profile"><i class="fa-solid fa-trash"></i></p>
                             </td>
                         </tr>
-                        <tr class="user-info" data-user-id="6792">
-                            <td>6792</td>
-                            <td>Donald Trump</td>
-                            <td><a href="./userorders.php" class="orders">Orders</a></td>
-                            <td><a href="./userprofile.php" class="view-profile">Profile</a></td>
-                            <td><a href="./edituserprofile.php" class="edit-profile"><i
-                                        class="fa-solid fa-pen-to-square"></i></a></td>
-                            <td>
-                                <p class="delete-profile"><i class="fa-solid fa-trash"></i></p>
-                            </td>
-                        </tr>
-                        <tr class="user-info" data-user-id="3126">
-                            <td>3126</td>
-                            <td>Albert Einstein</td>
-                            <td><a href="./userorders.php" class="orders">Orders</a></td>
-                            <td><a href="./userprofile.php" class="view-profile">Profile</a></td>
-                            <td><a href="./edituserprofile.php" class="edit-profile"><i
-                                        class="fa-solid fa-pen-to-square"></i></a></td>
-                            <td>
-                                <p class="delete-profile"><i class="fa-solid fa-trash"></i></p>
-                            </td>
-                        </tr>
+                        <?php }} ?>
+
                     </table>
                 </div>
             </div>

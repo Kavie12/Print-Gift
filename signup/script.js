@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const confirmPassword = document.getElementById('signUpConfirmPassword');
         const agreeTerms = document.getElementById('signUpAgreeTerms');
 
-        if (fName.value == "" || lName.value == "" || tel.value == "" || dob.value == "" || address.value == "" || city.value == "" || postalCode.value == "" || password.value == "") {
+        if (fName.value == "" || lName.value == "" || tel.value == "" || dob.value == "" || address.value == "" || city.value == "" || postalCode.value == "" || email.value == "" || password.value == "") {
             document.getElementById("signUpCardMsg").innerHTML = "All fields must be filled!";
             e.preventDefault();
         } else if (postalCode.value.length !== 5) {

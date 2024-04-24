@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include '../../library/sql/AdminAccess.php';
+    include '../../library/sql/AdminGuestNoAccess.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

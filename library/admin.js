@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Active page
     const pageName = document.body.getAttribute('data-page');
     const activeColor = 'rgb(0, 109, 96)';
-    console.log(pageName);
     switch(pageName) {
         case 'neworders':
             document.getElementById("newOrdersLink").style.color = activeColor;

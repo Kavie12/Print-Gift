@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    include '../../library/sql/AdminGuestNoAccess.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,42 +28,41 @@
 
             <!-- User Profile -->
             <div class="user-profile">
-                <h1>Profile of Peter</h1>
+                <h1 id="header"></h1>
                 <div class="profile-details" data-user-id="1234">
                     <a href="../users/" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
                     <div>
                         <label for="adminUserProfileFName">First Name</label>
-                        <input type="text" name="fname" id="adminUserProfileFName" value="Peter" disabled>
+                        <input type="text" name="fname" id="adminUserProfileFName" disabled>
                     </div>
                     <div>
                         <label for="adminUserProfileLName">Last Name</label>
-                        <input type="text" name="lname" id="adminUserProfileLName" value="Parker" disabled>
+                        <input type="text" name="lname" id="adminUserProfileLName" disabled>
                     </div>
                     <div>
                         <label for="adminUserProfileTel">Phone Number</label>
-                        <input type="tel" name="tel" id="adminUserProfileTel" value="0703467918" disabled>
+                        <input type="tel" name="tel" id="adminUserProfileTel" disabled>
                     </div>
                     <div>
                         <label for="adminUserProfileDOB">Date of Birth</label>
-                        <input type="date" name="dob" id="adminUserProfileDOB" value="2005-04-12" disabled>
+                        <input type="date" name="dob" id="adminUserProfileDOB" disabled>
                     </div>
                     <div class="address-field">
                         <label for="adminUserProfileAddress">Address</label>
-                        <input type="text" name="address" id="adminUserProfileAddress"
-                            value="Peter Parker, 22/A/12, Alwis Road, Kaduwela" disabled>
+                        <input type="text" name="address" id="adminUserProfileAddress" disabled>
                     </div>
                     <div>
                         <label for="adminUserProfileCity">City</label>
-                        <input type="text" name="city" id="adminUserProfileCity" value="Kaduwela" disabled>
+                        <input type="text" name="city" id="adminUserProfileCity" disabled>
                     </div>
                     <div>
                         <label for="adminUserProfilePostalCode">Postal Code</label>
-                        <input type="text" name="postalcode" id="adminUserProfilePostalCode" value="10640" disabled>
+                        <input type="text" name="postalcode" id="adminUserProfilePostalCode" disabled>
                     </div>
                     <div class="buttons">
-                        <a href="./edituserprofile.html" class="edit">Edit Profile</a>
+                        <a href="./edituserprofile.php?id=<?php echo $_GET['id']; ?>" class="edit">Edit Profile</a>
                         <span class="delete">Delete Account</span>
                     </div>
                 </div>
