@@ -12,7 +12,6 @@ if (isset($_SESSION['admin'])) {
 
     mysqli_query($conn, $sql);
 
-
     header("Location: ../");
 
 }

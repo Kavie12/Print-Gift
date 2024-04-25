@@ -27,7 +27,7 @@
         <div class="login-content">
 
             <div class="login-section">
-                <h1>Login</h1>
+                <h1>Admin Login</h1>
                 <form class="login-card" id="loginForm" action="./sql/login.php" method="post">
                     <div>
                         <label for="loginUsername">Username</label>
