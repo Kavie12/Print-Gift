@@ -64,46 +64,25 @@
                 <div class="products-section">
                     <button class="filters-sidebar-open" id="filtersSidebarOpen">Filters</button>
                     <div class="products-list">
-                        <a href="./item.php" class="product-item mug">
-                            <img src="../images/home_mug_pic.png" alt="product_img">
+                        <?php
+                            include '../library/sql/dbconn.php';
+
+                            $sql = "SELECT id, title, category, price, img, status FROM items WHERE status != 'removed' AND status != 'hide'";
+                            
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                        <a href="./item.php?product=<?php echo $row['id']; ?>" class="product-item <?php echo $row['category']; echo ($row['status'] == 'outofstock') ? ' out-of-stock' : null ?>">
+                            <img src="../images/uploads/items/<?php echo $row['img']; ?>" alt="product_img">
                             <div class="product-details">
-                                <h3>Custom Printed White Mug</h3>
-                                <span>Rs. 1250</span>
+                                <h3><?php echo $row['title']; ?></h3>
+                                <span>Rs. <?php echo $row['price']; ?></span>
                             </div>
                             <!-- Status is changed by JS -->
                             <p class="productsStatus"></p>
-                        </a>
-                        <a href="#" class="product-item mug">
-                            <img src="../images/about-img-1.jpg" alt="product_img">
-                            <div class="product-details">
-                                <h3>Custom Printed Black Mug</h3>
-                                <span>Rs. 1250</span>
-                            </div>
-                            <p class="productsStatus"></p>
-                        </a>
-                        <a href="#" class="product-item t-shirt out-of-stock">
-                            <img src="../images/about-img-2.jpg" alt="product_img">
-                            <div class="product-details">
-                                <h3>Custom Printed Black T-shirt</h3>
-                                <span>Rs. 1250</span>
-                            </div>
-                            <p class="productsStatus"></p>
-                        </a>
-                        <a href="#" class="product-item pen">
-                            <img src="../images/product-img-1.jpg" alt="product_img">
-                            <div class="product-details">
-                                <h3>Custom Printed White Pen</h3>
-                                <span>Rs. 1250</span>
-                            </div>
-                            <p class="productsStatus"></p>
-                        </a>
-                        <a href="#" class="product-item band">
-                            <img src="../images/product-img-2.jpg" alt="product_img">
-                            <div class="product-details">
-                                <h3>Custom Printed Wrist Band</h3>
-                                <span>Rs. 200</span>
-                            </div>
-                            <p class="productsStatus"></p>
+                        <?php }} ?>
                         </a>
                     </div>
                 </div>

@@ -90,7 +90,7 @@ function catFilter() {
     const mugs = document.querySelectorAll(".product-item.mug");
     const pens = document.querySelectorAll(".product-item.pen");
     const tShirts = document.querySelectorAll(".product-item.t-shirt");
-    const bands = document.querySelectorAll(".product-item.band");
+    const bands = document.querySelectorAll(".product-item.wrist-band");
 
     // Category Products Array
     const products = [mugs, pens, tShirts, bands];

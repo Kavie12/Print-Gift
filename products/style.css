@@ -195,6 +195,10 @@
     color: rgb(96, 96, 96);
 }
 
+.add-to-cart-msg {
+    font-family: Poppins;
+}
+
 @media screen and (max-width: 1400px) {
     .products-content .products-tab {
         padding: 40px 100px;
