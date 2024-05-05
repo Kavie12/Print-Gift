@@ -1,8 +1,8 @@
-// Nav List Dropdown
-
-const navListControl = document.getElementById("navListControl");
-
 document.addEventListener("DOMContentLoaded", () => {
+
+    // Nav List Dropdown
+    const navListControl = document.getElementById("navListControl");
+
     document.getElementById("navListControl").addEventListener("click", () => {
         const navList = document.getElementById("navList");
         const navListControl1 = document.getElementById("navListControl1");
@@ -22,16 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
             navListControl3.style.transform = "rotate(-45deg) translateY(-4.2px)";
         }
     });
-});
 
 
 
 
 
+    // Account Dropdown
 
-// Account Dropdown
-
-document.addEventListener("DOMContentLoaded", () => {
     const navProfile = document.querySelector(".navbar .nav-profile");
     const menu = document.querySelector(".navbar .nav-profile-list");
 
@@ -42,17 +39,21 @@ document.addEventListener("DOMContentLoaded", () => {
             menu.style.display = "none";
         }
     });
+
+
+
+
+
+    // Nav Cart Orders Count
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4, this.status == 200) {
+            const cart = document.querySelector(".navbar .nav-cart > a > i > span");
+            cart.innerHTML = this.responseText;
+        }
+    }
+    xhttp.open('GET', '../library/sql/cartcount.php', true);
+    xhttp.send();
+
+
 });
-
-
-
-
-
-
-// Nav Cart Orders Count
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     const cart = document.querySelector(".navbar .nav-cart > a > i > span");
-
-//     cart.innerHTML = 2;
-// });
