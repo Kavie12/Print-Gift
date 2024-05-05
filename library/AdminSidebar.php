@@ -33,9 +33,9 @@
         </a>
     </div>
     <div class="bottom-links">
-        <a href="../account" id="accountLink">
-            <i class="fa-solid fa-user"></i>
-            Account
+        <a href="../settings" id="settingsLink">
+            <i class="fa-solid fa-gear"></i>
+            Settings
         </a>
     </div>
 </div>

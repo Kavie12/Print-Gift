@@ -9,13 +9,7 @@ if (isset($_SESSION['admin'])) {
     
     $result = mysqli_query($conn, $sql);
 
-    if (mysqli_num_rows($result)) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            $uname = $row['username'];
-        }
-    }
-
-    echo $uname;
+    echo mysqli_fetch_assoc($result)['username'];
 }
 
 

@@ -9,12 +9,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRINT GIFT - Admin Dashboard</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./account.css">
     <link rel="stylesheet" href="../../library/global.css">
     <link rel="stylesheet" href="../../library/admin.css">
 </head>
 
-<body data-page='account'>
+<body data-page='settings'>
     <div class="container">
 
 
@@ -31,7 +31,7 @@
                 <div class="login-section">
                     <h1>Change Password</h1>
                     <form class="login-card" id="loginForm" action="./sql/changepw.php" method="post">
-                        <a href="./" class="back-btn">
+                        <a href="./account.php" class="back-btn">
                             <i class="fa-solid fa-arrow-left"></i>
                         </a>
                         <div>

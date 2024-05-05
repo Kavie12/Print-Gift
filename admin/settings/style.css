@@ -1,0 +1,54 @@
+.settings {
+    display: flex;
+    flex-direction: column;
+    row-gap: 28px;
+    margin: 28px 0;
+    padding: 0 40px;
+}
+
+.settings h1 {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.option-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    row-gap: 12px;
+    padding: 28px 36px;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px -16px #888888;
+    cursor: pointer;
+    transition: all .25s ease;
+    text-decoration: none;
+}
+
+.option:hover {
+    box-shadow: 0 6px 16px -8px #888888;
+}
+
+.option i {
+    font-size: 32px;
+    color: #242424;
+}
+
+.option span {
+    font-family: Poppins;
+    text-align: center;
+    color: black;
+}
+
+@media screen and (max-width: 425px) {
+    .option-list {
+        grid-template-columns: auto;
+    }
+}

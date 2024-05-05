@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
         case 'faq':
             document.getElementById("faqLink").style.color = activeColor;
             break;
-        case 'account':
-            document.getElementById("accountLink").style.color = activeColor;
+        case 'settings':
+            document.getElementById("settingsLink").style.color = activeColor;
             break;
         default:
             console.log('Error');
