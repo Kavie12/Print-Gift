@@ -5,6 +5,8 @@
 
         date_default_timezone_set("Asia/Colombo");
 
+        $id = $_GET['id'];
+
         $title = mysqli_real_escape_string($conn, $_POST['title']);
         $category = mysqli_real_escape_string($conn, $_POST['category']);
         $desc = mysqli_real_escape_string($conn, $_POST['desc']);
@@ -17,9 +19,9 @@
                 die("Error uploading image!");
             }
     
-            $sql = "UPDATE `items` SET title='$title', category = '$category', description = '$desc', price = '$price', img = '$img_name', updated_date = '$updatedate'";
+            $sql = "UPDATE `items` SET title='$title', category = '$category', description = '$desc', price = '$price', img = '$img_name', updated_date = '$updatedate' WHERE id = $id";
         } else {
-            $sql = "UPDATE `items` SET title='$title', category = '$category', description = '$desc', price = '$price', updated_date = '$updatedate'";
+            $sql = "UPDATE `items` SET title='$title', category = '$category', description = '$desc', price = '$price', updated_date = '$updatedate' WHERE id = $id";
         }
 
         mysqli_query($conn, $sql);

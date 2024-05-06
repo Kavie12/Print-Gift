@@ -67,7 +67,7 @@
                                 <li>Text: "<?php echo $row['text']; ?>"</li>
                                 <li>Color: <div class="color <?php echo $row['color']; ?>"></div></li>
                                 <?php
-                                    if (isset($row['img'])) {
+                                    if (isset($row['printing_img'])) {
                                         echo "<li>Image: <img src='../images/uploads/printing_images/" . $row['printing_img'] . "'></li>";
                                     }
                                 ?>
@@ -98,89 +98,34 @@
                     <div class="checkout-items">
                         <h2>Checkout</h2>
                         <table class="checkout-items-list">
-
-                            <!-- Checkout item list map -->
-                            <?php
-                                $sql2 = "SELECT
-                                            items.title as title,
-                                            cart.qty as qty,
-                                            items.price as price,
-                                            cart.wrap as wrap
-                                        FROM cart
-                                        INNER JOIN items ON cart.pid = items.id
-                                        WHERE cart.uid = $uid";
-                                $result2 = mysqli_query($conn, $sql2);
-                                if (mysqli_num_rows($result2) > 0) {
-                                    while ($row = mysqli_fetch_assoc($result2)) {
-                            ?>
-                            <tr>
-                                <td><?php echo $row['title']; ?></td>
-                                <td class="qty"><?php echo $row['qty']; ?>x</td>
-                                <td class="rs">Rs.</td>
-                                <td class="price"><?php echo $row['price'] * $row['qty']; ?></td>
-                            </tr>
+                            <!-- Checkout item list prepends from JS -->
 
                                         
                             <!-- Wrapping pricing -->
-                            <?php
-                                }}
-                                $sql3 = "SELECT wrap FROM service_prices WHERE id = 1";
-                                $result3 = mysqli_query($conn, $sql3);
-                                $wrapping_price = mysqli_fetch_assoc($result3)['wrap'];
-
-                                $sql4 = "SELECT
-                                            COUNT(*) as count
-                                        FROM cart
-                                        WHERE uid = $uid AND wrap = 1";
-                                $result4 = mysqli_query($conn, $sql4);
-                                $wrap_count = mysqli_fetch_assoc($result4)['count'];
-
-                                $wrap_total = $wrapping_price * $wrap_count;
-                            ?>
                             <tr class="wrapping">
                                 <td>Wrapping</td>
-                                <td class="qty"><?php echo $wrap_count; ?>x</td>
+                                <td class="qty">x</td>
                                 <td class="rs">Rs.</td>
-                                <td class="price"><?php echo $wrap_total; ?></td>
+                                <td class="price"></td>
                             </tr>
 
 
                             <!-- Shipping price -->
-                            <?php
-                                $sql5 = "SELECT delivery FROM service_prices WHERE id = 1";
-                                $result5 = mysqli_query($conn, $sql5);
-                                $shipping = mysqli_fetch_assoc($result5)['delivery'];
-                            ?>
                             <tr class="shipping">
                                 <td colspan="2">Shipping</td>
                                 <td class="rs">Rs.</td>
-                                <td class="price"><?php echo $shipping; ?></td>
+                                <td class="price"></td>
                             </tr>
 
                         </table>
 
 
-                        <?php
-                            $total_price = $shipping + $wrap_total;
-
-                            $sql6 = "SELECT
-                                        cart.qty as qty,
-                                        items.price as price
-                                    FROM cart
-                                    INNER JOIN items ON cart.pid = items.id
-                                    WHERE cart.uid = $uid";
-
-                            $result6 = mysqli_query($conn, $sql6);
-
-                            while ($row = mysqli_fetch_assoc($result6)) {
-                                $total_price += $row['price'] * $row['qty'];
-                            }
-                        ?>
+                        <!-- Total Price -->
                         <div class="total-price">
                             <span>Total Price</span>
                             <div>
                                 <span>Rs.</span>
-                                <span class="total-price-value"><?php echo $total_price; ?></span>
+                                <span class="total-price-value"></span>
                             </div>
                         </div>
 
@@ -190,11 +135,11 @@
                     <div class="checkout-address">
                         <span>Shipping to:</span>
                         <?php
-                            $sql7 = "SELECT fname, lname, address, city, postalcode, phone FROM users WHERE id = $uid";
+                            $sql6 = "SELECT fname, lname, address, city, postalcode, phone FROM users WHERE id = $uid";
 
-                            $result7 = mysqli_query($conn, $sql7);
+                            $result6 = mysqli_query($conn, $sql6);
 
-                            while ($row = mysqli_fetch_assoc($result7)) {
+                            while ($row = mysqli_fetch_assoc($result6)) {
                         ?>
                         <div class="shipping-address">
                             <span><?php echo $row['fname'] . ' ' . $row['lname']; ?>,</span>

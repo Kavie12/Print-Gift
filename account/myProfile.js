@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("profilePostalCode").value = data[0].postalcode;
 
         }
-        };
+    };
     xhttp.open('GET', './sql/userdetails.php', true);
     xhttp.send();
 

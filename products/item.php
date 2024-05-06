@@ -97,6 +97,11 @@
                                         value="pink">
                                     <div></div>
                                 </div>
+                                <div>
+                                    <input type="radio" name="printing_text_color" id="printingTextColorWhite"
+                                        value="white">
+                                    <div></div>
+                                </div>
                             </div>
                         </div>
                         <div class="image">

@@ -43,21 +43,12 @@ function cartQtyLimit() {
 
 // Add to Cart Data
 function addToCartData() {
-    let itemID = document.querySelector(".item-tab").getAttribute("data-item-id");
+    // let itemID = document.querySelector(".item-tab").getAttribute("data-item-id");
     const addToCartForm = document.getElementById("addToCartForm");
     
     addToCartForm.addEventListener("submit", e => {
-        let form = new FormData(addToCartForm);
-    
-        let text = form.get("printing_text");
-        let color = form.get("printing_text_color");
 
-        if (text == "" || color == null) {
-            e.preventDefault();
-            document.getElementById("addToCartMsg").innerHTML = "Fill required details!";
-        } else {
-            document.getElementById("addToCartMsg").innerHTML = "Adding!";
-        }
+        document.getElementById("addToCartMsg").innerHTML = "Adding!";
     
     });
 }

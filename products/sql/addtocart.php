@@ -17,7 +17,7 @@ if (isset($_SESSION['user'])) {
 
     include '../../library/sql/dbconn.php';
 
-    if (!isset($_POST['printing_image'])) {
+    if (!isset($_FILES['printing_image']['tmp_name'])) {
         $sql = "INSERT INTO cart (uid, pid, text, color, wrap, comments, qty) VALUES ('$uid', '$pid', '$text', '$color', '$wrap', '$comments', '$qty')";
     } else {
         $img = basename($_FILES['printing_image']['name']);
