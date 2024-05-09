@@ -41,19 +41,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
-
-
-    // Nav Cart Orders Count
-    const xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4, this.status == 200) {
-            const cart = document.querySelector(".navbar .nav-cart > a > i > span");
-            cart.innerHTML = this.responseText;
-        }
-    }
-    xhttp.open('GET', '../library/sql/cartcount.php', true);
-    xhttp.send();
-
-
 });

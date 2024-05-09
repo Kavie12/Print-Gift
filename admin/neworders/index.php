@@ -29,70 +29,108 @@
             <!-- New Orders -->
             <div class="new-orders">
                 <h1>New Orders</h1>
-                <div class="search">
-                    <input type="text" placeholder="Search orders">
-                </div>
+                <form class="search" method="get" action="./index.php">
+                    <input type="text" name="search" placeholder="Search orders">
+                </form>
                 <div class="new-orders-list">
                     <div class="no-new-orders" id="noNewOrdersMsg">
                         <h2>No New Orders to Display</h2>
                     </div>
+
+                    <?php
+                        include '../../library/sql/dbconn.php';
+
+                        if (!isset($_GET['search'])) {
+                            $sql = "SELECT
+                                        orders.id as id,
+                                        items.id as pid,
+                                        orders.uid as uid,
+                                        orders.add_date as date,
+                                        items.title as title,
+                                        orders.wrap as wrap,
+                                        orders.text as text,
+                                        orders.color as color,
+                                        orders.comments as comments,
+                                        items.img as product_img,
+                                        orders.img as printing_img,
+                                        orders.qty as qty,
+                                        items.price as price,
+                                        users.fname as fname,
+                                        users.lname as lname,
+                                        users.address as address
+                                    FROM ((`orders`
+                                    INNER JOIN `items` ON orders.pid = items.id)
+                                    INNER JOIN `users` ON orders.uid = users.id)
+                                    WHERE orders.status = 'pending'";
+                        } else {
+                            $key = $_GET['search'];
+
+                            $sql = "SELECT
+                                orders.id as id,
+                                items.id as pid,
+                                orders.uid as uid,
+                                orders.add_date as date,
+                                items.title as title,
+                                orders.wrap as wrap,
+                                orders.text as text,
+                                orders.color as color,
+                                orders.comments as comments,
+                                items.img as product_img,
+                                orders.img as printing_img,
+                                orders.qty as qty,
+                                items.price as price,
+                                users.fname as fname,
+                                users.lname as lname,
+                                users.address as address
+                            FROM ((`orders`
+                            INNER JOIN `items` ON orders.pid = items.id)
+                            INNER JOIN `users` ON orders.uid = users.id)
+                            WHERE orders.status = 'pending'
+                            AND (items.title LIKE '%$key%'
+                            OR orders.text LIKE '%$key%'
+                            OR users.fname LIKE '%$key%'
+                            OR users.lname LIKE '%$key%')";
+                        }
+                    
+                        $result = mysqli_query($conn, $sql);
+                    
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
                     <div class="item">
                         <div class="item-info">
-                            <p class="order-id">Order ID: 12189</p>
-                            <img src="../../images/home_mug_pic.png" alt="image">
+                            <p class="order-id">Order ID: <?php echo $row['id']; ?></p>
+                            <img src="../../images/uploads/items/<?php echo $row['product_img']; ?>" alt="image">
                             <div class="details">
-                                <p class="date">Date: 2024-01-01</p>
-                                <p class="product-id">Product ID: 1792</p>
-                                <p class="item-name">Custom Printed White Mug</p>
+                                <p class="date">Date: <?php echo $row['date']; ?></p>
+                                <p class="product-id">Product ID: <?php echo $row['pid']; ?></p>
+                                <p class="item-name"><?php echo $row['title']; ?></p>
                             </div>
                             <ul class="options">
-                                <li>Packaging: Wrapped</li>
-                                <li>Text: "Wish You Happy New Year!"</li>
-                                <li>Color: <div class="color red"></div>
-                                </li>
-                                <li>Comments: Text should be bigger</li>
-                            </ul>
-                            <div class="user">
-                                <p>User ID: 293</p>
-                                <p>User Name: Peter Parker</p>
-                                <p>Address: 293/7, Kaduwela Rd, Malabe</p>
-                            </div>
-                            <div class="pricing">
-                                <p class="qty">Quantity: 1</p>
-                                <p class="price">Rs. 1100</p>
-                            </div>
-                        </div>
-                        <div class="approval">
-                            <button class="accept"><i class="fa-solid fa-check"></i></button>
-                            <button class="decline"><i class="fa-solid fa-xmark"></i></button>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item-info">
-                            <p class="order-id">Order ID: 7283</p>
-                            <img src="../../images/about-img-1.jpg" alt="product_image">
-                            <div class="details">
-                                <p class="date">Date: 2023-12-29</p>
-                                <p class="product-id">Product ID: 1627</p>
-                                <p class="item-name">Custom Printed Black Mug</p>
-                            </div>
-                            <ul class="options">
-                                <li>Packaging: Not Wrapped</li>
+                                <li>Packaging: <?php echo (($row['wrap']) ? 'Wrapped' : 'Not Wrapped'); ?></li>
+                                <li>Text: "<?php echo $row['text']; ?>"</li>
+                                <li>Color: <div class="color <?php echo $row['color']; ?>"></div></li>
+
+                                <?php
+                                    if ($row['printing_img'] !== "") {
+                                ?>
                                 <li>
                                     Image:
-                                    <img src="../../images/uploads/spiderman-sticker.jpg">
-                                    <a href="../../images/uploads/spiderman-sticker.jpg" download>Download</a>
+                                    <img src="../../images/uploads/printing_images/<?php echo $row['printing_img']; ?>">
+                                    <a href="../../images/uploads/printing_images/<?php echo $row['printing_img']; ?>" download>Download</a>
                                 </li>
-                                <li>Comments: Set a margin at least half an inch around the image</li>
+                                <?php } ?>
+
+                                <li>Comments: <?php echo $row['comments']; ?></li>
                             </ul>
                             <div class="user">
-                                <p>User ID: 293</p>
-                                <p>User Name: Peter Parker</p>
-                                <p>Address: 293/7, Kaduwela Rd, Malabe</p>
+                                <p>User ID: <?php echo $row['uid']; ?></p>
+                                <p>User Name: <?php echo $row['fname'] . ' ' . $row['lname']; ?></p>
+                                <p>Address: <?php echo $row['address']; ?></p>
                             </div>
                             <div class="pricing">
-                                <p class="qty">Quantity: 2</p>
-                                <p class="price">Rs. 2800</p>
+                                <p class="qty">Quantity: <?php echo $row['qty']; ?></p>
+                                <p class="price">Rs. <?php echo $row['qty'] * $row['price']; ?></p>
                             </div>
                         </div>
                         <div class="approval">
@@ -100,6 +138,8 @@
                             <button class="decline"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                     </div>
+                    <?php }} ?>
+
                 </div>
             </div>
 

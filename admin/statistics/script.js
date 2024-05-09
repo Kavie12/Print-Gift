@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const ordersValue = document.querySelector(".statistics-cards .orders span");
     const revenueValue = document.querySelector(".statistics-cards .revenue span");
     
+    const xhttp = new XMLHttpRequest();
 
     function changeValues() {
         if (filter.value !== "all") {
@@ -17,17 +18,33 @@ document.addEventListener("DOMContentLoaded", () => {
             ordersTitle.innerHTML = "Orders - 30 Days";
             revenueTitle.innerHTML = "Revenue - 30 Days";
 
-            usersValue.innerHTML = "26";
-            ordersValue.innerHTML = "17";
-            revenueValue.innerHTML = "Rs. 6300";
+            xhttp.open('GET', './sql/30days.php', true);
+            xhttp.send();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    const data = JSON.parse(this.responseText);
+
+                    usersValue.innerHTML = data[0];
+                    ordersValue.innerHTML = data[1];
+                    revenueValue.innerHTML = "Rs. " + data[2];
+                }
+            }
         } else {
             usersTitle.innerHTML = "Total Users";
             ordersTitle.innerHTML = "Total Orders";
             revenueTitle.innerHTML = "Total Revenue";
 
-            usersValue.innerHTML = "395";
-            ordersValue.innerHTML = "309";
-            revenueValue.innerHTML = "Rs. 43000";
+            xhttp.open('GET', './sql/alltime.php', true);
+            xhttp.send();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    const data = JSON.parse(this.responseText);
+
+                    usersValue.innerHTML = data[0];
+                    ordersValue.innerHTML = data[1];
+                    revenueValue.innerHTML = "Rs. " + data[2];
+                }
+            }
         }
     }
 

@@ -8,12 +8,14 @@
 
         include '../../library/sql/dbconn.php';
 
+        // Delivery and wrapping prices
         $sql = "SELECT delivery, wrap FROM service_prices WHERE id = 1";
         $result = mysqli_query($conn, $sql);
         $data = mysqli_fetch_all($result)[0];
    
 
-        $sql2 = "SELECT COUNT(*) FROM cart WHERE uid = $uid AND wrap = 1";
+        // Wrapping 
+        $sql2 = "SELECT SUM(qty) FROM cart WHERE uid = $uid AND wrap = 1";
         $result2 = mysqli_query($conn, $sql2);
         $data2 = mysqli_fetch_all($result2)[0][0];
 

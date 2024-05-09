@@ -83,34 +83,24 @@
                     <div class="faq">
                         <h3>FAQ</h3>
                         <div class="faq-list">
+                            
+                            <?php
+                                include '../library/sql/dbconn.php';
+                                $sql = "SELECT question, answer FROM faq";
+                                $result = mysqli_query($conn, $sql);
+
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                            ?>
                             <div>
                                 <div>
                                     <button></button>
-                                    <span>What service do you offer?</span>
+                                    <span><?php echo $row['question']; ?></span>
                                 </div>
-                                <p>
-                                    We allow customers to customize the products they choose on our platform, get it
-                                    printed and get delivered.
-                                </p>
+                                <p><?php echo $row['answer']; ?></p>
                             </div>
-                            <div>
-                                <div>
-                                    <button></button>
-                                    <span>Can I buy multiple items with the same design?</span>
-                                </div>
-                                <p>
-                                    Yes. You can choose the quantity when you buy.
-                                </p>
-                            </div>
-                            <div>
-                                <div>
-                                    <button></button>
-                                    <span>How is the product quality?</span>
-                                </div>
-                                <p>
-                                    We provide quality products that has been manufactured by well known brands.
-                                </p>
-                            </div>
+                            <?php }} ?>
+
                         </div>
                     </div>
 

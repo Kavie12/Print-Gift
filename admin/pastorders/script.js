@@ -1,21 +1,16 @@
-// Past Orders Search
-
 document.addEventListener("DOMContentLoaded", () => {
+    // Past Orders Search
     const search = document.querySelector(".admin-content .past-orders .search input");
 
     search.addEventListener("change", () => {
         const key = search.value;
         console.log(key);
     });
-});
 
 
 
 
-// Past Orders Status
-
-document.addEventListener("DOMContentLoaded", () => {
-
+    // Past Orders Status
     let orders = document.querySelectorAll(".past-orders-list .item .status");
 
     orders.forEach(order => {
@@ -32,7 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
             let formData = new FormData(order);
             let status = formData.get("past-order-status-" + orderID);
 
-            console.log(orderID + " - " + status);
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('GET', './sql/changestatus.php?id=' + orderID + '&status=' + status, true);
+            xhttp.send();
         });
 
 

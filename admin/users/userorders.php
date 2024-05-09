@@ -28,123 +28,114 @@
 
             <!-- User Orders -->
             <div class="user-orders">
-                <h1>Orders of Peter</h1>
+
+                <?php
+                    include '../../library/sql/dbconn.php';
+                    $uid = $_GET['id'];
+                    $sql = "SELECT fname, lname FROM users WHERE id = '$uid'";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                <h1>Orders of <?php echo $row['fname'] . ' ' . $row['lname']; ?></h1>
+                <?php } ?>
+
                 <div class="back-btn-and-search">
                     <a href="../users/" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
-                    <div class="search">
-                        <input type="text" placeholder="Search orders of Peter">
-                    </div>
                 </div>
                 <div class="user-orders-list">
-                    <div class="item" data-order-id="1234">
+
+                    <?php                    
+                        $sql2 = "SELECT
+                                    orders.id as id,
+                                    items.id as pid,
+                                    orders.uid as uid,
+                                    orders.add_date as date,
+                                    items.title as title,
+                                    orders.wrap as wrap,
+                                    orders.text as text,
+                                    orders.color as color,
+                                    orders.comments as comments,
+                                    items.img as product_img,
+                                    orders.img as printing_img,
+                                    orders.qty as qty,
+                                    items.price as price,
+                                    orders.status as status
+                                    FROM `orders`
+                                    INNER JOIN `items` ON orders.pid = items.id
+                                    WHERE orders.uid = '$uid' AND orders.status != 'pending'";
+                    
+                        $result2 = mysqli_query($conn, $sql2);
+                    
+                        if (mysqli_num_rows($result2) > 0) {
+                            while ($row = mysqli_fetch_assoc($result2)) {
+                    ?>
+                    <div class="item" data-order-id="<?php echo $row['id']; ?>">
                         <div class="item-info">
-                            <p class="order-id">Order ID: 1234</p>
-                            <img src="../../images/home_mug_pic.png" alt="image">
+                            <p class="order-id">Order ID: <?php echo $row['id']; ?></p>
+                            <img src="../../images/uploads/items/<?php echo $row['product_img']; ?>" alt="image">
                             <div class="details">
-                                <p class="date">Date: 2024-01-01</p>
-                                <p class="product-id">Product ID: 1792</p>
-                                <p class="item-name">Custom Printed White Mug</p>
+                                <p class="date">Date: <?php echo $row['date']; ?></p>
+                                <p class="product-id">Product ID: <?php echo $row['pid']; ?></p>
+                                <p class="item-name"><?php echo $row['title']; ?></p>
                             </div>
                             <ul class="options">
-                                <li>Packaging: Wrapped</li>
-                                <li>Text: "Wish You Happy New Year!"</li>
-                                <li>Color: <div class="color red"></div>
-                                </li>
-                                <li>Comments: Text should be bigger</li>
-                            </ul>
-                            <div class="pricing">
-                                <p class="qty">Quantity: 1</p>
-                                <p class="price">Rs. 1100</p>
-                            </div>
-                        </div>
-                        <form class="status">
-                            <!-- Fix same ID and name issues -->
-                            <div>
-                                <input type="radio" name="user-order-status-1234" id="userOrderStatusDeclined1234"
-                                    value="declined">
-                                <label for="userOrderStatusDeclined1234">Declined</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="user-order-status-1234" id="userOrderStatusConfirmed1234"
-                                    value="confirmed" checked>
-                                <label for="userOrderStatusConfirmed1234">Confirmed</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="user-order-status-1234" id="userOrderStatusProcessing1234"
-                                    value="processing">
-                                <label for="userOrderStatusProcessing1234">Processing</label>
+                                <li>Packaging: <?php echo (($row['wrap']) ? 'Wrapped' : null); ?></li>
+                                <li>Text: "<?php echo $row['text']; ?>"</li>
+                                <li>Color: <div class="color <?php echo $row['color']; ?>"></div></li>
 
-                            </div>
-                            <div>
-                                <input type="radio" name="user-order-status-1234" id="userOrderStatusDispatched1234"
-                                    value="dispatched">
-                                <label for="userOrderStatusDispatched1234">Dispatched</label>
-
-                            </div>
-                            <div>
-                                <input type="radio" name="user-order-status-1234" id="userOrderStatusDelivered1234"
-                                    value="delivered">
-                                <label for="userOrderStatusDelivered1234">Delivered</label>
-                            </div>
-
-                            <input type="submit" value="Saved!" id="userOrderStatusSave1234">
-                        </form>
-                    </div>
-                    <div class="item" data-order-id="5678">
-                        <div class="item-info">
-                            <p class="order-id">Order ID: 5678</p>
-                            <img src="../../images/about-img-1.jpg" alt="product_image">
-                            <div class="details">
-                                <p class="date">Date: 2023-12-29</p>
-                                <p class="product-id">Product ID: 1627</p>
-                                <p class="item-name">Custom Printed Black Mug</p>
-                            </div>
-                            <ul class="options">
-                                <li>Packaging: Not Wrapped</li>
+                                <?php
+                                    if ($row['printing_img'] !== "") {
+                                ?>
                                 <li>
                                     Image:
-                                    <img src="../../images/uploads/spiderman-sticker.jpg">
-                                    <a href="../../images/uploads/spiderman-sticker.jpg" download>Download</a>
+                                    <img src="../../images/uploads/printing_images/<?php echo $row['printing_img']; ?>">
+                                    <a href="../../images/uploads/printing_images/<?php echo $row['printing_img']; ?>" download>Download</a>
                                 </li>
-                                <li>Comments: Set a margin at least half an inch around the image</li>
+                                <?php } ?>
+
+                                <li>Comments: <?php echo $row['comments']; ?></li>
                             </ul>
                             <div class="pricing">
-                                <p class="qty">Quantity: 2</p>
-                                <p class="price">Rs. 2800</p>
+                                <p class="qty">Quantity: <?php echo $row['qty']; ?></p>
+                                <p class="price">Rs. <?php echo $row['price'] * $row['qty']; ?></p>
                             </div>
                         </div>
                         <form class="status">
                             <div>
-                                <input type="radio" name="user-order-status-5678" id="userOrderStatusDeclined5678"
-                                    value="declined">
-                                <label for="userOrderStatusDeclined5678">Declined</label>
+                                <input type="radio" name="user-order-status-<?php echo $row['id']; ?>" id="userOrderStatusDeclined<?php echo $row['id']; ?>"
+                                    value="declined" <?php echo (($row['status'] == 'declined') ? 'checked' : null); ?>>
+                                <label for="userOrderStatusDeclined<?php echo $row['id']; ?>">Declined</label>
                             </div>
                             <div>
-                                <input type="radio" name="user-order-status-5678" id="userOrderStatusConfirmed5678"
-                                    value="confirmed">
-                                <label for="userOrderStatusConfirmed5678">Confirmed</label>
+                                <input type="radio" name="user-order-status-<?php echo $row['id']; ?>" id="userOrderStatusConfirmed<?php echo $row['id']; ?>"
+                                    value="confirmed" <?php echo (($row['status'] == 'confirmed') ? 'checked' : null); ?>>
+                                <label for="userOrderStatusConfirmed<?php echo $row['id']; ?>">Confirmed</label>
                             </div>
                             <div>
-                                <input type="radio" name="user-order-status-5678" id="userOrderStatusProcessing5678"
-                                    value="processing">
-                                <label for="userOrderStatusProcessing5678">Processing</label>
+                                <input type="radio" name="user-order-status-<?php echo $row['id']; ?>" id="userOrderStatusProcessing<?php echo $row['id']; ?>"
+                                    value="processing" <?php echo (($row['status'] == 'processing') ? 'checked' : null); ?>>
+                                <label for="userOrderStatusProcessing<?php echo $row['id']; ?>">Processing</label>
+
                             </div>
                             <div>
-                                <input type="radio" name="user-order-status-5678" id="userOrderStatusDispatched5678"
-                                    value="dispatched">
-                                <label for="userOrderStatusDispatched5678">Dispatched</label>
+                                <input type="radio" name="user-order-status-<?php echo $row['id']; ?>" id="userOrderStatusDispatched<?php echo $row['id']; ?>"
+                                    value="dispatched" <?php echo (($row['status'] == 'dispatched') ? 'checked' : null); ?>>
+                                <label for="userOrderStatusDispatched<?php echo $row['id']; ?>">Dispatched</label>
+
                             </div>
                             <div>
-                                <input type="radio" name="user-order-status-5678" id="userOrderStatusDelivered5678"
-                                    value="delivered" checked>
-                                <label for="userOrderStatusDelivered5678">Delivered</label>
+                                <input type="radio" name="user-order-status-<?php echo $row['id']; ?>" id="userOrderStatusDelivered<?php echo $row['id']; ?>"
+                                    value="delivered" <?php echo (($row['status'] == 'delivered') ? 'checked' : null); ?>>
+                                <label for="userOrderStatusDelivered<?php echo $row['id']; ?>">Delivered</label>
                             </div>
 
-                            <input type="submit" value="Saved!" id="userOrderStatusSave5678">
+                            <input type="submit" value="Saved!" id="userOrderStatusSave<?php echo $row['id']; ?>">
                         </form>
                     </div>
+                    <?php }} ?>
+
                 </div>
             </div>
 

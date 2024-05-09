@@ -64,10 +64,16 @@
                 <div class="products-section">
                     <button class="filters-sidebar-open" id="filtersSidebarOpen">Filters</button>
                     <div class="products-list">
+
                         <?php
                             include '../library/sql/dbconn.php';
 
-                            $sql = "SELECT id, title, category, price, img, status FROM items WHERE status != 'removed' AND status != 'hide'";
+                            if (!isset($_GET['search'])) {
+                                $sql = "SELECT id, title, category, price, img, status FROM items WHERE status != 'removed' AND status != 'hide'";
+                            } else {
+                                $key = $_GET['search'];
+                                $sql = "SELECT id, title, category, price, img, status FROM items WHERE status != 'removed' AND status != 'hide' AND (title LIKE '%$key%' OR category LIKE '%$key%')";
+                            }
                             
                             $result = mysqli_query($conn, $sql);
 
@@ -82,8 +88,9 @@
                             </div>
                             <!-- Status is changed by JS -->
                             <p class="productsStatus"></p>
-                        <?php }} ?>
                         </a>
+                        <?php }} ?>
+
                     </div>
                 </div>
             </div>

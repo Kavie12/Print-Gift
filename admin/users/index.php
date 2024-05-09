@@ -1,10 +1,6 @@
 <?php
     session_start();
     include '../../library/sql/AdminGuestNoAccess.php';
-
-    include '../../library/sql/dbconn.php';
-    $sql = "SELECT id, fname, lname FROM users WHERE status != 'deleted'";
-    $result = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,9 +29,9 @@
             <!-- Users -->
             <div class="users">
                 <h1>Users</h1>
-                <div class="search">
-                    <input type="text" placeholder="Search users">
-                </div>
+                <form class="search" method="get" action="./index.php">
+                    <input type="text" name="search" placeholder="Search users">
+                </form>
                 <div class="add-user-btn">
                     <a href="./adduser.php">Add User</a>
                 </div>
@@ -51,6 +47,16 @@
                         </tr>
 
                         <?php
+                            include '../../library/sql/dbconn.php';
+
+                            if (!isset($_GET['search'])) {
+                                $sql = "SELECT id, fname, lname FROM users WHERE status != 'deleted'";
+                            } else {
+                                $key = $_GET['search'];
+                                $sql = "SELECT id, fname, lname FROM users WHERE status != 'deleted' AND (id LIKE '%$key%' OR fname LIKE '%$key%' OR lname LIKE '%$key%')";
+                            }
+                            $result = mysqli_query($conn, $sql);
+
                             if (mysqli_num_rows($result) > 0) {
                                 while($row = mysqli_fetch_assoc($result)) {
                         ?>

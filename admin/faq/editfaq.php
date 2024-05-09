@@ -33,18 +33,31 @@
                     <a href="../faq/" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
-                    <form id="editFAQForm" data-faq-id="3">
+
+                    <?php
+                        include '../../library/sql/dbconn.php';
+
+                        $sql = "SELECT * FROM faq";
+
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result)) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <form id="editFAQForm" data-faq-id="<?php echo $row['id']; ?>" action="./sql/editfaq.php?id=<?php echo $row['id']; ?>" method="post">
                         <div>
                             <label for="editFAQQ">Question</label>
-                            <textarea name="edit-faq-q" id="editFAQQ">How is the product quality?</textarea>
+                            <textarea name="edit-faq-q" id="editFAQQ"><?php echo $row['question']; ?></textarea>
                         </div>
                         <div>
                             <label for="editFAQA">Answer</label>
-                            <textarea name="edit-faq-a" id="editFAQA">We provide quality products</textarea>
+                            <textarea name="edit-faq-a" id="editFAQA"><?php echo $row['answer']; ?></textarea>
                         </div>
                         <input type="submit" name="edit" id="editFAQSubmit" value="Edit">
                         <p id="editFAQMsg"></p>
                     </form>
+                    <?php }} ?>
+
                 </div>
             </div>
 

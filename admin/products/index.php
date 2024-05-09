@@ -1,10 +1,6 @@
 <?php
     session_start();
     include '../../library/sql/AdminGuestNoAccess.php';
-
-    include '../../library/sql/dbconn.php';
-    $sql = "SELECT id, img, title, category, description, price, status FROM items WHERE status != 'removed'";
-    $result = mysqli_query($conn, $sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,15 +29,25 @@
             <!-- Products -->
             <div class="products">
                 <h1>Products</h1>
-                <div class="search">
-                    <input type="text" placeholder="Search products">
-                </div>
+                <form class="search" method="get" action="./index.php">
+                    <input type="text" name="search" placeholder="Search products">
+                </form>
                 <div class="add-product-btn">
                     <a href="./addproduct.php">Add Product</a>
                 </div>
                 <div class="products-list">
 
                     <?php
+                        include '../../library/sql/dbconn.php';
+
+                        if (!isset($_GET['search'])) {
+                            $sql = "SELECT id, img, title, category, description, price, status FROM items WHERE status != 'removed'";
+                        } else {
+                            $key = $_GET['search'];
+                            $sql = "SELECT id, img, title, category, description, price, status FROM items WHERE status != 'removed' AND (id LIKE '%$key%' OR title LIKE '%$key%' OR category LIKE '%$key%')";
+                        }
+                        $result = mysqli_query($conn, $sql);
+
                         if (mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
                     ?>

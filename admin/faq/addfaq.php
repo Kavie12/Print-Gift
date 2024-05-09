@@ -33,7 +33,7 @@
                     <a href="../faq/" class="back-btn">
                         <i class="fa-solid fa-arrow-left"></i>
                     </a>
-                    <form id="addFAQForm">
+                    <form id="addFAQForm" method="post" action="./sql/addfaq.php">
                         <div>
                             <label for="addFAQQ">Question</label>
                             <textarea name="add-faq-q" id="addFAQQ" placeholder="Enter Question"></textarea>

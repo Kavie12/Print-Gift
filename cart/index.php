@@ -135,11 +135,11 @@
                     <div class="checkout-address">
                         <span>Shipping to:</span>
                         <?php
-                            $sql6 = "SELECT fname, lname, address, city, postalcode, phone FROM users WHERE id = $uid";
+                            $sql2 = "SELECT fname, lname, address, city, postalcode, phone FROM users WHERE id = $uid";
 
-                            $result6 = mysqli_query($conn, $sql6);
+                            $result2 = mysqli_query($conn, $sql2);
 
-                            while ($row = mysqli_fetch_assoc($result6)) {
+                            while ($row = mysqli_fetch_assoc($result2)) {
                         ?>
                         <div class="shipping-address">
                             <span><?php echo $row['fname'] . ' ' . $row['lname']; ?>,</span>
@@ -163,7 +163,7 @@
                     </div>
 
                     <div class="confirm-order">
-                        <a href="#" id="cartConfirmOrder">Confirm Order</a>
+                        <a href="./sql/confirmorder.php" id="cartConfirmOrder">Confirm Order</a>
                     </div>
 
                 </div>

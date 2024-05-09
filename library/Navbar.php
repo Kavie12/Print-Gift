@@ -3,6 +3,15 @@
     if (isset($_SESSION['user'])) {
         $login_state = true;
     }
+
+    $cartcount = 0;
+    if ($login_state) {
+        $id = $_SESSION['user'];
+        include 'sql/dbconn.php';
+        $sql = "SELECT COUNT(*) as count FROM cart WHERE uid = $id";
+        $result = mysqli_query($conn, $sql);
+        $cartcount = intval(mysqli_fetch_assoc($result)['count']);
+    }
 ?>
 
 <div class="navbar">
@@ -13,17 +22,25 @@
         </a>
     </div>
     <div class="nav-search">
-        <div class="search">
-            <input type="search" placeholder="Search products">
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-        </div>
+        <form class="search" method="get" action="../products/index.php">
+            <input type="search" name="search" placeholder="Search products">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
     </div>
     <div class="nav-cart">
         <?php
             if ($login_state) {
                 echo
                     '
-                        <a href="../cart/"><i class="fa-solid fa-cart-shopping"><span></span></i></a>
+                        <a href="../cart/">
+                            <i class="fa-solid fa-cart-shopping">
+                            '
+                                .
+                                    (($cartcount > 0) ? '<span>' . $cartcount . '</span>' : null)
+                                .
+                            '
+                            </i>
+                        </a>
                     ';
             }
         ?>

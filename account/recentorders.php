@@ -32,59 +32,71 @@
                 </div>
                 <div class="details">
                     <h1>Recent Orders</h1>
+                    <p>*Note that delivery and wrapping charges are not shown here</p>
                     <div class="recent-orders-list">
+
+                        <?php
+                            include '../library/sql/dbconn.php';
+                        
+                            $uid = $_SESSION['user'];
+                            $sql = "SELECT
+                                        orders.id as id,
+                                        orders.add_date as date,
+                                        items.title as title,
+                                        orders.wrap as wrap,
+                                        orders.text as text,
+                                        orders.color as color,
+                                        orders.comments as comments,
+                                        items.img as product_img,
+                                        orders.img as printing_img,
+                                        orders.status as status,
+                                        orders.qty as qty,
+                                        items.price as price
+                                        FROM `orders`
+                                        INNER JOIN `items` ON orders.pid = items.id
+                                        WHERE orders.uid='$uid'";
+                        
+                            $result = mysqli_query($conn, $sql);
+                        
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
                         <div class="item">
                             <div class="item-info">
-                                <p class="order-id">Order ID: 12189</p>
-                                <img src="../images/home_mug_pic.png" alt="image">
+                                <p class="order-id">Order ID: <?php echo $row['id']; ?></p>
+                                <img src="../images/uploads/items/<?php echo $row['product_img']; ?>" alt="image">
                                 <div class="order-details">
-                                    <p class="date">Date: 2024-01-01</p>
-                                    <p class="item-name">Custom Printed White Mug</p>
+                                    <p class="date">Date: <?php echo $row['date']; ?></p>
+                                    <p class="item-name"><?php echo $row['title']; ?></p>
                                 </div>
                                 <ul class="options">
-                                    <li>Packaging: Wrapped</li>
-                                    <li>Text: "Wish You Happy New Year!"</li>
-                                    <li>Color: <div class="color red"></div>
-                                    </li>
-                                    <li>Comments: Text should be bigger</li>
-                                </ul>
-                                <div class="status">
-                                    <i class="fa-solid fa-truck"></i>
-                                    <p>Processing</p>
-                                </div>
-                                <div class="pricing">
-                                    <p class="qty">Quantity: 1</p>
-                                    <p class="price">Rs. 1100</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-info">
-                                <p class="order-id">Order ID: 7283</p>
-                                <img src="../images/about-img-1.jpg" alt="product_image">
-                                <div class="order-details">
-                                    <p class="date">Date: 2023-12-29</p>
-                                    <p class="item-name">Custom Printed Black Mug</p>
-                                </div>
-                                <ul class="options">
-                                    <li>Packaging: Not Wrapped</li>
+                                    <li>Packaging: <?php echo (($row['wrap']) ? 'Wrapped' : 'Not Wrapped'); ?></li>
+                                    <li>Text: "<?php echo $row['text']; ?>"</li>
+                                    <li>Color: <div class="color <?php echo $row['color']; ?>"></div></li>
+
+                                    <?php
+                                        if ($row['printing_img'] !== "") {
+                                    ?>
                                     <li>
                                         Image:
-                                        <img src="../images/uploads/spiderman-sticker.jpg">
-                                        <a href="../images/uploads/spiderman-sticker.jpg" download>Download</a>
+                                        <img src="../images/uploads/printing_images/<?php echo $row['printing_img']; ?>">
                                     </li>
-                                    <li>Comments: Set a margin at least half an inch around the image</li>
+                                    <?php } ?>
+
+                                    <li>Comments: <?php echo $row['comments']; ?></li>
                                 </ul>
                                 <div class="status">
                                     <i class="fa-solid fa-truck"></i>
-                                    <p>Delivered</p>
+                                    <p><?php echo ucfirst($row['status']); ?></p>
                                 </div>
                                 <div class="pricing">
-                                    <p class="qty">Quantity: 2</p>
-                                    <p class="price">Rs. 2800</p>
+                                    <p class="qty">Quantity: <?php echo $row['qty']; ?></p>
+                                    <p class="price">Rs. <?php echo $row['price'] * $row['qty']; ?></p>
                                 </div>
                             </div>
                         </div>
+                        <?php }} ?>
+
                     </div>
                 </div>
             </div>

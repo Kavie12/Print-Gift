@@ -34,45 +34,30 @@
                 </div>
                 <div class="faq-section">
                     <div class="faq-list">
+
+                        <?php
+                            include '../../library/sql/dbconn.php';
+
+                            $sql = "SELECT * FROM faq";
+
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result)) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
                         <div class="faq-item" data-faq-id="1">
                             <div>
                                 <button></button>
-                                <span>Who are you?</span>
+                                <span><?php echo $row['question']; ?></span>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, doloremque. Odio,
-                                tempora doloribus ducimus veritatis quasi autem aut optio praesentium esse, aperiam
-                                eos laboriosam a commodi consectetur architecto eum? Quibusdam.</p>
+                            <p><?php echo $row['answer']; ?></p>
                             <div class="buttons">
-                                <a href="./editfaq.php" class="edit">Edit</a>
+                                <a href="./editfaq.php?id=<?php echo $row['id']; ?>" class="edit">Edit</a>
                                 <span class="delete">Delete</span>
                             </div>
                         </div>
-                        <div class="faq-item" data-faq-id="2">
-                            <div>
-                                <button></button>
-                                <span>Who are you?</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, doloremque. Odio,
-                                tempora doloribus ducimus veritatis quasi autem aut optio praesentium esse, aperiam
-                                eos laboriosam a commodi consectetur architecto eum? Quibusdam.</p>
-                            <div class="buttons">
-                                <a href="./editfaq.php" class="edit">Edit</a>
-                                <span class="delete">Delete</span>
-                            </div>
-                        </div>
-                        <div class="faq-item" data-faq-id="3">
-                            <div>
-                                <button></button>
-                                <span>Who are you?</span>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, doloremque. Odio,
-                                tempora doloribus ducimus veritatis quasi autem aut optio praesentium esse, aperiam
-                                eos laboriosam a commodi consectetur architecto eum? Quibusdam.</p>
-                            <div class="buttons">
-                                <a href="./editfaq.php" class="edit">Edit</a>
-                                <span class="delete">Delete</span>
-                            </div>
-                        </div>
+                        <?php }} ?>
+
                     </div>
                 </div>
             </div>
