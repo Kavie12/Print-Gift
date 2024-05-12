@@ -65,44 +65,8 @@
                                 placeholder="Enter text you want to get printed"></textarea>
                         </div>
                         <div class="options">
-                            <span>Select Text Color</span>
-                            <div class="options-list">
-                                <div>
-                                    <input type="radio" name="printing_text_color" id="printingTextColorBlack"
-                                        value="black">
-                                    <div></div>
-                                </div>
-                                <div>
-                                    <input type="radio" name="printing_text_color" id="printingTextColorRed"
-                                        value="red">
-                                    <div></div>
-                                </div>
-                                <div>
-                                    <input type="radio" name="printing_text_color" id="printingTextColorBlue"
-                                        value="blue">
-                                    <div></div>
-                                </div>
-                                <div>
-                                    <input type="radio" name="printing_text_color" id="printingTextColorOrange"
-                                        value="orange">
-                                    <div></div>
-                                </div>
-                                <div>
-                                    <input type="radio" name="printing_text_color" id="printingTextColorPurple"
-                                        value="purple">
-                                    <div></div>
-                                </div>
-                                <div>
-                                    <input type="radio" name="printing_text_color" id="printingTextColorPink"
-                                        value="pink">
-                                    <div></div>
-                                </div>
-                                <div>
-                                    <input type="radio" name="printing_text_color" id="printingTextColorWhite"
-                                        value="white">
-                                    <div></div>
-                                </div>
-                            </div>
+                            <label for="printingTextColor">Select Text Color</label>
+                            <input type="color" id="printingTextColor" name="printing_text_color">
                         </div>
                         <div class="image">
                             <label for="printingImage">

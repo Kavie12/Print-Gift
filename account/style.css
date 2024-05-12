@@ -367,34 +367,6 @@
     border-radius: 4px;
 }
 
-.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.black {
-    background-color: rgb(40, 40, 40);
-}
-
-.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.white {
-    background-color: whitesmoke;
-}
-
-.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.red {
-    background-color: rgb(194, 51, 51);
-}
-
-.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.blue {
-    background-color: rgb(29, 86, 183);
-}
-
-.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.orange {
-    background-color: rgb(222, 98, 45);
-}
-
-.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.purple {
-    background-color: rgb(117, 49, 177);
-}
-
-.account-content .account-section>.details .recent-orders-list .item .item-info .options li .color.pink {
-    background-color: rgb(201, 47, 127);
-}
-
 .account-content .account-section>.details .recent-orders-list .item .item-info .options li img {
     width: 100px;
 }

@@ -72,7 +72,7 @@
                                 <ul class="options">
                                     <li>Packaging: <?php echo (($row['wrap']) ? 'Wrapped' : 'Not Wrapped'); ?></li>
                                     <li>Text: "<?php echo $row['text']; ?>"</li>
-                                    <li>Color: <div class="color <?php echo $row['color']; ?>"></div></li>
+                                    <li>Color: <div class="color" style="background-color: <?php echo $row['color']; ?>;"></div></li>
 
                                     <?php
                                         if ($row['printing_img'] !== "") {

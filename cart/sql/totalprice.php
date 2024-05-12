@@ -26,7 +26,7 @@
    
 
         // Wrapping product count
-        $sql3 = "SELECT COUNT(*) FROM cart WHERE uid = $uid AND wrap = 1";
+        $sql3 = "SELECT SUM(qty) FROM cart WHERE uid = $uid AND wrap = 1";
         $result3 = mysqli_query($conn, $sql3);
         $data3 = mysqli_fetch_all($result3)[0][0];
 

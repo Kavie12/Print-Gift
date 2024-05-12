@@ -5,6 +5,7 @@ function cartIncreaseQty(i, itemID) {
     qtyInput.value = qty + 1;
 
     qtyDBUpdate(qtyInput.value, itemID);
+    updateServicePrices();
 
     // console.log(itemID + " - " + qtyInput.value);
 
@@ -19,6 +20,7 @@ function cartDecreaseQty(i, itemID) {
         qtyInput.value = qty - 1;
         // console.log(itemID + " - " + qtyInput.value);
         qtyDBUpdate(qtyInput.value, itemID);
+        updateServicePrices();
     } else {
         cartQtyLimit(i, itemID);
     }
@@ -34,6 +36,7 @@ function cartQtyLimit(i, itemID) {
     }
     // console.log(itemID + " - " + qtyInput.value);
     qtyDBUpdate(qtyInput.value, itemID);
+    updateServicePrices();
 }
 
 // Remove item from cart
@@ -44,6 +47,7 @@ function removeCart(item, itemID) {
 
     // console.log(itemID + " - removed");
     cartDBDelete(itemID);
+    updateServicePrices();
 }
 
 // Number cart items
@@ -147,7 +151,7 @@ function updateServicePrices() {
 
             document.querySelector(".checkout-items-list .shipping .price").innerHTML = data[0];
             document.querySelector(".checkout-items-list .wrapping .price").innerHTML = data[1] * data[2];
-            document.querySelector(".checkout-items-list .wrapping .qty").innerHTML = data[2] + 'x';
+            document.querySelector(".checkout-items-list .wrapping .qty").innerHTML = ((data[2] == null) ? 0 : data[2]) + 'x';
 
         }
     }
