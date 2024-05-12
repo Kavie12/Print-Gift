@@ -59,7 +59,8 @@
                                     FROM ((`orders`
                                     INNER JOIN `items` ON orders.pid = items.id)
                                     INNER JOIN `users` ON orders.uid = users.id)
-                                    WHERE orders.status != 'pending'";
+                                    WHERE orders.status != 'pending'
+                                    ORDER BY orders.id DESC";
                         } else {
                             $key = $_GET['search'];
 
@@ -87,7 +88,8 @@
                             WHERE orders.status != 'pending'
                             AND (items.title LIKE '%$key%'
                             OR orders.text LIKE '%$key%'
-                            OR orders.id LIKE '%$key%')";
+                            OR orders.id LIKE '%$key%')
+                            ORDER BY orders.id DESC";
                         }
                     
                         $result = mysqli_query($conn, $sql);
