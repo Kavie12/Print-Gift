@@ -234,7 +234,8 @@
     outline-color: rgb(90, 90, 90);
 }
 
-.admin-content .user-profile .profile-details .address-field {
+.admin-content .user-profile .profile-details .address-field,
+.admin-content .user-profile .profile-details .email-field {
     grid-column: 1/3;
 }
 

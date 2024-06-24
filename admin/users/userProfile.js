@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("adminUserProfileLName").value = data.lname;
             document.getElementById("adminUserProfileTel").value = data.phone;
             document.getElementById("adminUserProfileDOB").value = data.dob;
+            document.getElementById("adminUserProfileEmail").value = data.email;
             document.getElementById("adminUserProfileAddress").value = data.address;
             document.getElementById("adminUserProfileCity").value = data.city;
             document.getElementById("adminUserProfilePostalCode").value = data.postalcode;

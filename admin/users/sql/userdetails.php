@@ -8,7 +8,7 @@ if (isset($_SESSION['admin'])) {
 
     $id = $_GET['id'];
 
-    $sql = "SELECT fname, lname, phone, dob, address, city, postalcode FROM users WHERE id = $id";
+    $sql = "SELECT fname, lname, phone, dob, email, address, city, postalcode FROM users WHERE id = $id";
 
     $result = mysqli_query($conn, $sql);
 

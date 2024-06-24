@@ -29,21 +29,17 @@
             <!-- Statistics -->
             <div class="statistics">
                 <h1>Statistics</h1>
-                <select name="duration" id="adminStatisticsDurationFilter">
-                    <option value="all" selected>All Time</option>
-                    <option value="month">30 Days</option>
-                </select>
                 <div class="statistics-cards">
                     <div class="users">
-                        <h3></h3>
+                        <h3>Total Users</h3>
                         <span></span>
                     </div>
                     <div class="orders">
-                        <h3></h3>
+                        <h3>Total Orders</h3>
                         <span></span>
                     </div>
                     <div class="revenue">
-                        <h3></h3>
+                        <h3>Total Revenue</h3>
                         <span></span>
                     </div>
                 </div>

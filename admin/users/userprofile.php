@@ -49,6 +49,10 @@
                         <label for="adminUserProfileDOB">Date of Birth</label>
                         <input type="date" name="dob" id="adminUserProfileDOB" disabled>
                     </div>
+                    <div class="email-field">
+                        <label for="adminUserProfileEmail">Email</label>
+                        <input type="text" name="address" id="adminUserProfileEmail" disabled>
+                    </div>
                     <div class="address-field">
                         <label for="adminUserProfileAddress">Address</label>
                         <input type="text" name="address" id="adminUserProfileAddress" disabled>
